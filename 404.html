@@ -127,6 +127,34 @@
       box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4);
       color: #FFFFFF !important;
     }
+    @media (max-width: 540px) {
+      body {
+        padding: 24px 16px;
+      }
+      .error-num {
+        font-size: clamp(4.5rem, 20vw, 7rem);
+      }
+      .error-num::after {
+        font-size: 1.6rem;
+        right: -15px;
+      }
+      .error-title {
+        font-size: 1.5rem;
+      }
+      .error-desc {
+        font-size: 0.95rem;
+        margin-bottom: 28px;
+      }
+      .error-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+      .error-actions .btn {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>

@@ -70,14 +70,16 @@ document.addEventListener('DOMContentLoaded', () => {
         once: true,
         onEnter: batch => {
           gsap.fromTo(batch,
-            { opacity: 0, y: 25 },
+            { opacity: 0, y: 28, scale: 0.96, rotation: -1.2 },
             {
               opacity: 1,
               y: 0,
-              duration: 0.5,
+              scale: 1,
+              rotation: 0,
+              duration: 0.65,
               stagger: 0.08,
               ease: 'power2.out',
-              clearProps: 'opacity,transform'
+              clearProps: 'opacity,transform,rotation'
             }
           );
         }
@@ -192,23 +194,139 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 8. Mobile Menu Toggle
+  // 8. Spring-Board Mobile Menu Navigation
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
+  let navBackdrop = document.querySelector('.nav-backdrop');
+
+  if (!navBackdrop && mobileToggle && navMenu) {
+    navBackdrop = document.createElement('div');
+    navBackdrop.className = 'nav-backdrop';
+    document.body.appendChild(navBackdrop);
+  }
+
+  // Ensure login/signup actions are available inside mobile menu drawer
+  if (navMenu && !navMenu.querySelector('.nav-menu-actions')) {
+    const mobileActions = document.createElement('div');
+    mobileActions.className = 'nav-menu-actions';
+    mobileActions.innerHTML = `
+      <a href="login.html" class="btn btn-outline btn-sm"><i class="fa fa-arrow-right-to-bracket"></i> Login</a>
+      <a href="signup.html" class="btn btn-primary btn-sm"><i class="fa fa-user-plus"></i> Signup</a>
+    `;
+    navMenu.appendChild(mobileActions);
+  }
+
+  function openMobileMenu() {
+    if (!navMenu || !mobileToggle) return;
+    mobileToggle.classList.add('active');
+    navMenu.classList.remove('closing');
+    navMenu.classList.add('active');
+    if (navBackdrop) navBackdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    if (!navMenu || !mobileToggle) return;
+    if (!navMenu.classList.contains('active')) return;
+    mobileToggle.classList.remove('active');
+    navMenu.classList.add('closing');
+    if (navBackdrop) navBackdrop.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      navMenu.classList.remove('active');
+      navMenu.classList.remove('closing');
+    }, 240);
+  }
+
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      const isVisible = navMenu.style.display === 'flex';
-      navMenu.style.display = isVisible ? 'none' : 'flex';
-      if (!isVisible) {
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '80px';
-        navMenu.style.left = '0';
-        navMenu.style.width = '100%';
-        navMenu.style.background = '#FFFFFF';
-        navMenu.style.padding = '24px';
-        navMenu.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (navMenu.classList.contains('active')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
       }
+    });
+
+    if (navBackdrop) {
+      navBackdrop.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close when clicking nav links
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMobileMenu();
+    });
+
+    // Reset when resizing to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 992 && navMenu.classList.contains('active')) {
+        closeMobileMenu();
+      }
+    });
+  }
+
+  // 9. Reusable Wobble Card Enter Animation
+  const wobbleTargetSelectors = [
+    '.module-card',
+    '.sector-card',
+    '.blog-card',
+    '.compliance-card',
+    '.testimonial-card',
+    '.info-box',
+    '.workflow-step',
+    '.team-card',
+    '.metric-item',
+    '.showcase-card',
+    '.contact-form-card',
+    '.wobble-card'
+  ].join(', ');
+
+  const wobbleCards = document.querySelectorAll(wobbleTargetSelectors);
+
+  if ('IntersectionObserver' in window && wobbleCards.length > 0) {
+    const wobbleObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry, idx) => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          const stagger = (idx % 3) * 0.08;
+          card.style.animationDelay = `${stagger}s`;
+          card.classList.add('wobble-card-enter');
+          observer.unobserve(card);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -30px 0px',
+      threshold: 0.1
+    });
+
+    wobbleCards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        card.classList.add('wobble-card-enter');
+      } else {
+        card.classList.add('wobble-card-ready');
+        wobbleObserver.observe(card);
+      }
+    });
+
+    // Safety fallback: ensure every card is fully visible within 1.2s
+    setTimeout(() => {
+      wobbleCards.forEach(c => {
+        c.classList.remove('wobble-card-ready');
+        c.style.opacity = '1';
+        c.style.transform = 'none';
+      });
+    }, 1200);
+  } else {
+    wobbleCards.forEach(c => {
+      c.style.opacity = '1';
+      c.style.visibility = 'visible';
     });
   }
 });
