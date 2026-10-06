@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curated Wishlist & Rare Fabrics — STACKLY VIP Atelier</title>
+  <meta name="description" content="Personalized Haute Couture wishlist, runway pre-orders, reserved Como silk swatches, and stylist ensemble recommendations.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+
+  <!-- Google Fonts: Playfair Display & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/atelier-dashboard.css">
+</head>
+<body>
+
+  <!-- TOP WINE NAVIGATION -->
+  <header class="top-wine-header">
+    <div class="top-tier-primary">
+      <div class="brand-cluster">
+        <a href="dashboard.html" class="brand-logo-text">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          STACKLY
+        </a>
+        <div class="top-role-badge">
+          <span class="dot"></span>
+          <span>VIP CLIENT</span>
+        </div>
+        <div class="role-switcher-toggle">
+          <a href="curated-wishlist.html" class="role-btn-toggle active"><i class="fa fa-user"></i> VIP Client</a>
+          <a href="store-overview.html" class="role-btn-toggle"><i class="fa fa-shield-halved"></i> Atelier Admin</a>
+        </div>
+      </div>
+      <div class="top-user-meta">
+        <span class="top-user-email">lingalamanasa123@gmail.com</span>
+        <div class="top-user-avatar" title="VIP Profile"><i class="fa fa-user"></i></div>
+      </div>
+    </div>
+    <div class="top-tier-secondary">
+      <div class="welcome-phrase">
+        Welcome, <strong>Lingalamanasa123</strong>
+        <span class="welcome-role-tag">VIP CLIENT</span>
+      </div>
+      <div class="current-tab-crumb">Curated Wishlist</div>
+    </div>
+  </header>
+
+  <div class="dashboard-body-container">
+    <!-- SIDEBAR -->
+    <aside class="atelier-sidebar">
+      <div>
+        <div class="sidebar-section-label">YOUR ATELIER SUITE</div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="wardrobe-orders.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-box-archive"></i> My Wardrobe & Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="bespoke-fittings.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-scissors"></i> Bespoke Fittings</span>
+            </a>
+          </li>
+          <li>
+            <a href="curated-wishlist.html" class="sidebar-menu-btn active">
+              <span class="btn-inner"><i class="fa fa-heart"></i> Curated Wishlist</span>
+              <span class="dot-indicator"></span>
+            </a>
+          </li>
+          <li>
+            <a href="stylist-sessions.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-star"></i> Stylist Sessions</span>
+            </a>
+          </li>
+          <li>
+            <a href="vip-measurements.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-ruler-combined"></i> VIP Measurements</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-user-bottom">
+        <div class="sidebar-user-badge-card">
+          <div class="user-profile-row">
+            <div class="user-profile-circle"><i class="fa fa-user"></i></div>
+            <div class="user-profile-info">
+              <div class="user-profile-name">Lingalamanasa123</div>
+              <div class="user-profile-email">lingalamanasa123@gmail.com</div>
+            </div>
+          </div>
+          <a href="login.html" class="logout-btn-box" onclick="return confirm('Sign out of STACKLY?');">
+            <i class="fa fa-arrow-right-from-bracket"></i> LOGOUT
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEW: 5 SECTIONS -->
+    <main class="atelier-main">
+
+      <!-- SECTION 1: HERO & WISHLIST METRICS -->
+      <section class="dashboard-section anim-fade-in delay-1">
+        <div class="section-header-row">
+          <div>
+            <span class="section-badge-index">SECTION 01 · COUTURE WISHLIST</span>
+            <h1 class="section-main-title">Private Runway Selection & Rare Swatches</h1>
+            <p class="section-desc">Exclusive pieces hand-picked for your silhouette by Head Stylist Amélie, with reserved bolts of Italian silk and French lace.</p>
+          </div>
+          <div>
+            <button class="hero-action-btn" onclick="showToast('Requesting courier delivery of fabric swatch book...')">
+              REQUEST SWATCH BOX <i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid-4-col">
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">SAVED ENSEMBLES</span>
+              <span class="kpi-card-pill rose">VIP Picks</span>
+            </div>
+            <div class="kpi-card-number">7</div>
+            <div class="kpi-card-desc">Handpicked haute couture silhouettes.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">RESERVED FABRIC BOLTS</span>
+            </div>
+            <div class="kpi-card-number">4</div>
+            <div class="kpi-card-desc">Como silk & Loro Piana wool held 14 days.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">PRE-ORDER PRIORITY</span>
+              <span class="kpi-card-pill emerald">Tier 1</span>
+            </div>
+            <div class="kpi-card-number">1st</div>
+            <div class="kpi-card-desc">Guaranteed slot for Paris Spring Couture.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">STYLIST NOTES</span>
+            </div>
+            <div class="kpi-card-number">12</div>
+            <div class="kpi-card-desc">Silhouette & neckline recommendations.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: RUNWAY PIECES & EXCLUSIVE PRE-ORDERS -->
+      <section class="dashboard-section anim-fade-in delay-2">
+        <span class="section-badge-index">SECTION 02 · RUNWAY PRE-ORDERS</span>
+        <h2 class="section-sub-title">Fall/Winter Haute Couture Runway Collection</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Reserve direct runway looks before public salon unveiling. Only 3 bespoke commissions allocated per design globally.</p>
+
+        <div class="grid-3-col">
+          <div class="content-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="kpi-card-pill rose" style="font-size: 0.68rem; margin-bottom: 8px; display: inline-block;">RUNWAY LOOK #04</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 6px;">Sculpted Corset Cape Dress</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Heavy duchess silk satin with detachable cascading cape and hand-boned corset.</p>
+              <div style="font-size: 0.88rem; font-weight: 700; color: #821B3D; margin-bottom: 16px;">$14,800 • Salem & Paris Atelier</div>
+            </div>
+            <button class="hero-action-btn" style="width: 100%; justify-content: center; padding: 10px;" onclick="showToast('Commissions hold placed for Corset Cape Dress!')">
+              RESERVE COMMISSION <i class="fa fa-check"></i>
+            </button>
+          </div>
+
+          <div class="content-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="kpi-card-pill rose" style="font-size: 0.68rem; margin-bottom: 8px; display: inline-block;">RUNWAY LOOK #11</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 6px;">Chantilly Lace Tiered Ballgown</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">140 hours of French hand-appliqué embroidery over silk tulle understructure.</p>
+              <div style="font-size: 0.88rem; font-weight: 700; color: #821B3D; margin-bottom: 16px;">$22,500 • Milan Atelier</div>
+            </div>
+            <button class="hero-action-btn" style="width: 100%; justify-content: center; padding: 10px;" onclick="showToast('Private appointment requested for Lace Ballgown!')">
+              REQUEST PRIVATE VIEWING <i class="fa fa-eye"></i>
+            </button>
+          </div>
+
+          <div class="content-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="kpi-card-pill rose" style="font-size: 0.68rem; margin-bottom: 8px; display: inline-block;">RUNWAY LOOK #19</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 6px;">Cashmere Kimono Smoking Jacket</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Woven on heritage Jacquard looms with silk faille shawl lapels and monogram sash.</p>
+              <div style="font-size: 0.88rem; font-weight: 700; color: #821B3D; margin-bottom: 16px;">$8,900 • New York Suite</div>
+            </div>
+            <button class="hero-action-btn" style="width: 100%; justify-content: center; padding: 10px;" onclick="showToast('Commission reserved for Kimono Jacket!')">
+              RESERVE COMMISSION <i class="fa fa-check"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: RARE FABRICS & BESPOKE SWATCHES -->
+      <section class="dashboard-section anim-fade-in delay-3">
+        <span class="section-badge-index">SECTION 03 · TEXTILE VAULT</span>
+        <h2 class="section-sub-title">Reserved Rare Fabric Bolts (14-Day Hold)</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">These rare, limited-yardage fabrics are physically held in our Salem atelier vault exclusively for your next commission.</p>
+
+        <div class="luxury-table-wrap">
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>Textile Code</th>
+                <th>Fabric Name & Origin</th>
+                <th>Composition</th>
+                <th>Meters Held</th>
+                <th>Hold Expiry</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>FAB-COMO-881</strong></td>
+                <td>Como Silk Velvet — Deep Burgundy</td>
+                <td>100% Italian Mulberry Silk</td>
+                <td>8.5 meters</td>
+                <td><span class="kpi-card-pill rose">11 Days Left</span></td>
+                <td><button class="btn-outline-pill" style="padding: 4px 12px; font-size: 0.72rem;" onclick="showToast('Fabric assigned to order')">Assign to Gown</button></td>
+              </tr>
+              <tr>
+                <td><strong>FAB-LORO-329</strong></td>
+                <td>Loro Piana Cloud Cashmere — Midnight</td>
+                <td>95% Cashmere, 5% Vicuña</td>
+                <td>5.0 meters</td>
+                <td><span class="kpi-card-pill amber">4 Days Left</span></td>
+                <td><button class="btn-outline-pill" style="padding: 4px 12px; font-size: 0.72rem;" onclick="showToast('Hold extended by 14 days')">Extend Hold</button></td>
+              </tr>
+              <tr>
+                <td><strong>FAB-LYON-402</strong></td>
+                <td>Lyon Metallic Fil-Coupé Brocade</td>
+                <td>Gold thread & Silk Chiffon</td>
+                <td>6.2 meters</td>
+                <td><span class="kpi-card-pill emerald">14 Days Left</span></td>
+                <td><button class="btn-outline-pill" style="padding: 4px 12px; font-size: 0.72rem;" onclick="showToast('Swatch delivery scheduled')">Request Swatch</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 4: STYLIST ENSEMBLE MOODBOARD -->
+      <section class="dashboard-section anim-fade-in delay-4">
+        <span class="section-badge-index">SECTION 04 · ENSEMBLE MOODBOARD</span>
+        <h2 class="section-sub-title">Head Stylist Amélie's Seasonal Recommendations</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Curated color palettes and silhouettes tailored to your seasonal VIP gala calendar in Salem and Paris.</p>
+
+        <div class="grid-2-col">
+          <div class="content-card">
+            <span class="kpi-card-pill rose" style="margin-bottom: 8px; display: inline-block;">GALA NIGHT ENSEMBLE</span>
+            <h4 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 8px;">Venetian Operatic Night (Nov 2026)</h4>
+            <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px;">
+              "Pairing your Burgundy Como silk gown with a sculpted ivory duchess bolero. The contrast accentuates neckline posture and pairs with emerald jewelry."
+            </p>
+            <div style="display: flex; gap: 8px;">
+              <span class="kpi-card-pill gray">Deep Wine #6E1230</span>
+              <span class="kpi-card-pill gray">Silk White #FFF9FA</span>
+              <span class="kpi-card-pill gray">Gold Bullion Accent</span>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <span class="kpi-card-pill rose" style="margin-bottom: 8px; display: inline-block;">DAYTIME RECEPTION ENSEMBLE</span>
+            <h4 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 8px;">Art Basel Collectors Luncheon (Dec 2026)</h4>
+            <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px;">
+              "Structured double-breasted coatdress in Loro Piana cashmere, cut with high side-vents and paired with hand-rolled silk foulard."
+            </p>
+            <div style="display: flex; gap: 8px;">
+              <span class="kpi-card-pill gray">Oatmeal Heather</span>
+              <span class="kpi-card-pill gray">Espresso Satin</span>
+              <span class="kpi-card-pill gray">Horn Buttons</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: INSTANT ATELIER PREVIEW BOOKING -->
+      <section class="dashboard-section anim-fade-in delay-5">
+        <div class="content-card" style="background: linear-gradient(135deg, #1C050D 0%, #3B0D1C 100%); color: #FFF; border: 1px solid #821B3D;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <span class="top-role-badge" style="background: rgba(255,255,255,0.15); margin-bottom: 10px;">SECTION 05 · PRIVATE PREVIEW</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: #FFF; margin-bottom: 6px;">Experience Your Wishlist in a Private Fitting Suite</h3>
+              <p style="font-size: 0.85rem; color: rgba(255,255,255,0.75); margin-bottom: 0;">Have all 3 runway pieces and reserved fabric bolts pre-draped on mannequins for your arrival.</p>
+            </div>
+            <button class="hero-action-btn" style="background: #FFF; color: #821B3D;" onclick="showToast('Private preview appointment reserved!')">
+              BOOK PRIVATE PREVIEW SESSION <i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="toast-popup" id="toastBox">
+    <i class="fa fa-circle-check" style="color: #F48FB1;"></i>
+    <span id="toastMsg">Success</span>
+  </div>
+
+  <script>
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & Clinical Insights — Stackly Health | Healthcare Technology Articles</title>
+  <meta name="description" content="Read expert insights on hospital management, EMR innovations, diagnostic LIMS automation, pharmacy supply chains, and NABH compliance.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+
+  <style>
+    /* ===== STACKLY PRELOADER ===== */
+    #stackly-preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: #0B0F19;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+    #stackly-preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .pl-logo {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 22px rgba(99,85,255,0.85));
+      animation: plPulse 1.8s ease-in-out infinite;
+    }
+    .pl-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.3px;
+      opacity: 0;
+      animation: plFadeUp 0.5s 0.25s ease forwards;
+    }
+    @keyframes plPulse {
+      0%, 100% { transform: scale(1);   filter: drop-shadow(0 0 20px rgba(99,85,255,0.8)); }
+      50%       { transform: scale(1.1); filter: drop-shadow(0 0 36px rgba(99,85,255,1));   }
+    }
+    @keyframes plFadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+  </style>
+
+</head>
+<body>
+  <!-- ===== STACKLY PRELOADER ===== -->
+  <div id="stackly-preloader" role="status" aria-label="Loading">
+    <img src="assets/images/stackly-logo.png" alt="Stackly" class="pl-logo">
+    <div class="pl-label">Stackly Blog</div>
+  </div>
+
+  <script>
+    (function() {
+      var pl = document.getElementById('stackly-preloader');
+      function hide() { if (pl) pl.classList.add('hidden'); }
+      window.addEventListener('load', function() { setTimeout(hide, 1800); });
+      setTimeout(hide, 4000);
+    })();
+  </script>
+
+  <!-- ===================== TOPBAR ===================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <div class="topbar-item">
+          <i class="fa fa-newspaper" style="color: var(--accent-teal);"></i>
+          <span>Healthcare Research & Editorial Publication</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <span class="topbar-badge"><i class="fa fa-rss"></i> Over 50,000 Medical Readers</span>
+        <div class="topbar-item"><a href="login.html"><i class="fa fa-lock"></i> Staff Login</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo" aria-label="Stackly Health Home">
+          <img src="assets/images/stackly-logo.png" alt="Stackly Health Logo">
+          <span class="brand-badge">Health ERP</span>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="login.html" class="btn btn-outline btn-sm"><i class="fa fa-arrow-right-to-bracket"></i> Login</a>
+          <a href="signup.html" class="btn btn-primary btn-sm"><i class="fa fa-user-plus"></i> Signup</a>
+          <button class="mobile-toggle" aria-label="Toggle menu"><i class="fa fa-bars"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== 1. BLOG HERO & EDITORIAL INSIGHT ===================== -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 20px;">
+        <span class="section-badge"><i class="fa fa-book-medical"></i> HealthTech Journal</span>
+        <h1 class="hero-title">Insights for Visionary <span class="text-gradient">Healthcare Leaders</span></h1>
+        <p class="section-desc">Practical clinical workflows, regulatory updates, hospital case studies, and engineering deep dives written by healthcare professionals.</p>
+      </div>
+
+      <div style="width: 100%; margin-top: 20px; margin-bottom: 24px;">
+        <img src="assets/images/blog-hero.webp" alt="Visionary Healthcare Leaders and Clinical Editorial Board" style="width: 100%; height: 380px; object-fit: cover; border-radius: var(--radius-lg); display: block; box-shadow: var(--shadow-md);">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. FEATURED CHIEF MEDICAL OFFICER ARTICLE ===================== -->
+  <section class="section-padding bg-light" style="padding-top: 0;">
+    <div class="container">
+      <div class="showcase-card" style="box-shadow: var(--shadow-lg);">
+        <div class="showcase-content">
+          <div style="display: flex; gap: 10px; margin-bottom: 14px;">
+            <span class="topbar-badge" style="background: #EDE9FE; color: #7C3AED;">Featured Editorial</span>
+            <span class="topbar-badge" style="background: #ECFDF5; color: #059669;">8 Min Read</span>
+          </div>
+          <h2 style="font-size: 2.2rem; margin-bottom: 16px; line-height: 1.3;">
+            How AI Clinical Decision Support is Eliminating Medication Errors in 200+ Bed Hospitals
+          </h2>
+          <p style="color: var(--gray-500); margin-bottom: 24px; font-size: 1.05rem;">
+            Adverse Drug Events (ADEs) cost hospitals millions annually and threaten patient safety. Discover how algorithmic cross-referencing of kidney function, allergy histories, and active prescriptions is transforming modern clinical pharmacy.
+          </p>
+          <div class="client-info">
+            <img src="assets/images/avatar-dr-richardson.webp" alt="Dr. David Richardson" class="avatar-sm-img">
+            <div class="client-details">
+              <h4>Dr. David Richardson, MD</h4>
+              <span>Chief Medical Officer, Stackly Health & Board-Certified Intensivist</span>
+            </div>
+          </div>
+        </div>
+        <div class="showcase-preview" style="background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%); color: #fff; padding: 24px;">
+          <img src="assets/images/blog-ai-cds.webp" alt="AI in Clinical Decision Support" class="showcase-photo" style="height: 220px; margin-bottom: 14px;">
+          <div style="text-align: center;">
+            <h3 style="color: #fff; margin-bottom: 8px;">Key Takeaway</h3>
+            <p style="color: #94A3B8; font-size: 0.95rem; line-height: 1.6;">
+              "Automated real-time drug interaction checks at the exact moment of prescription entry reduced serious adverse events by 74% across our pilot network."
+            </p>
+            <div class="topbar-badge" style="margin-top: 16px; background: rgba(99, 85, 255, 0.2); color: #A5B4FC;">
+              Peer-Reviewed Study Available
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. CATEGORY FILTER & SEARCH BAR ===================== -->
+  <section class="section-padding bg-white" style="padding-bottom: 20px;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px;">
+        <div style="display: flex; align-items: center; gap: 12px; background: #F8FAFC; border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 8px 12px;">
+          <img src="assets/images/opd-reception.webp" alt="Operations" style="width: 50px; height: 50px; border-radius: var(--radius-sm); object-fit: cover;">
+          <div style="font-size: 0.85rem; font-weight: 600; color: #1E293B;">Hospital Ops</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; background: #F8FAFC; border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 8px 12px;">
+          <img src="assets/images/emr-tablet.webp" alt="Doctor EMR" style="width: 50px; height: 50px; border-radius: var(--radius-sm); object-fit: cover;">
+          <div style="font-size: 0.85rem; font-weight: 600; color: #1E293B;">Doctor EMR</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; background: #F8FAFC; border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 8px 12px;">
+          <img src="assets/images/lab-analyzer.webp" alt="LIMS Labs" style="width: 50px; height: 50px; border-radius: var(--radius-sm); object-fit: cover;">
+          <div style="font-size: 0.85rem; font-weight: 600; color: #1E293B;">Diagnostic LIMS</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; background: #F8FAFC; border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 8px 12px;">
+          <img src="assets/images/nabh-hospital.webp" alt="Compliance" style="width: 50px; height: 50px; border-radius: var(--radius-sm); object-fit: cover;">
+          <div style="font-size: 0.85rem; font-weight: 600; color: #1E293B;">NABH & Security</div>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-bottom: 1px solid var(--gray-200); padding-bottom: 24px;">
+        <div class="tabs-nav" style="margin-bottom: 0;">
+          <button class="tab-btn active"><i class="fa fa-border-all"></i> All Articles</button>
+          <button class="tab-btn"><i class="fa fa-hospital"></i> Hospital Operations</button>
+          <button class="tab-btn"><i class="fa fa-user-doctor"></i> Doctor EMR</button>
+          <button class="tab-btn"><i class="fa fa-vial"></i> Diagnostic LIMS</button>
+          <button class="tab-btn"><i class="fa fa-shield-halved"></i> NABH & HIPAA</button>
+        </div>
+
+        <div style="display: flex; gap: 10px; width: 320px; max-width: 100%;">
+          <input type="text" class="form-control" placeholder="Search clinical topics..." style="padding: 10px 14px; font-size: 0.875rem;">
+          <button class="btn btn-primary btn-sm"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. SECTION 4: HOSPITAL OPERATIONS & LEADERSHIP (3 POSTS) ===================== -->
+  <section class="section-padding bg-white" style="padding-top: 40px;">
+    <div class="container">
+      <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+        <span class="section-badge"><i class="fa fa-hospital"></i> Operations & Administration</span>
+        <h2 class="section-title" style="font-size: 2rem;">Hospital Leadership & Operational Efficiency</h2>
+      </div>
+
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-thumb" style="position: relative; overflow: hidden; height: 200px;">
+            <img src="assets/images/blog-opd-flow.webp" alt="OPD Workflow" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span class="blog-badge-tag">OPD Workflow</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span><i class="fa fa-calendar"></i> Oct 2, 2026</span><span><i class="fa fa-clock"></i> 5 min</span></div>
+            <h3 class="blog-title">How 450-Bed Apex Hospital Slashed OPD Waiting Times by 45%</h3>
+            <p class="blog-snippet">Implementing intelligent digital token queuing and doctor room display boards eliminated patient hallway congestion.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">Read Case Study <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-thumb" style="position: relative; overflow: hidden; height: 200px;">
+            <img src="assets/images/blog-bed-management.webp" alt="Bed Management" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span class="blog-badge-tag">Bed Management</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span><i class="fa fa-calendar"></i> Sep 28, 2026</span><span><i class="fa fa-clock"></i> 6 min</span></div>
+            <h3 class="blog-title">Solving Hospital Bed Bottlenecks: A Data-Driven Approach to Inpatient Turnover</h3>
+            <p class="blog-snippet">Why sanitization delays hold up ICU admissions and how real-time ward telemetry alerts housekeeping in under 60 seconds.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">Read Case Study <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-thumb" style="position: relative; overflow: hidden; height: 200px;">
+            <img src="assets/images/blog-surgery-cost.webp" alt="Revenue Cycle" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span class="blog-badge-tag">Revenue Cycle</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span><i class="fa fa-calendar"></i> Sep 24, 2026</span><span><i class="fa fa-clock"></i> 7 min</span></div>
+            <h3 class="blog-title">Preventing Revenue Leakage in Surgical Operation Theatres: A CFO's Guide</h3>
+            <p class="blog-snippet">Over 18% of surgical implants and consumables fail to be billed accurately due to paper logbooks. Here is how barcode scanning fixes it.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">Read Case Study <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. SECTION 5: CLINICAL TECH & EMR INNOVATION (3 POSTS) ===================== -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+        <span class="section-badge"><i class="fa fa-laptop-medical"></i> Clinical Informatics</span>
+        <h2 class="section-title" style="font-size: 2rem;">Doctor EMR & Clinical Workflow Innovations</h2>
+      </div>
+
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-thumb" style="position: relative; overflow: hidden; height: 200px;">
+            <img src="assets/images/blog-voice-ehr.webp" alt="AI Voice Dictation" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span class="blog-badge-tag">AI Voice Dictation</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span><i class="fa fa-calendar"></i> Sep 18, 2026</span><span><i class="fa fa-clock"></i> 6 min</span></div>
+            <h3 class="blog-title">Voice-to-Text EHR: Ending 2-Hour After-Shift Charting for Doctors</h3>
+            <p class="blog-snippet">How natural language processing tailored for complex medical terminology is reversing clinician burnout across multi-specialty teams.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">Read Article <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-thumb" style="position: relative; overflow: hidden; height: 200px;">
+            <img src="assets/images/doctor-consult.webp" alt="Safety Algorithms" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span class="blog-badge-tag">Safety Algorithms</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span><i class="fa fa-calendar"></i> Sep 14, 2026</span><span><i class="fa fa-clock"></i> 5 min</span></div>
+            <h3 class="blog-title">Drug Interaction Engines: Saving Lives in the Emergency Room</h3>
+            <p class="blog-snippet">Examining how automated contraindication flags prevented lethal drug interactions during critical acute care resuscitations.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">Read Article <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-thumb" style="position: relative; overflow: hidden; height: 200px;">
+            <img src="assets/images/clinic-poly.webp" alt="Specialty EMR" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span class="blog-badge-tag">Specialty EMR</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span><i class="fa fa-calendar"></i> Sep 10, 2026</span><span><i class="fa fa-clock"></i> 6 min</span></div>
+            <h3 class="blog-title">Specialty EMR Templates: Why Generic Software Fails Cardiologists and Pediatricians</h3>
+            <p class="blog-snippet">Pediatric growth charts, immunization tracking, and ECG attachments require tailored clinical workflows rather than generic text boxes.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">Read Article <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. SECTION 6: DIAGNOSTIC & LAB ADVANCEMENTS (3 POSTS) ===================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+        <span class="section-badge"><i class="fa fa-microscope"></i> Pathology & LIMS</span>
+        <h2 class="section-title" style="font-size: 2rem;">Diagnostic Laboratory Automation</h2>
+      </div>
+
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-thumb" style="position: relative; overflow: hidden; height: 200px;">
+            <img src="assets/images/lab-analyzer.webp" alt="Analyzer Interfacing" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span class="blog-badge-tag">Analyzer Interfacing</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span><i class="fa fa-calendar"></i> Sep 05, 2026</span><span><i class="fa fa-clock"></i> 5 min</span></div>
+            <h3 class="blog-title">Bi-Directional Analyzer Interfacing: Eliminating 99% of Laboratory Transcription Errors</h3>
+            <p class="blog-snippet">Directly transmitting test orders to hematology and biochemistry analyzers and reading results automatically back into LIMS.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">Read Article <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-thumb" style="position: relative; overflow: hidden; height: 200px;">
+            <img src="assets/images/blog-lab-automation.webp" alt="Phlebotomy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span class="blog-badge-tag">Phlebotomy</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span><i class="fa fa-calendar"></i> Aug 31, 2026</span><span><i class="fa fa-clock"></i> 4 min</span></div>
+            <h3 class="blog-title">The Fast-Track Pathology Phlebotomy Workflow with QR-Coded Tube Tracking</h3>
+            <p class="blog-snippet">How barcoding blood collection tubes at the moment of blood draw prevents sample mismatches and automates centrifuge routing.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">Read Article <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-thumb" style="position: relative; overflow: hidden; height: 200px;">
+            <img src="assets/images/nurse-station.webp" alt="Multi-Branch LIMS" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span class="blog-badge-tag">Multi-Branch LIMS</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span><i class="fa fa-calendar"></i> Aug 27, 2026</span><span><i class="fa fa-clock"></i> 7 min</span></div>
+            <h3 class="blog-title">Managing Multi-Branch Diagnostic Chains: Real-Time QC and Pathologist Digital Signing</h3>
+            <p class="blog-snippet">How centralized hub-and-spoke laboratory networks operate with remote pathologist verification and automated WhatsApp delivery.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">Read Article <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7. SECTION 7: REGULATORY, COMPLIANCE & CYBER-SAFETY (3 POSTS) ===================== -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+        <span class="section-badge"><i class="fa fa-shield-halved"></i> Accreditation & Security</span>
+        <h2 class="section-title" style="font-size: 2rem;">Healthcare Standards, NABH & Cyber Defense</h2>
+      </div>
+
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-thumb" style="position: relative; overflow: hidden; height: 200px;">
+            <img src="assets/images/blog-nabh-audit.webp" alt="NABH 5th Edition" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span class="blog-badge-tag">NABH 5th Edition</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span><i class="fa fa-calendar"></i> Aug 21, 2026</span><span><i class="fa fa-clock"></i> 6 min</span></div>
+            <h3 class="blog-title">NABH 5th Edition: 12 Key Digital Indicators Your Hospital Must Track</h3>
+            <p class="blog-snippet">From surgical site infection rates to medication recall audit records, discover how Stackly automates mandatory NABH monthly reporting.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">Read Compliance Guide <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-thumb" style="position: relative; overflow: hidden; height: 200px;">
+            <img src="assets/images/hospital-building.webp" alt="HIPAA Governance" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span class="blog-badge-tag">HIPAA Governance</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span><i class="fa fa-calendar"></i> Aug 16, 2026</span><span><i class="fa fa-clock"></i> 8 min</span></div>
+            <h3 class="blog-title">HIPAA in the Cloud: How Modern HIMS Ensures End-to-End Zero-Trust Data Isolation</h3>
+            <p class="blog-snippet">An architectural breakdown of tenant data separation, encrypted audit logs, and granular role-based nurse/doctor permissions.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">Read Whitepaper <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-thumb" style="position: relative; overflow: hidden; height: 200px;">
+            <img src="assets/images/doctor-team.webp" alt="ABDM M3" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span class="blog-badge-tag">ABDM M3</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span><i class="fa fa-calendar"></i> Aug 11, 2026</span><span><i class="fa fa-clock"></i> 5 min</span></div>
+            <h3 class="blog-title">Ayushman Bharat Digital Mission (ABDM): Step-by-Step Hospital Integration Roadmap</h3>
+            <p class="blog-snippet">How hospitals achieve ABHA creation, health record linking, and consent-driven FHIR longitudinal data exchange.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.875rem;">Read Integration Guide <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8. SECTION 8: CLINICAL WHITEPAPERS & RESEARCH ===================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa fa-file-pdf"></i> Downloadable Resources</span>
+        <h2 class="section-title">Clinical Whitepapers & <span class="text-gradient">Hospital Playbooks</span></h2>
+        <p class="section-desc">Download in-depth guides crafted for Hospital CEOs, Medical Directors, and Chief Information Officers.</p>
+      </div>
+
+      <div class="sectors-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/blog-nabh-audit.webp" alt="Digital Transformation Blueprint" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div class="sector-icon"><i class="fa fa-file-contract"></i></div>
+          <h4>The 2026 Hospital Digital Transformation Blueprint</h4>
+          <p>A step-by-step roadmap for migrating a 100-500 bed facility from paper charts to 100% paperless cloud ERP.</p>
+          <a href="#" class="btn btn-outline btn-sm" style="width: 100%;"><i class="fa fa-download"></i> Download PDF (3.2 MB)</a>
+        </div>
+
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/pharmacy-dispense.webp" alt="Barcode Pharmacy Dispensing Study" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div class="sector-icon" style="background: #ECFDF5; color: #059669;"><i class="fa fa-chart-line"></i></div>
+          <h4>Clinical Study: Impact of Barcode Pharmacy Dispensing</h4>
+          <p>Analyzing 120,000 outpatient and inpatient prescriptions to calculate error prevention metrics.</p>
+          <a href="#" class="btn btn-outline btn-sm" style="width: 100%;"><i class="fa fa-download"></i> Download PDF (2.8 MB)</a>
+        </div>
+
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/bed-ward.webp" alt="Paperless ICU Transition" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div class="sector-icon" style="background: #FAF5FF; color: #9333EA;"><i class="fa fa-heart-pulse"></i></div>
+          <h4>Paperless ICU Transition in a 300-Bed Tertiary Facility</h4>
+          <p>Best practices for bedside vital telemetry sync, nurse MAR charting, and critical emergency alerts.</p>
+          <a href="#" class="btn btn-outline btn-sm" style="width: 100%;"><i class="fa fa-download"></i> Download PDF (4.1 MB)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 9. SECTION 9: NEWSLETTER SUBSCRIPTION BOX ===================== -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      <div style="background: linear-gradient(135deg, #1E1B4B 0%, #312E81 100%); color: #fff; border-radius: var(--radius-xl); padding: 40px; text-align: center; max-width: 860px; margin: 0 auto; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/patient-mobile.webp" alt="Stackly HealthTech Digest" style="max-width: 480px; width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-lg); margin: 0 auto 20px; display: block; border: 2px solid rgba(255,255,255,0.2);">
+        <div style="font-size: 2.2rem; color: #A5B4FC; margin-bottom: 12px;"><i class="fa fa-envelope-open-text"></i></div>
+        <h2 style="color: #fff; font-size: 2.2rem; margin-bottom: 12px;">Subscribe to the Weekly HealthTech Digest</h2>
+        <p style="color: #C7D2FE; margin-bottom: 28px; font-size: 1.05rem;">
+          Join 50,000+ medical directors, doctors, and health administrators receiving our curated weekly clinical research and hospital ERP case studies.
+        </p>
+        <div style="display: flex; gap: 12px; justify-content: center; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+          <input type="email" class="form-control" placeholder="Enter your hospital/professional email" style="flex: 1; min-width: 260px;">
+          <button class="btn btn-primary" onclick="alert('Thank you for subscribing to Stackly HealthTech Digest!');"><i class="fa fa-paper-plane"></i> Subscribe Free</button>
+        </div>
+        <div style="font-size: 0.75rem; color: #A5B4FC; margin-top: 14px;">No spam. Unsubscribe anytime. Strictly medical and health informatics content.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 10. SECTION 10: EXPERT CONTRIBUTOR NETWORK & AUTHOR CTA ===================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="cta-banner">
+        <img src="assets/images/telehealth-doctor.webp" alt="Contribute to Stackly Health" style="max-width: 580px; width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-lg); margin: 0 auto 20px; display: block; border: 2px solid rgba(255,255,255,0.25); box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+        <h2>Contribute to the Stackly HealthTech Journal</h2>
+        <p>Are you a Medical Director, practicing clinician, health informatics engineer, or hospital quality manager? Share your clinical insights, case studies, and research with our global audience.</p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-secondary btn-lg"><i class="fa fa-pen-nib"></i> Pitch an Article / Case Study</a>
+          <a href="about.html" class="btn btn-outline-white btn-lg"><i class="fa fa-user-doctor"></i> Join Medical Advisory Panel</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 16px;">
+            <img src="assets/images/stackly-logo-white.png" alt="Stackly Health Logo">
+          </a>
+          <p>Stackly Health is the pioneering cloud healthcare management platform inspired by global leaders like MocDoc. Delivering seamless hospital, clinic, diagnostic, and pharmacy digital transformation.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Portals &amp; Security</h4>
+          <div class="footer-links">
+            <a href="login.html">Doctor &amp; Staff Login</a>
+            <a href="dashboard-user.html">Patient Health Portal</a>
+            <a href="dashboard-admin.html">Hospital Admin Cockpit</a>
+            <a href="signup.html">Register Facility</a>
+            <a href="contact.html">NABH Compliance Guide</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>24/7 Clinical Support</h4>
+          <div class="footer-links" style="font-size: 0.85rem;">
+            <p><i class="fa fa-phone" style="color: var(--primary);"></i> +1 (800) 555-0199</p>
+            <p><i class="fa fa-envelope" style="color: var(--primary);"></i> support@stacklyhealth.com</p>
+            <p><i class="fa fa-location-dot" style="color: var(--primary);"></i> 750 Tech Boulevard, Silicon Healthcare Hub, CA 94025</p>
+            <p><i class="fa fa-location-dot" style="color: var(--accent-teal);"></i> MMR Complex, Executive Tower, Salem, TN 636008, India</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Health Technologies Inc. All rights reserved. MocDoc architecture benchmarked.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

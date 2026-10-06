@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Orders & Atelier Production Pipeline — STACKLY Admin</title>
+  <meta name="description" content="Manage bespoke couture commissions, production kanban, fitting milestones, and white-glove logistics.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+
+  <!-- Google Fonts: Playfair Display & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/atelier-dashboard.css">
+</head>
+<body>
+
+  <!-- TOP WINE NAVIGATION -->
+  <header class="top-wine-header">
+    <div class="top-tier-primary">
+      <div class="brand-cluster">
+        <a href="dashboard.html" class="brand-logo-text">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          STACKLY
+        </a>
+        <div class="top-role-badge">
+          <span class="dot"></span>
+          <span>ATELIER ADMIN</span>
+        </div>
+        <div class="role-switcher-toggle">
+          <a href="bespoke-fittings.html" class="role-btn-toggle"><i class="fa fa-user"></i> VIP Client</a>
+          <a href="client-orders.html" class="role-btn-toggle active"><i class="fa fa-shield-halved"></i> Atelier Admin</a>
+        </div>
+      </div>
+      <div class="top-user-meta">
+        <span class="top-user-email">lingalamanasa123@gmail.com</span>
+        <div class="top-user-avatar" title="Admin Console"><i class="fa fa-user"></i></div>
+      </div>
+    </div>
+    <div class="top-tier-secondary">
+      <div class="welcome-phrase">
+        Welcome, <strong>Lingalamanasa123</strong>
+        <span class="welcome-role-tag">ATELIER ADMIN</span>
+      </div>
+      <div class="current-tab-crumb">Client Orders</div>
+    </div>
+  </header>
+
+  <div class="dashboard-body-container">
+    <!-- SIDEBAR -->
+    <aside class="atelier-sidebar">
+      <div>
+        <div class="sidebar-section-label">BOUTIQUE OPERATIONS</div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="store-overview.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-table-cells-large"></i> Store Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="boutique-catalog.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-tag"></i> Boutique Catalog</span>
+            </a>
+          </li>
+          <li>
+            <a href="client-orders.html" class="sidebar-menu-btn active">
+              <span class="btn-inner"><i class="fa fa-bag-shopping"></i> Client Orders</span>
+              <span class="dot-indicator"></span>
+            </a>
+          </li>
+          <li>
+            <a href="artisans-inventory.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-scissors"></i> Artisans & Inventory</span>
+            </a>
+          </li>
+          <li>
+            <a href="financial-analytics.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-chart-line"></i> Financial Analytics</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-user-bottom">
+        <div class="sidebar-user-badge-card">
+          <div class="user-profile-row">
+            <div class="user-profile-circle"><i class="fa fa-user"></i></div>
+            <div class="user-profile-info">
+              <div class="user-profile-name">Lingalamanasa123</div>
+              <div class="user-profile-email">lingalamanasa123@gmail.com</div>
+            </div>
+          </div>
+          <a href="login.html" class="logout-btn-box" onclick="return confirm('Sign out of STACKLY?');">
+            <i class="fa fa-arrow-right-from-bracket"></i> LOGOUT
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEW: 5 SECTIONS -->
+    <main class="atelier-main">
+
+      <!-- SECTION 1: HERO & ORDERS METRIC SNAPSHOT -->
+      <section class="dashboard-section anim-fade-in delay-1">
+        <div class="section-header-row">
+          <div>
+            <span class="section-badge-index">SECTION 01 · CLIENT ORDER PIPELINE</span>
+            <h1 class="section-main-title">VIP Client Commission Orders Cockpit</h1>
+            <p class="section-desc">Manage end-to-end bespoke garments from client deposit and 3D silhouette draft to white-glove international delivery.</p>
+          </div>
+          <div>
+            <button class="hero-action-btn" onclick="showToast('Creating VIP Commission Order...')">
+              CREATE NEW VIP ORDER <i class="fa fa-plus"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid-4-col">
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">ACTIVE COMMISSIONS</span>
+              <span class="kpi-card-pill rose">+3</span>
+            </div>
+            <div class="kpi-card-number">14</div>
+            <div class="kpi-card-desc">Couture garments in artisan pipeline.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">AWAITING FITTING</span>
+              <span class="kpi-card-pill amber">Priority</span>
+            </div>
+            <div class="kpi-card-number">4</div>
+            <div class="kpi-card-desc">Scheduled for Salem & Paris salons.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">READY FOR DISPATCH</span>
+              <span class="kpi-card-pill emerald">Inspected</span>
+            </div>
+            <div class="kpi-card-number">3</div>
+            <div class="kpi-card-desc">Passed 100-point stitch audit.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">PIPELINE VALUE</span>
+            </div>
+            <div class="kpi-card-number">$248.5k</div>
+            <div class="kpi-card-desc">Commission value in active tailoring.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: 5-STAGE KANBAN PRODUCTION PIPELINE -->
+      <section class="dashboard-section anim-fade-in delay-2">
+        <span class="section-badge-index">SECTION 02 · KANBAN WORKFLOW</span>
+        <h2 class="section-sub-title">Haute Couture Production Kanban</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Visual flow of garments through each meticulous stage of bespoke atelier craftsmanship.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;">
+          <!-- Col 1 -->
+          <div style="background: #FAF8F9; border: 1px solid var(--card-border); border-radius: 10px; padding: 14px;">
+            <div style="font-size: 0.70rem; font-weight: 700; color: #4B4E5A; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between;">
+              <span>1. Deposit & Specs</span> <span class="kpi-card-pill gray">2</span>
+            </div>
+            <div class="content-card" style="padding: 12px; margin-bottom: 10px;">
+              <div style="font-size: 0.72rem; color: #821B3D; font-weight: 700;">#STK-8949</div>
+              <div style="font-weight: 700; font-size: 0.85rem;">Silk Halter Gown</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Client: Elena Rostova</div>
+            </div>
+          </div>
+
+          <!-- Col 2 -->
+          <div style="background: #FAF8F9; border: 1px solid var(--card-border); border-radius: 10px; padding: 14px;">
+            <div style="font-size: 0.70rem; font-weight: 700; color: #4B4E5A; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between;">
+              <span>2. Pattern & Baste</span> <span class="kpi-card-pill rose">4</span>
+            </div>
+            <div class="content-card" style="padding: 12px; margin-bottom: 10px;">
+              <div style="font-size: 0.72rem; color: #821B3D; font-weight: 700;">#STK-8934</div>
+              <div style="font-weight: 700; font-size: 0.85rem;">Cashmere Trench</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Client: Lingalamanasa123</div>
+            </div>
+          </div>
+
+          <!-- Col 3 -->
+          <div style="background: #FAF8F9; border: 1px solid var(--card-border); border-radius: 10px; padding: 14px;">
+            <div style="font-size: 0.70rem; font-weight: 700; color: #4B4E5A; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between;">
+              <span>3. Master Fitting</span> <span class="kpi-card-pill rose">4</span>
+            </div>
+            <div class="content-card" style="padding: 12px; margin-bottom: 10px;">
+              <div style="font-size: 0.72rem; color: #821B3D; font-weight: 700;">#STK-8921</div>
+              <div style="font-weight: 700; font-size: 0.85rem;">Autumn Gala Gown</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Client: Lingalamanasa123</div>
+            </div>
+          </div>
+
+          <!-- Col 4 -->
+          <div style="background: #FAF8F9; border: 1px solid var(--card-border); border-radius: 10px; padding: 14px;">
+            <div style="font-size: 0.70rem; font-weight: 700; color: #4B4E5A; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between;">
+              <span>4. Hand Finish</span> <span class="kpi-card-pill amber">2</span>
+            </div>
+            <div class="content-card" style="padding: 12px; margin-bottom: 10px;">
+              <div style="font-size: 0.72rem; color: #821B3D; font-weight: 700;">#STK-8890</div>
+              <div style="font-weight: 700; font-size: 0.85rem;">Charmeuse Tuxedo</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Client: Sofia Al-Mansoor</div>
+            </div>
+          </div>
+
+          <!-- Col 5 -->
+          <div style="background: #FAF8F9; border: 1px solid var(--card-border); border-radius: 10px; padding: 14px;">
+            <div style="font-size: 0.70rem; font-weight: 700; color: #4B4E5A; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between;">
+              <span>5. White-Glove</span> <span class="kpi-card-pill emerald">2</span>
+            </div>
+            <div class="content-card" style="padding: 12px; margin-bottom: 10px;">
+              <div style="font-size: 0.72rem; color: #821B3D; font-weight: 700;">#STK-8874</div>
+              <div style="font-weight: 700; font-size: 0.85rem;">Pleated Jumpsuit</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Courier: Manifest #WG-991</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: DETAILED VIP ORDER TABLE -->
+      <section class="dashboard-section anim-fade-in delay-3">
+        <span class="section-badge-index">SECTION 03 · CLIENT MANIFEST</span>
+        <h2 class="section-sub-title">Live VIP Orders & Salon Allocation</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Direct control over artisan assignments, fitting deadlines, and invoice settlement.</p>
+
+        <div class="luxury-table-wrap">
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>Order Ref</th>
+                <th>Client Name</th>
+                <th>Garment Description</th>
+                <th>Salon Suite</th>
+                <th>Lead Artisan</th>
+                <th>Value</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>#STK-8921</strong></td>
+                <td>Lingalamanasa123</td>
+                <td>Autumn Gala Final Draping</td>
+                <td>Salem Flagship</td>
+                <td>Master Marco</td>
+                <td>$18,500</td>
+                <td><span class="kpi-card-pill rose">Stage 3: Fitting</span></td>
+                <td><button class="btn-outline-pill" style="padding: 4px 10px; font-size: 0.72rem;" onclick="showToast('Opening Order Dossier')">Dossier</button></td>
+              </tr>
+              <tr>
+                <td><strong>#STK-8934</strong></td>
+                <td>Lingalamanasa123</td>
+                <td>Cashmere Blazer Sleeve Adjustment</td>
+                <td>Paris Montaigne</td>
+                <td>Amélie Laurent</td>
+                <td>$12,800</td>
+                <td><span class="kpi-card-pill rose">Stage 2: Basting</span></td>
+                <td><button class="btn-outline-pill" style="padding: 4px 10px; font-size: 0.72rem;" onclick="showToast('Opening Order Dossier')">Dossier</button></td>
+              </tr>
+              <tr>
+                <td><strong>#STK-8902</strong></td>
+                <td>Sofia Al-Mansoor</td>
+                <td>Silk Charmeuse Gown Hemming</td>
+                <td>Milan Galleria</td>
+                <td>Matteo Rossi</td>
+                <td>$21,000</td>
+                <td><span class="kpi-card-pill amber">Stage 4: Finishing</span></td>
+                <td><button class="btn-outline-pill" style="padding: 4px 10px; font-size: 0.72rem;" onclick="showToast('Opening Order Dossier')">Dossier</button></td>
+              </tr>
+              <tr>
+                <td><strong>#STK-8865</strong></td>
+                <td>Elena Rostova</td>
+                <td>Virgin Wool Double-Breasted Suit</td>
+                <td>New York Madison</td>
+                <td>Julian Vance</td>
+                <td>$14,200</td>
+                <td><span class="kpi-card-pill emerald">Ready for Delivery</span></td>
+                <td><button class="btn-outline-pill" style="padding: 4px 10px; font-size: 0.72rem;" onclick="showToast('Generating Dispatch Waybill')">Waybill</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 4: URGENT ALTERATION REQUESTS -->
+      <section class="dashboard-section anim-fade-in delay-4">
+        <span class="section-badge-index">SECTION 04 · ALTERATION DESK</span>
+        <h2 class="section-sub-title">VIP Client Special Alteration Requests</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Priority adjustments requested by clients ahead of international galas and red-carpet ceremonies.</p>
+
+        <div class="grid-2-col">
+          <div class="content-card" style="border-left: 4px solid #A83256;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <span class="kpi-card-pill rose">Priority Express</span>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">Requested: 2 hrs ago</span>
+            </div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 4px;">Lingalamanasa123 — Autumn Gala Draping Refinement</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Waist nip by 1.5cm and hook-and-eye repositioning to pair with diamond choker.</p>
+            <div style="display: flex; gap: 8px;">
+              <button class="hero-action-btn" style="padding: 7px 16px; font-size: 0.74rem;" onclick="showToast('Assigned to Master Marco')">Assign to Marco</button>
+              <button class="btn-outline-pill" style="padding: 7px 14px; font-size: 0.74rem;" onclick="showToast('Marking complete')">Complete</button>
+            </div>
+          </div>
+
+          <div class="content-card" style="border-left: 4px solid #FEF3C7;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <span class="kpi-card-pill amber">Standard Refit</span>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">Requested: Yesterday</span>
+            </div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 4px;">Sofia Al-Mansoor — Silk Gown Hemming for 100mm Heels</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Floor clearance calibrated with custom stiletto pitch for Milan Opera night.</p>
+            <div style="display: flex; gap: 8px;">
+              <button class="hero-action-btn" style="padding: 7px 16px; font-size: 0.74rem;" onclick="showToast('Assigned to Matteo Rossi')">Assign to Matteo</button>
+              <button class="btn-outline-pill" style="padding: 7px 14px; font-size: 0.74rem;" onclick="showToast('Marking complete')">Complete</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: LOGISTICS & WHITE-GLOVE DISPATCH MANIFEST -->
+      <section class="dashboard-section anim-fade-in delay-5">
+        <span class="section-badge-index">SECTION 05 · LOGISTICS DISPATCH</span>
+        <h2 class="section-sub-title">Global White-Glove Dispatch Manifest</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Insured delivery tracking with armored courier, cedarwood trunks, and personalized delivery verification.</p>
+
+        <div class="content-card" style="background: linear-gradient(135deg, #1C050D 0%, #3B0D1C 100%); color: #FFF; border: 1px solid #821B3D;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <span class="top-role-badge" style="background: rgba(255,255,255,0.15); margin-bottom: 8px;">LIVE LOGISTICS FEED</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #FFF; margin-bottom: 6px;">3 International Shipments in Transit Today</h3>
+              <p style="font-size: 0.85rem; color: rgba(255,255,255,0.75); margin-bottom: 0;">Salem Flagship → Paris Montaigne • Milan Galleria → Zurich Private Residence • NY Penthouse Delivery.</p>
+            </div>
+            <button class="hero-action-btn" style="background: #FFF; color: #821B3D;" onclick="showToast('Downloading global dispatch manifest...')">
+              VIEW DISPATCH MANIFEST <i class="fa fa-truck-fast"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="toast-popup" id="toastBox">
+    <i class="fa fa-circle-check" style="color: #F48FB1;"></i>
+    <span id="toastMsg">Success</span>
+  </div>
+
+  <script>
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+  </script>
+</body>
+</html>

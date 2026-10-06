@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artisans & Inventory Management — STACKLY Atelier Admin</title>
+  <meta name="description" content="Manage master artisans, patternmakers, rare textile inventories, Como silk imports, and stitch quality audits.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+
+  <!-- Google Fonts: Playfair Display & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/atelier-dashboard.css">
+</head>
+<body>
+
+  <!-- TOP WINE NAVIGATION -->
+  <header class="top-wine-header">
+    <div class="top-tier-primary">
+      <div class="brand-cluster">
+        <a href="dashboard.html" class="brand-logo-text">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          STACKLY
+        </a>
+        <div class="top-role-badge">
+          <span class="dot"></span>
+          <span>ATELIER ADMIN</span>
+        </div>
+        <div class="role-switcher-toggle">
+          <a href="bespoke-fittings.html" class="role-btn-toggle"><i class="fa fa-user"></i> VIP Client</a>
+          <a href="artisans-inventory.html" class="role-btn-toggle active"><i class="fa fa-shield-halved"></i> Atelier Admin</a>
+        </div>
+      </div>
+      <div class="top-user-meta">
+        <span class="top-user-email">lingalamanasa123@gmail.com</span>
+        <div class="top-user-avatar" title="Admin Console"><i class="fa fa-user"></i></div>
+      </div>
+    </div>
+    <div class="top-tier-secondary">
+      <div class="welcome-phrase">
+        Welcome, <strong>Lingalamanasa123</strong>
+        <span class="welcome-role-tag">ATELIER ADMIN</span>
+      </div>
+      <div class="current-tab-crumb">Artisans & Inventory</div>
+    </div>
+  </header>
+
+  <div class="dashboard-body-container">
+    <!-- SIDEBAR -->
+    <aside class="atelier-sidebar">
+      <div>
+        <div class="sidebar-section-label">BOUTIQUE OPERATIONS</div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="store-overview.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-table-cells-large"></i> Store Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="boutique-catalog.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-tag"></i> Boutique Catalog</span>
+            </a>
+          </li>
+          <li>
+            <a href="client-orders.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-bag-shopping"></i> Client Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="artisans-inventory.html" class="sidebar-menu-btn active">
+              <span class="btn-inner"><i class="fa fa-scissors"></i> Artisans & Inventory</span>
+              <span class="dot-indicator"></span>
+            </a>
+          </li>
+          <li>
+            <a href="financial-analytics.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-chart-line"></i> Financial Analytics</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-user-bottom">
+        <div class="sidebar-user-badge-card">
+          <div class="user-profile-row">
+            <div class="user-profile-circle"><i class="fa fa-user"></i></div>
+            <div class="user-profile-info">
+              <div class="user-profile-name">Lingalamanasa123</div>
+              <div class="user-profile-email">lingalamanasa123@gmail.com</div>
+            </div>
+          </div>
+          <a href="login.html" class="logout-btn-box" onclick="return confirm('Sign out of STACKLY?');">
+            <i class="fa fa-arrow-right-from-bracket"></i> LOGOUT
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEW: 5 SECTIONS -->
+    <main class="atelier-main">
+
+      <!-- SECTION 1: HERO & ATELIER ARTISANS ROSTER -->
+      <section class="dashboard-section anim-fade-in delay-1">
+        <div class="section-header-row">
+          <div>
+            <span class="section-badge-index">SECTION 01 · ARTISAN COHORTS</span>
+            <h1 class="section-main-title">Master Artisans & Raw Material Inventory</h1>
+            <p class="section-desc">Manage commissions for our 11 global master tailors, monitor precious silk vaults, and track pending European fabric imports.</p>
+          </div>
+          <div>
+            <button class="hero-action-btn" onclick="showToast('Creating new fabric intake manifest...')">
+              RECORD FABRIC SHIPMENT <i class="fa fa-plus"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid-4-col">
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">MASTER TAILORS</span>
+              <span class="kpi-card-pill rose">Active</span>
+            </div>
+            <div class="kpi-card-number">11</div>
+            <div class="kpi-card-desc">Artisans on active commissions.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">FABRIC IMPORTS</span>
+              <span class="kpi-card-pill amber">• PENDING</span>
+            </div>
+            <div class="kpi-card-number">4</div>
+            <div class="kpi-card-desc">Como silk awaiting salon intake.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">VAULT INVENTORY</span>
+              <span class="kpi-card-pill emerald">Optimal</span>
+            </div>
+            <div class="kpi-card-number">142 bolts</div>
+            <div class="kpi-card-desc">Total climate vault yardage held.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">STITCH AUDIT SCORE</span>
+            </div>
+            <div class="kpi-card-number">99.8%</div>
+            <div class="kpi-card-desc">Haute couture zero-defect rating.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: ARTISAN WORKLOAD & COMMISSION ALLOCATION -->
+      <section class="dashboard-section anim-fade-in delay-2">
+        <span class="section-badge-index">SECTION 02 · ARTISAN CAPACITY</span>
+        <h2 class="section-sub-title">Master Tailors & Patternmakers Workload</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Artisan capacity is capped at 3 simultaneous couture commissions to ensure uncompromising hand craftsmanship.</p>
+
+        <div class="grid-3-col">
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h4 style="font-family: var(--font-serif); font-size: 1.2rem;">Master Marco</h4>
+              <span class="kpi-card-pill rose">3 of 3 Active</span>
+            </div>
+            <div style="font-size: 0.78rem; color: #821B3D; font-weight: 700; margin-bottom: 8px;">Salem Flagship • Savile Row Bespoke</div>
+            <div class="progress-track" style="margin-bottom: 10px;"><div class="progress-fill" style="width: 100%;"></div></div>
+            <p style="font-size: 0.80rem; color: var(--text-muted); margin-bottom: 12px;">Currently draping Autumn Gala Final Gown (#STK-8921) and 2 bespoke tuxedo coats.</p>
+            <button class="btn-outline-pill" style="width: 100%; justify-content: center;" onclick="showToast('Viewing Master Marco schedule')">View Commission Bench</button>
+          </div>
+
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h4 style="font-family: var(--font-serif); font-size: 1.2rem;">Amélie Laurent</h4>
+              <span class="kpi-card-pill emerald">2 of 3 Active</span>
+            </div>
+            <div style="font-size: 0.78rem; color: #821B3D; font-weight: 700; margin-bottom: 8px;">Paris Montaigne • Haute Couture Draping</div>
+            <div class="progress-track" style="margin-bottom: 10px;"><div class="progress-fill" style="width: 66%;"></div></div>
+            <p style="font-size: 0.80rem; color: var(--text-muted); margin-bottom: 12px;">Working on Cashmere Blazer Sleeve Refit (#STK-8934) and tiered ballgown.</p>
+            <button class="btn-outline-pill" style="width: 100%; justify-content: center;" onclick="showToast('Viewing Amélie schedule')">View Commission Bench</button>
+          </div>
+
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h4 style="font-family: var(--font-serif); font-size: 1.2rem;">Matteo Rossi</h4>
+              <span class="kpi-card-pill emerald">2 of 3 Active</span>
+            </div>
+            <div style="font-size: 0.78rem; color: #821B3D; font-weight: 700; margin-bottom: 8px;">Milan Galleria • Precision Patternmaking</div>
+            <div class="progress-track" style="margin-bottom: 10px;"><div class="progress-fill" style="width: 66%;"></div></div>
+            <p style="font-size: 0.80rem; color: var(--text-muted); margin-bottom: 12px;">Completing Silk Charmeuse Gown Hemming (#STK-8902) for gala delivery.</p>
+            <button class="btn-outline-pill" style="width: 100%; justify-content: center;" onclick="showToast('Viewing Matteo schedule')">View Commission Bench</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: LUXURY RAW MATERIAL & FABRIC VAULT -->
+      <section class="dashboard-section anim-fade-in delay-3">
+        <span class="section-badge-index">SECTION 03 · TEXTILE VAULT</span>
+        <h2 class="section-sub-title">Precious Raw Material & Fabric Stock Levels</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Real-time inventory across Salem, Paris, and Milan humidity-regulated vault facilities.</p>
+
+        <div class="luxury-table-wrap">
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>Textile Code</th>
+                <th>Material Description</th>
+                <th>Vault Location</th>
+                <th>Available Yardage</th>
+                <th>Reorder Threshold</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>FAB-COMO-881</strong></td>
+                <td>Como Silk Velvet — Deep Burgundy</td>
+                <td>Salem Flagship Vault</td>
+                <td>34.5 meters</td>
+                <td>15 meters</td>
+                <td><span class="kpi-card-pill emerald">Optimal Stock</span></td>
+              </tr>
+              <tr>
+                <td><strong>FAB-LORO-329</strong></td>
+                <td>Loro Piana Cloud Cashmere — Camel</td>
+                <td>Paris Montaigne Vault</td>
+                <td>18.0 meters</td>
+                <td>10 meters</td>
+                <td><span class="kpi-card-pill emerald">Optimal Stock</span></td>
+              </tr>
+              <tr>
+                <td><strong>FAB-LYON-402</strong></td>
+                <td>Gold Bullion Metallic Fil-Coupé</td>
+                <td>Milan Galleria Vault</td>
+                <td>8.2 meters</td>
+                <td>12 meters</td>
+                <td><span class="kpi-card-pill amber">Reorder Triggered</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 4: INCOMING FABRIC SHIPMENTS & CUSTOMS CLEARANCE -->
+      <section class="dashboard-section anim-fade-in delay-4">
+        <span class="section-badge-index">SECTION 04 · INTAKE PIPELINE</span>
+        <h2 class="section-sub-title">Incoming European Mill Shipments (4 Pending)</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Air shipments arriving under ATA Carnet from heritage mills across Northern Italy and Lyon.</p>
+
+        <div class="grid-2-col">
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span class="kpi-card-pill amber">• PENDING INTAKE</span>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">Waybill #IT-8841-COMO</span>
+            </div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 4px;">4 Bolts Como Silk Velvet (Burgundy & Midnight)</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Arrived at Boston Logan Customs. White-glove courier scheduled for Salem Salon intake Oct 12.</p>
+            <button class="hero-action-btn" style="padding: 7px 18px; font-size: 0.76rem;" onclick="showToast('Authorizing customs release...')">
+              AUTHORIZE INTAKE <i class="fa fa-stamp"></i>
+            </button>
+          </div>
+
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span class="kpi-card-pill emerald">CLEARED CUSTOMS</span>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">Waybill #FR-3301-LYON</span>
+            </div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 4px;">6 Bolts French Silk Tulle & Chantilly Lace</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Stored at Paris Montaigne receiving bay. Undergoing humidity acclimatization.</p>
+            <button class="btn-outline-pill" style="padding: 7px 18px; font-size: 0.76rem;" onclick="showToast('Moving bolts to climate vault...')">
+              MOVE TO VAULT <i class="fa fa-box-archive"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: QUALITY INSPECTION & STITCH AUDITS -->
+      <section class="dashboard-section anim-fade-in delay-5">
+        <span class="section-badge-index">SECTION 05 · QUALITY ASSURANCE</span>
+        <h2 class="section-sub-title">100-Point Haute Couture Stitch Integrity Audit</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Zero-tolerance inspection covering seam tension, grainline alignment, pick-stitch regularity, and silk lining tacking.</p>
+
+        <div class="content-card" style="background: linear-gradient(135deg, #1C050D 0%, #3B0D1C 100%); color: #FFF; border: 1px solid #821B3D;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <span class="top-role-badge" style="background: rgba(255,255,255,0.15); margin-bottom: 8px;">CERTIFIED COUTURE ACCREDITATION</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #FFF; margin-bottom: 6px;">All 14 In-Progress Garments Passing Inspection</h3>
+              <p style="font-size: 0.85rem; color: rgba(255,255,255,0.75); margin-bottom: 0;">Certified under French Chambre Syndicale de la Haute Couture craftsmanship standards.</p>
+            </div>
+            <button class="hero-action-btn" style="background: #FFF; color: #821B3D;" onclick="showToast('Downloading Quality Audit Certificate...')">
+              VIEW AUDIT CERTIFICATE <i class="fa fa-certificate"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="toast-popup" id="toastBox">
+    <i class="fa fa-circle-check" style="color: #F48FB1;"></i>
+    <span id="toastMsg">Success</span>
+  </div>
+
+  <script>
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — Stackly Health Portal | Doctor, Patient & Admin Authentication</title>
+  <meta name="description" content="Secure role-based login to Stackly Health Management System. Access Doctor/Patient Portal or Hospital Admin Enterprise Console.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="auth-page" style="position: relative;">
+
+  <!-- Floating Back to Home Button -->
+  <a href="index.html" class="back-home-floating-btn" style="position: fixed; top: 20px; left: 24px; display: inline-flex; align-items: center; gap: 8px; font-size: 0.86rem; font-weight: 700; color: #1E293B; background: #FFFFFF; padding: 10px 18px; border-radius: 9999px; box-shadow: 0 4px 14px rgba(0,0,0,0.08); text-decoration: none; border: 1px solid #E2E8F0; z-index: 999; transition: all 0.2s ease;">
+    <i class="fa fa-arrow-left" style="color: var(--primary, #6355FF);"></i> Back to Home
+  </a>
+
+  <div class="auth-card">
+    <!-- In-Card Back to Home Bar -->
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+      <a href="index.html" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 700; color: var(--primary, #6355FF); text-decoration: none; padding: 6px 14px; border-radius: 9999px; background: rgba(99, 85, 255, 0.08); transition: all 0.2s ease;">
+        <i class="fa fa-arrow-left"></i> Back to Home
+      </a>
+      <a href="dashboard.html" style="font-size: 0.80rem; font-weight: 600; color: #64748B; text-decoration: none;">
+        <i class="fa fa-gauge"></i> Atelier Portal
+      </a>
+    </div>
+
+    <div class="auth-header">
+      <img src="assets/images/login-portal-hero.webp" alt="Stackly Medical Portal" style="width: 100%; height: 140px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 16px; box-shadow: var(--shadow-sm);">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/stackly-logo.png" alt="Stackly Health Logo">
+        <span class="brand-badge">Health ERP</span>
+      </a>
+      <h2 style="font-size: 1.8rem; margin-top: 10px;">Sign In to Stackly</h2>
+      <p style="color: var(--gray-500); font-size: 0.9rem;">Select your role to sign in</p>
+    </div>
+
+    <!-- Role Switcher -->
+    <div class="role-switcher">
+      <button type="button" class="role-tab-btn active" data-role="user">
+        <i class="fa fa-user"></i> User
+      </button>
+      <button type="button" class="role-tab-btn" data-role="admin">
+        <i class="fa fa-shield-halved"></i> Admin
+      </button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="authLoginForm" onsubmit="handleAuthLogin(event)">
+      <input type="hidden" id="selectedRole" value="user">
+
+      <div class="form-group">
+        <label class="form-label">Email or Staff ID *</label>
+        <input type="email" id="email" class="form-control" placeholder="doctor@hospital.org" required>
+      </div>
+
+      <div class="form-group">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <label class="form-label" style="margin-bottom: 0;">Password *</label>
+          <a href="#" style="font-size: 0.8rem; color: var(--primary);">Forgot password?</a>
+        </div>
+        <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+      </div>
+
+      <!-- Admin Only Facility Selector -->
+      <div class="form-group admin-only" style="display: none;">
+        <label class="form-label">Hospital Branch / Unit *</label>
+        <select class="form-control">
+          <option>Apollo Memorial Hospital — Main Campus (450 Beds)</option>
+          <option>Apollo Diagnostic & Surgery Center — North Wing</option>
+          <option>Apollo Specialty Polyclinic — Downtown</option>
+        </select>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; font-size: 0.85rem;">
+        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+          <input type="checkbox" checked> Remember this device
+        </label>
+        <span style="color: var(--accent-teal); font-weight: 600;"><i class="fa fa-lock"></i> 256-Bit SSL</span>
+      </div>
+
+      <button type="submit" id="authSubmitBtn" class="btn btn-primary btn-lg" style="width: 100%;">
+        <i class="fa fa-arrow-right-to-bracket"></i> Sign In
+      </button>
+    </form>
+
+    <div style="text-align: center; margin-top: 24px; font-size: 0.9rem; color: var(--gray-500);">
+      Don't have an account yet? <a href="signup.html" style="color: var(--primary); font-weight: 600;">Register Facility or Patient</a>
+    </div>
+
+    <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--gray-200); text-align: center; font-size: 0.78rem; color: var(--gray-400);">
+      <i class="fa fa-shield-halved" style="color: var(--accent-teal);"></i> HIPAA & ABDM Compliant Multi-Factor Authentication
+    </div>
+  </div>
+
+  <!-- JavaScript for Role Navigation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    function handleAuthLogin(e) {
+      e.preventDefault();
+      const role = document.getElementById('selectedRole').value;
+      const email = document.getElementById('email').value.trim();
+      const submitBtn = document.getElementById('authSubmitBtn');
+      submitBtn.innerHTML = '<i class="fa fa-circle-notch fa-spin"></i> Authenticating...';
+      submitBtn.disabled = true;
+
+      // Save user info to localStorage
+      localStorage.setItem('stackly_email', email);
+      localStorage.setItem('stackly_role', role);
+      const namePart = email.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      localStorage.setItem('stackly_name', namePart);
+
+      setTimeout(() => {
+        if (role === 'admin') {
+          window.location.href = 'dashboard-admin.html';
+        } else {
+          window.location.href = 'dashboard-user.html';
+        }
+      }, 700);
+    }
+  </script>
+</body>
+</html>

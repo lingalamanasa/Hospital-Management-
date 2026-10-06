@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports & Analytics — Stackly Health</title>
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root{--b9:#1E3A5F;--b8:#1E4976;--b7:#1D5E9E;--b6:#1A6DB5;--b5:#1E7FCB;--b4:#3391D8;--bg:#F0F6FF;--cb:#E2EBF5;--font:'Outfit',sans-serif;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:var(--font);background:var(--bg);color:#1E1E24;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased;}
+    .top-hdr{background:linear-gradient(90deg,#1a3a6b,#1558a0);color:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.14);}
+    .t1{display:flex;align-items:center;justify-content:space-between;padding:10px 28px;border-bottom:1px solid rgba(255,255,255,.12);}
+    .brand{display:flex;align-items:center;gap:14px;}
+    .brand-name{display:flex;align-items:center;text-decoration:none;}
+    .brand-name img{height:38px;width:auto;max-width:170px;object-fit:contain;filter:brightness(0) invert(1);display:block;}
+    .rbadge{padding:4px 14px;border-radius:9999px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+    .umeta{display:flex;align-items:center;gap:12px;}
+    .uemail{font-size:.84rem;color:rgba(255,255,255,.9);}
+    .uavatar{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.35);}
+    .t2{display:flex;align-items:center;justify-content:space-between;padding:8px 28px;background:rgba(0,0,0,.14);font-size:.84rem;}
+    .wlc{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.85);}
+    .wlc strong{color:#fff;}
+    .rtag{padding:2px 10px;border-radius:12px;background:rgba(255,255,255,.15);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;border:1px solid rgba(255,255,255,.25);}
+    .crumb{color:rgba(255,255,255,.95);font-weight:600;}
+    .dbody{display:flex;flex:1;}
+    .sidebar{width:250px;min-width:250px;background:#1a3a6b;color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:24px 16px 20px;}
+    .slabel{font-size:.7rem;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.55);text-transform:uppercase;padding:0 12px;margin-bottom:14px;}
+    .smenu{list-style:none;display:flex;flex-direction:column;gap:5px;margin-bottom:20px;}
+    .nbtn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:8px;background:transparent;border:none;color:rgba(255,255,255,.82);font-size:.86rem;font-weight:500;font-family:var(--font);cursor:pointer;text-decoration:none;transition:all .15s;text-align:left;}
+    .nbtn .inn{display:flex;align-items:center;gap:12px;}
+    .nbtn .inn i{font-size:.93rem;width:18px;text-align:center;}
+    .nbtn:hover{background:rgba(255,255,255,.1);color:#fff;}
+    .nbtn.active{background:#1558a0;color:#fff;font-weight:600;}
+    .dind{width:6px;height:6px;background:#fff;border-radius:50%;}
+    .sbot{padding-top:20px;border-top:1px solid rgba(255,255,255,.1);}
+    .ucard{background:rgba(0,0,0,.18);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:12px;border:1px solid rgba(255,255,255,.08);}
+    .urow{display:flex;align-items:center;gap:10px;}
+    .ucircle{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .uname{font-size:.84rem;font-weight:700;}
+    .uem{font-size:.7rem;color:rgba(255,255,255,.6);}
+    .lbtn{width:100%;background:transparent;border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:8px 12px;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .18s;}
+    .lbtn:hover{background:rgba(255,255,255,.15);}
+    .main{flex:1;padding:32px 40px 60px;background:#F0F6FF;overflow-y:auto;}
+    .htag{font-size:.7rem;font-weight:700;letter-spacing:.12em;color:var(--b6);text-transform:uppercase;margin-bottom:6px;display:block;}
+    .htitle{font-size:1.9rem;font-weight:700;color:#1A1A1E;line-height:1.22;margin-bottom:8px;}
+    .hdesc{font-size:.9rem;color:#6A6E7D;line-height:1.5;margin-bottom:28px;}
+    .sec{background:#fff;border:1px solid var(--cb);border-radius:14px;padding:26px 28px;margin-bottom:22px;box-shadow:0 2px 8px rgba(30,58,95,.05);}
+    .sec-title{font-size:1.1rem;font-weight:700;color:#1A1A1E;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+    .sec-title i{color:var(--b5);font-size:1rem;}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+    .scard{background:#F8FAFF;border:1px solid #E2EBF5;border-radius:10px;padding:16px 18px;}
+    .scard-label{font-size:.7rem;font-weight:700;letter-spacing:.07em;color:#494C58;text-transform:uppercase;display:flex;align-items:center;gap:6px;margin-bottom:8px;}
+    .scard-label i{color:var(--b5);}
+    .scard-val{font-size:1.9rem;font-weight:700;color:#1A1A1E;line-height:1;margin-bottom:4px;}
+    .scard-sub{font-size:.76rem;color:#6C7080;}
+    .pill{font-size:.7rem;font-weight:700;padding:2px 9px;border-radius:9999px;}
+    .pb{background:#DBEAFE;color:#1D4ED8;}.pg{background:#D1FAE5;color:#065F46;}.pa{background:#FEF3C7;color:#B45309;}.pr{background:#FEE2E2;color:#991B1B;}.pgy{background:#F1F5F9;color:#475569;}
+    .row-item{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:10px;background:#F8FAFF;border:1px solid #E2EBF5;margin-bottom:10px;}
+    .row-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+    .row-info{flex:1;}
+    .row-name{font-size:.88rem;font-weight:600;color:#1A1A1E;}
+    .row-sub{font-size:.75rem;color:#6E7180;}
+    .abtn{display:inline-flex;align-items:center;gap:8px;background:var(--b6);color:#fff;padding:10px 20px;border-radius:9999px;font-size:.82rem;font-weight:700;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(26,109,181,.3);transition:all .2s;text-decoration:none;}
+    .abtn:hover{background:var(--b7);transform:translateY(-1px);}
+    table{width:100%;border-collapse:collapse;font-size:.85rem;}
+    th{background:#EFF6FF;color:#1E3A5F;font-weight:700;padding:10px 14px;text-align:left;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;}
+    td{padding:10px 14px;border-bottom:1px solid #E2EBF5;color:#374151;}
+    tr:last-child td{border-bottom:none;}
+    tr:hover td{background:#F8FAFF;}
+    .toast{position:fixed;bottom:24px;right:24px;background:#111827;color:#fff;padding:14px 20px;border-radius:10px;display:flex;align-items:center;gap:12px;font-size:.84rem;z-index:1000;transform:translateY(100px);opacity:0;transition:all .3s;border-left:4px solid var(--b5);box-shadow:0 10px 25px rgba(0,0,0,.2);}
+    .toast.show{transform:translateY(0);opacity:1;}
+  </style>
+</head>
+<body>
+  <header class="top-hdr">
+    <div class="t1">
+      <div class="brand">
+        <a href="dashboard-admin.html" class="brand-name"><img src="assets/images/stackly-logo.png" alt="Stackly Health"></a>
+        <span class="rbadge">HOSPITAL ADMIN</span>
+      </div>
+      <div class="umeta"><span class="uemail">admin@stacklyhealth.com</span><div class="uavatar"><i class="fa fa-user"></i></div></div>
+    </div>
+    <div class="t2">
+      <div class="wlc">Welcome, <strong>Hospital Administrator</strong><span class="rtag">ADMIN</span></div>
+      <div class="crumb">Reports & Analytics</div>
+    </div>
+  </header>
+  <div class="dbody">
+    <aside class="sidebar">
+      <div>
+        <div class="slabel">HOSPITAL MANAGEMENT</div>
+        <ul class="smenu">
+          <li><a href="dashboard-admin.html" class="nbtn "><span class="inn"><i class="fa fa-hospital"></i>Hospital Overview</span></a></li>
+          <li><a href="admin-opd.html" class="nbtn "><span class="inn"><i class="fa fa-user-doctor"></i>OPD Management</span></a></li>
+          <li><a href="admin-ipd.html" class="nbtn "><span class="inn"><i class="fa fa-bed-pulse"></i>IPD & Bed Management</span></a></li>
+          <li><a href="admin-lab.html" class="nbtn "><span class="inn"><i class="fa fa-flask"></i>Laboratory (LIMS)</span></a></li>
+          <li><a href="admin-pharmacy.html" class="nbtn "><span class="inn"><i class="fa fa-pills"></i>Pharmacy ERP</span></a></li>
+          <li><a href="admin-staff.html" class="nbtn "><span class="inn"><i class="fa fa-user-nurse"></i>Staff & HR</span></a></li>
+          <li><a href="admin-billing.html" class="nbtn "><span class="inn"><i class="fa fa-chart-line"></i>Billing & Finance</span></a></li>
+          <li><a href="admin-reports.html" class="nbtn active"><span class="inn"><i class="fa fa-file-waveform"></i>Reports & Analytics</span></a></li>
+        </ul>
+      </div>
+      <div class="sbot">
+        <div class="ucard">
+          <div class="urow"><div class="ucircle"><i class="fa fa-user-shield"></i></div><div><div class="uname">Dr. Admin</div><div class="uem">admin@stacklyhealth.com</div></div></div>
+          <button class="lbtn" onclick="if(confirm('Sign out?'))window.location.href='login.html'"><i class="fa fa-arrow-right-from-bracket"></i>LOGOUT</button>
+        </div>
+      </div>
+    </aside>
+    <main class="main">
+      <span class="htag">ANALYTICS & REPORTING</span>
+      <h1 class="htitle">Hospital Reports & Analytics</h1>
+      <p class="hdesc">Generate clinical, operational, and financial reports for NABH compliance and management review.</p>
+
+      <div class="sec"><div class="sec-title"><i class="fa fa-chart-bar"></i> Key Performance Indicators</div>
+        <div class="grid4">
+          <div class="scard"><div class="scard-label"><i class="fa fa-bed-pulse"></i>Bed Occupancy Rate</div><div class="scard-val">71%</div><div class="scard-sub">142/200 beds occupied</div></div>
+          <div class="scard"><div class="scard-label"><i class="fa fa-clock"></i>Avg OPD Wait Time</div><div class="scard-val">22 min</div><div class="scard-sub">Target: under 30 min</div></div>
+          <div class="scard"><div class="scard-label"><i class="fa fa-calendar"></i>Avg Length of Stay</div><div class="scard-val">4.2 days</div><div class="scard-sub">IPD patients</div></div>
+          <div class="scard"><div class="scard-label"><i class="fa fa-star"></i>Patient Satisfaction</div><div class="scard-val">4.6/5</div><div class="scard-sub">Based on 320 reviews</div></div>
+        </div>
+      </div>
+      <div class="sec"><div class="sec-title"><i class="fa fa-file-medical"></i> Generate Report</div>
+        <div class="grid2">
+          <div><div style="margin-bottom:14px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Report Type</label><select style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"><option>Daily Clinical Operations</option><option>Monthly Revenue & Billing</option><option>Patient Admission & Discharge</option><option>Lab Utilization Report</option><option>NABH Quality Indicators</option><option>Staff Attendance & Productivity</option></select></div></div>
+          <div><div style="margin-bottom:14px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Date Range</label><select style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"><option>Today</option><option>Last 7 Days</option><option>Last 30 Days</option><option>Last 12 Months</option></select></div>
+          <button class="abtn" onclick="alert('Report generated!')"><i class="fa fa-download"></i>Generate & Download</button></div>
+        </div>
+      </div>
+      <div class="sec"><div class="sec-title"><i class="fa fa-certificate"></i> NABH Quality Indicators</div>
+        <table><thead><tr><th>Indicator</th><th>Target</th><th>Current Value</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Hand Hygiene Compliance</td><td>≥ 85%</td><td>92%</td><td><span class="pill pg">Achieved</span></td></tr>
+          <tr><td>Medication Error Rate</td><td>≤ 0.5%</td><td>0.3%</td><td><span class="pill pg">Achieved</span></td></tr>
+          <tr><td>Patient Fall Rate (per 1000)</td><td>≤ 2.0</td><td>1.4</td><td><span class="pill pg">Achieved</span></td></tr>
+          <tr><td>SSI Rate (Surgical)</td><td>≤ 2%</td><td>1.8%</td><td><span class="pill pg">Achieved</span></td></tr>
+          <tr><td>Lab TAT (Routine) — Hours</td><td>≤ 4h</td><td>3.2h</td><td><span class="pill pg">Achieved</span></td></tr>
+        </tbody></table>
+      </div>
+      <div class="sec"><div class="sec-title"><i class="fa fa-chart-line"></i> Monthly Trend Overview</div>
+        <div style="height:110px;background:#F8FAFF;border-radius:10px;border:1px solid #E2EBF5;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 500 90" style="width:100%;height:90px;padding:8px 16px;"><polyline points="0,75 60,68 120,60 180,50 240,55 300,38 360,28 420,22 500,12" fill="none" stroke="#1E7FCB" stroke-width="3" stroke-linejoin="round"/><circle cx="500" cy="12" r="5" fill="#1E7FCB"/></svg>
+        </div>
+      </div>
+      <div class="sec"><div class="sec-title"><i class="fa fa-history"></i> Recent Reports Generated</div>
+        <div class="row-item"><div class="row-icon" style="background:#DBEAFE;color:#1D4ED8;"><i class="fa fa-file-pdf"></i></div><div class="row-info"><div class="row-name">Daily Clinical Operations — Oct 5, 2026</div><div class="row-sub">Generated by Admin · PDF · 2.4 MB</div></div><button class="abtn" style="padding:6px 14px;font-size:.76rem;border-radius:6px;">Download</button></div>
+        <div class="row-item"><div class="row-icon" style="background:#D1FAE5;color:#065F46;"><i class="fa fa-file-excel"></i></div><div class="row-info"><div class="row-name">Monthly Revenue Report — September 2026</div><div class="row-sub">Generated by Admin · Excel · 1.1 MB</div></div><button class="abtn" style="padding:6px 14px;font-size:.76rem;border-radius:6px;">Download</button></div>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast"><i class="fa fa-circle-check" style="color:#38BDF8;"></i><span id="tmsg">Done.</span></div>
+  <script>function showToast(m){const t=document.getElementById('toast');document.getElementById('tmsg').textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}</script>
+
+  <!-- Dynamic User Info Sync -->
+  <script id="stackly-user-sync">
+    (function() {
+      function syncUserData() {
+        try {
+          var email = localStorage.getItem('stackly_email');
+          var name = localStorage.getItem('stackly_name');
+          if (email) {
+            document.querySelectorAll('.uemail, .uem, .top-user-email, .user-profile-email').forEach(function(el) {
+              el.textContent = email;
+            });
+          }
+          if (name) {
+            document.querySelectorAll('.uname, .user-profile-name').forEach(function(el) {
+              el.textContent = name;
+            });
+            var wlc = document.querySelector('.wlc strong, .welcome-user-name');
+            if (wlc) {
+              wlc.textContent = name;
+            }
+            var htitle = document.querySelector('.htitle');
+            if (htitle && htitle.textContent.indexOf('Good Morning') !== -1) {
+              htitle.textContent = 'Good Morning, ' + name + ' 👋';
+            }
+          }
+        } catch(e) {}
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', syncUserData);
+      } else {
+        syncUserData();
+      }
+    })();
+  </script>
+
+</body></html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique Catalog & Haute Couture Collections — STACKLY Atelier Admin</title>
+  <meta name="description" content="Manage bespoke couture lines, fabric allocation, artisan assignments, and prototype garment pricing.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+
+  <!-- Google Fonts: Playfair Display & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/atelier-dashboard.css">
+</head>
+<body>
+
+  <!-- TOP WINE NAVIGATION -->
+  <header class="top-wine-header">
+    <div class="top-tier-primary">
+      <div class="brand-cluster">
+        <a href="dashboard.html" class="brand-logo-text">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          STACKLY
+        </a>
+        <div class="top-role-badge">
+          <span class="dot"></span>
+          <span>ATELIER ADMIN</span>
+        </div>
+        <div class="role-switcher-toggle">
+          <a href="bespoke-fittings.html" class="role-btn-toggle"><i class="fa fa-user"></i> VIP Client</a>
+          <a href="boutique-catalog.html" class="role-btn-toggle active"><i class="fa fa-shield-halved"></i> Atelier Admin</a>
+        </div>
+      </div>
+      <div class="top-user-meta">
+        <span class="top-user-email">lingalamanasa123@gmail.com</span>
+        <div class="top-user-avatar" title="Admin Console"><i class="fa fa-user"></i></div>
+      </div>
+    </div>
+    <div class="top-tier-secondary">
+      <div class="welcome-phrase">
+        Welcome, <strong>Lingalamanasa123</strong>
+        <span class="welcome-role-tag">ATELIER ADMIN</span>
+      </div>
+      <div class="current-tab-crumb">Boutique Catalog</div>
+    </div>
+  </header>
+
+  <div class="dashboard-body-container">
+    <!-- SIDEBAR -->
+    <aside class="atelier-sidebar">
+      <div>
+        <div class="sidebar-section-label">BOUTIQUE OPERATIONS</div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="store-overview.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-table-cells-large"></i> Store Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="boutique-catalog.html" class="sidebar-menu-btn active">
+              <span class="btn-inner"><i class="fa fa-tag"></i> Boutique Catalog</span>
+              <span class="dot-indicator"></span>
+            </a>
+          </li>
+          <li>
+            <a href="client-orders.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-bag-shopping"></i> Client Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="artisans-inventory.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-scissors"></i> Artisans & Inventory</span>
+            </a>
+          </li>
+          <li>
+            <a href="financial-analytics.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-chart-line"></i> Financial Analytics</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-user-bottom">
+        <div class="sidebar-user-badge-card">
+          <div class="user-profile-row">
+            <div class="user-profile-circle"><i class="fa fa-user"></i></div>
+            <div class="user-profile-info">
+              <div class="user-profile-name">Lingalamanasa123</div>
+              <div class="user-profile-email">lingalamanasa123@gmail.com</div>
+            </div>
+          </div>
+          <a href="login.html" class="logout-btn-box" onclick="return confirm('Sign out of STACKLY?');">
+            <i class="fa fa-arrow-right-from-bracket"></i> LOGOUT
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEW: 5 SECTIONS -->
+    <main class="atelier-main">
+
+      <!-- SECTION 1: HERO & CATALOG KPI METRICS -->
+      <section class="dashboard-section anim-fade-in delay-1">
+        <div class="section-header-row">
+          <div>
+            <span class="section-badge-index">SECTION 01 · COLLECTION ARCHITECTURE</span>
+            <h1 class="section-main-title">Haute Couture Boutique Catalog</h1>
+            <p class="section-desc">Manage active couture collections, limited-run bespoke prototypes, precious fabric allocations, and commission price tiers.</p>
+          </div>
+          <div>
+            <button class="hero-action-btn" onclick="scrollToCreateDesign()">
+              ADD NEW COUTURE DESIGN <i class="fa fa-plus"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid-4-col">
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">CATALOG SILHOUETTES</span>
+              <span class="kpi-card-pill rose">Active</span>
+            </div>
+            <div class="kpi-card-number">48</div>
+            <div class="kpi-card-desc">Bespoke design blocks in production.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">AVERAGE PRICE TICKET</span>
+            </div>
+            <div class="kpi-card-number">$16.4k</div>
+            <div class="kpi-card-desc">Hand-tailored haute couture pieces.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">FABRICS STOCKED</span>
+              <span class="kpi-card-pill emerald">Optimal</span>
+            </div>
+            <div class="kpi-card-number">86 bolts</div>
+            <div class="kpi-card-desc">Como silks, Loro Piana cashmere, lace.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">PROTOTYPES IN REVIEW</span>
+            </div>
+            <div class="kpi-card-number">6</div>
+            <div class="kpi-card-desc">Paris Spring 2027 runway trials.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: ACTIVE BESPOKE GARMENTS GRID -->
+      <section class="dashboard-section anim-fade-in delay-2">
+        <span class="section-badge-index">SECTION 02 · SIGNATURE COLLECTIONS</span>
+        <h2 class="section-sub-title">Signature Haute Couture Catalog Pieces</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Master pattern blocks available for VIP client commissions with bespoke anatomical customization.</p>
+
+        <div class="grid-3-col">
+          <div class="content-card">
+            <span class="kpi-card-pill rose" style="font-size: 0.68rem; margin-bottom: 8px; display: inline-block;">CODE #CAT-GOWN-01</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 6px;">Midnight Silk Velvet Gala Gown</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Sculpted mermaid silhouette, hand-boned corset with Como silk velvet.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <span style="font-weight: 700; color: #821B3D;">$18,500</span>
+              <span class="kpi-card-pill emerald">4 Commissions Left</span>
+            </div>
+            <button class="btn-outline-pill" style="width: 100%; justify-content: center;" onclick="showToast('Editing Midnight Velvet Gown...')">
+              <i class="fa fa-pen"></i> Edit Pattern Specs
+            </button>
+          </div>
+
+          <div class="content-card">
+            <span class="kpi-card-pill rose" style="font-size: 0.68rem; margin-bottom: 8px; display: inline-block;">CODE #CAT-COAT-04</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 6px;">Double-Breasted Cashmere Trench</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Unstructured elegance with hand-stitched pick lapels and buffalo horn buttons.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <span style="font-weight: 700; color: #821B3D;">$12,800</span>
+              <span class="kpi-card-pill emerald">6 Commissions Left</span>
+            </div>
+            <button class="btn-outline-pill" style="width: 100%; justify-content: center;" onclick="showToast('Editing Cashmere Trench...')">
+              <i class="fa fa-pen"></i> Edit Pattern Specs
+            </button>
+          </div>
+
+          <div class="content-card">
+            <span class="kpi-card-pill rose" style="font-size: 0.68rem; margin-bottom: 8px; display: inline-block;">CODE #CAT-SUIT-09</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 6px;">Silk Charmeuse Pleated Jumpsuit</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Fluid sunburst accordion pleats with deep V-neck and satin waist cinch.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <span style="font-weight: 700; color: #821B3D;">$9,400</span>
+              <span class="kpi-card-pill amber">2 Commissions Left</span>
+            </div>
+            <button class="btn-outline-pill" style="width: 100%; justify-content: center;" onclick="showToast('Editing Pleated Jumpsuit...')">
+              <i class="fa fa-pen"></i> Edit Pattern Specs
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: FABRIC & TEXTILE ALLOCATION MATRIX -->
+      <section class="dashboard-section anim-fade-in delay-3">
+        <span class="section-badge-index">SECTION 03 · TEXTILE SOURCING</span>
+        <h2 class="section-sub-title">Precious Fabric & Mill Allocation</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Direct supplier allocations from heritage mills across Como, Biella, Lyon, and St. Gallen.</p>
+
+        <div class="luxury-table-wrap">
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>Fabric Ref</th>
+                <th>Heritage Mill</th>
+                <th>Material Spec</th>
+                <th>Available Yardage</th>
+                <th>Allocated Orders</th>
+                <th>Restock Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>FAB-SILK-991</strong></td>
+                <td>Ratti Mill (Como, Italy)</td>
+                <td>Mulberry Silk Velvet (420g)</td>
+                <td>42 meters</td>
+                <td>5 gowns</td>
+                <td><span class="kpi-card-pill emerald">In Vault</span></td>
+              </tr>
+              <tr>
+                <td><strong>FAB-WOOL-304</strong></td>
+                <td>Loro Piana (Biella, Italy)</td>
+                <td>Super 180s Wool & Vicuña</td>
+                <td>28 meters</td>
+                <td>4 trench coats</td>
+                <td><span class="kpi-card-pill emerald">In Vault</span></td>
+              </tr>
+              <tr>
+                <td><strong>FAB-LACE-112</strong></td>
+                <td>Sophie Hallette (Caudry, France)</td>
+                <td>Dentelle Chantilly Lace</td>
+                <td>14 meters</td>
+                <td>2 ballgowns</td>
+                <td><span class="kpi-card-pill amber">Low Stock</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 4: ADD NEW COUTURE DESIGN FORM -->
+      <section class="dashboard-section anim-fade-in delay-4" id="createDesignSection">
+        <span class="section-badge-index">SECTION 04 · NEW PROTOTYPE</span>
+        <h2 class="section-sub-title">Catalog Prototype Onboarding Wizard</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Register a new master block design, assign master drapers, and establish commission tier pricing.</p>
+
+        <div class="content-card">
+          <form onsubmit="handleNewDesign(event)">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px;">
+              <div>
+                <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #4B4E5A; display: block; margin-bottom: 6px;">Garment Name</label>
+                <input type="text" class="modal-input" placeholder="e.g. Venetian Operatic Cape Dress" required>
+              </div>
+              <div>
+                <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #4B4E5A; display: block; margin-bottom: 6px;">Category</label>
+                <select class="modal-select" required>
+                  <option>Haute Couture Evening Gown</option>
+                  <option>Bespoke Tailored Overcoat</option>
+                  <option>Black Tie Dinner Suit</option>
+                  <option>Silk Capsule Loungewear</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #4B4E5A; display: block; margin-bottom: 6px;">Commission Price (USD)</label>
+                <input type="number" class="modal-input" value="16500" required>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <button type="submit" class="hero-action-btn">
+                Publish to Catalog & Salon Lookbook <i class="fa fa-cloud-arrow-up"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- SECTION 5: RUNWAY POPULARITY & COMMISSION DEMAND -->
+      <section class="dashboard-section anim-fade-in delay-5">
+        <span class="section-badge-index">SECTION 05 · PERFORMANCE ANALYTICS</span>
+        <h2 class="section-sub-title">Collection Demand & VIP Wishlist Popularity</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Real-time ranking of designs most frequently added to client wishlists and salon fitting requests.</p>
+
+        <div class="grid-3-col">
+          <div class="content-card" style="border-left: 4px solid #A83256;">
+            <div style="font-size: 0.70rem; font-weight: 700; color: #A83256; text-transform: uppercase;">#1 Most Requested</div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin: 4px 0 6px 0;">Autumn Gala Final Draping</h4>
+            <div style="font-size: 1.4rem; font-weight: 700; margin-bottom: 4px;">28 VIP Wishlists</div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0;">Commission conversion rate: 82%</p>
+          </div>
+
+          <div class="content-card" style="border-left: 4px solid #BE446B;">
+            <div style="font-size: 0.70rem; font-weight: 700; color: #BE446B; text-transform: uppercase;">#2 Most Requested</div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin: 4px 0 6px 0;">Double-Faced Cashmere Trench</h4>
+            <div style="font-size: 1.4rem; font-weight: 700; margin-bottom: 4px;">21 VIP Wishlists</div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0;">Commission conversion rate: 76%</p>
+          </div>
+
+          <div class="content-card" style="border-left: 4px solid #D96E90;">
+            <div style="font-size: 0.70rem; font-weight: 700; color: #D96E90; text-transform: uppercase;">#3 Most Requested</div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin: 4px 0 6px 0;">Silk Charmeuse Hemmed Gown</h4>
+            <div style="font-size: 1.4rem; font-weight: 700; margin-bottom: 4px;">19 VIP Wishlists</div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0;">Commission conversion rate: 71%</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="toast-popup" id="toastBox">
+    <i class="fa fa-circle-check" style="color: #F48FB1;"></i>
+    <span id="toastMsg">Success</span>
+  </div>
+
+  <script>
+    function scrollToCreateDesign() {
+      document.getElementById('createDesignSection').scrollIntoView({ behavior: 'smooth' });
+      showToast('Jumped to prototype onboarding wizard');
+    }
+    function handleNewDesign(e) {
+      e.preventDefault();
+      showToast('New haute couture silhouette published to boutique catalog!');
+    }
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+  </script>
+</body>
+</html>

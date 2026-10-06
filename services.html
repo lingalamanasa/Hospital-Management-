@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & Modules — Stackly Health | Complete Cloud Healthcare ERP</title>
+  <meta name="description" content="Explore Stackly Health's 10 integrated healthcare software modules: HIMS, EMR, LIMS, Pharmacy ERP, Radiology PACS, Telehealth, and Cashless TPA Billing.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+
+  <style>
+    /* ===== STACKLY PRELOADER ===== */
+    #stackly-preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: #0B0F19;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+    #stackly-preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .pl-logo {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 22px rgba(99,85,255,0.85));
+      animation: plPulse 1.8s ease-in-out infinite;
+    }
+    .pl-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.3px;
+      opacity: 0;
+      animation: plFadeUp 0.5s 0.25s ease forwards;
+    }
+    @keyframes plPulse {
+      0%, 100% { transform: scale(1);   filter: drop-shadow(0 0 20px rgba(99,85,255,0.8)); }
+      50%       { transform: scale(1.1); filter: drop-shadow(0 0 36px rgba(99,85,255,1));   }
+    }
+    @keyframes plFadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+  </style>
+
+</head>
+<body>
+  <!-- ===== STACKLY PRELOADER ===== -->
+  <div id="stackly-preloader" role="status" aria-label="Loading">
+    <img src="assets/images/stackly-logo.png" alt="Stackly" class="pl-logo">
+    <div class="pl-label">Stackly Services</div>
+  </div>
+
+  <script>
+    (function() {
+      var pl = document.getElementById('stackly-preloader');
+      function hide() { if (pl) pl.classList.add('hidden'); }
+      window.addEventListener('load', function() { setTimeout(hide, 1800); });
+      setTimeout(hide, 4000);
+    })();
+  </script>
+
+  <!-- ===================== TOPBAR ===================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <div class="topbar-item">
+          <i class="fa fa-phone-alt" style="color: var(--accent-teal);"></i>
+          <span>Support Desk: <a href="tel:+18005550199">+1 (800) 555-0199</a></span>
+        </div>
+        <div class="topbar-item">
+          <i class="fa fa-envelope" style="color: var(--accent-teal);"></i>
+          <a href="mailto:solutions@stacklyhealth.com">solutions@stacklyhealth.com</a>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <span class="topbar-badge"><i class="fa fa-check-double"></i> 10 Enterprise Modules</span>
+        <div class="topbar-item"><a href="login.html"><i class="fa fa-lock"></i> Staff Login</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo" aria-label="Stackly Health Home">
+          <img src="assets/images/stackly-logo.png" alt="Stackly Health Logo">
+          <span class="brand-badge">Health ERP</span>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="login.html" class="btn btn-outline btn-sm"><i class="fa fa-arrow-right-to-bracket"></i> Login</a>
+          <a href="signup.html" class="btn btn-primary btn-sm"><i class="fa fa-user-plus"></i> Signup</a>
+          <button class="mobile-toggle" aria-label="Toggle menu"><i class="fa fa-bars"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== 1. SERVICES HERO SECTION ===================== -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-trust-tag">
+            <span class="stars"><i class="fa fa-layer-group"></i></span>
+            <span>Modular, Interoperable, Cloud-Native Healthcare Architecture</span>
+          </div>
+
+          <h1 class="hero-title">
+            Enterprise Cloud Suites for <span class="text-gradient">Every Care Setting</span>
+          </h1>
+
+          <p class="hero-desc">
+            Explore Stackly's 10 modular services designed in line with MocDoc's benchmark healthcare ecosystem. Deploy individual modules or our unified full-stack Hospital ERP.
+          </p>
+
+          <div class="hero-actions">
+            <a href="signup.html" class="btn btn-primary btn-lg"><i class="fa fa-calendar-check"></i> Book Solutions Walkthrough</a>
+            <a href="#services-list" class="btn btn-outline btn-lg"><i class="fa fa-arrow-down"></i> Browse All 10 Modules</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-device-card" style="padding: 24px;">
+            <img src="assets/images/services-hub.webp" alt="Connected Health Hub Operations Command" class="showcase-photo" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 16px; display: block; box-shadow: var(--shadow-sm);">
+            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 16px; color: var(--dark-900); display: flex; align-items: center; justify-content: space-between;">
+              <span><i class="fa fa-network-wired" style="color: var(--primary);"></i> Connected Health Hub</span>
+              <span class="status-badge confirmed">All Systems Nominal</span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; font-size: 0.825rem;">
+              <div style="background: #F8FAFC; padding: 12px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                <strong style="color: var(--primary);">HMS Core</strong>
+                <p style="color: #64748B; margin-top: 4px;">OPD / IPD / Ward Map</p>
+              </div>
+              <div style="background: #F8FAFC; padding: 12px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                <strong style="color: #059669;">LIMS Diagnostic</strong>
+                <p style="color: #64748B; margin-top: 4px;">200+ Analyzer Interfaces</p>
+              </div>
+              <div style="background: #F8FAFC; padding: 12px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                <strong style="color: #D97706;">Pharmacy ERP</strong>
+                <p style="color: #64748B; margin-top: 4px;">Batch & Expiry POS</p>
+              </div>
+              <div style="background: #F8FAFC; padding: 12px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                <strong style="color: #7C3AED;">PACS Imaging</strong>
+                <p style="color: #64748B; margin-top: 4px;">DICOM Web Viewer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. SECTION 2: HOSPITAL HIMS ===================== -->
+  <section class="section-padding bg-white" id="services-list">
+    <div class="container">
+      <div class="showcase-card">
+        <div class="showcase-content">
+          <span class="topbar-badge" style="width: fit-content; margin-bottom: 12px;">Module 01</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 14px;">Hospital Information Management System (HIMS)</h2>
+          <p style="color: var(--gray-500); margin-bottom: 20px;">The central operating system for secondary and tertiary care hospitals. Seamlessly unifies multi-departmental workflows from patient admission to discharge.</p>
+          <ul class="sector-list" style="margin-bottom: 24px;">
+            <li><i class="fa fa-check"></i> <strong>Outpatient (OPD):</strong> Fast track digital registration, biometric lookup, multi-specialty triage.</li>
+            <li><i class="fa fa-check"></i> <strong>Inpatient (IPD):</strong> Visual real-time ward bed map, doctor transfer requests, room upgrades.</li>
+            <li><i class="fa fa-check"></i> <strong>Nurse Stations:</strong> Medication Administration Records (MAR), digital handover sheets.</li>
+            <li><i class="fa fa-check"></i> <strong>Discharge Management:</strong> Automated summary generation with one-click billing reconciliation.</li>
+          </ul>
+          <a href="signup.html" class="btn btn-primary" style="width: fit-content;">Explore HIMS Architecture</a>
+        </div>
+        <div class="showcase-preview" style="background: #F8FAFC;">
+          <div style="background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #E2E8F0; width: 100%;">
+            <img src="assets/images/nurse-station.webp" alt="Inpatient Ward Nursing Station" class="showcase-photo">
+            <h4 style="margin-bottom: 12px; color: var(--dark-900);"><i class="fa fa-bed" style="color: var(--primary);"></i> Live Inpatient Ward Tracker</h4>
+            <div style="font-size: 0.85rem; color: #64748B; margin-bottom: 14px;">Main Tower — 5th Floor Critical Care Unit</div>
+            <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+              <span class="status-badge confirmed">24 Occupied</span>
+              <span class="status-badge waiting">4 Under Sanitization</span>
+              <span class="status-badge in-progress">4 Available</span>
+            </div>
+            <div style="background: #F1F5F9; padding: 12px; border-radius: 6px; font-size: 0.8rem;">
+              <strong>Nurse On-Duty:</strong> Sister Claire Myers, RN<br>
+              <strong>Resident MO:</strong> Dr. Kevin Brooks, MD
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. SECTION 3: CLINIC CMS & DOCTOR EMR ===================== -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      <div class="showcase-card">
+        <div class="showcase-preview" style="background: #F8FAFC;">
+          <div style="background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #E2E8F0; width: 100%;">
+            <img src="assets/images/doctor-consult.webp" alt="Doctor Consultation Suite" class="showcase-photo">
+            <h4 style="margin-bottom: 12px; color: var(--dark-900);"><i class="fa fa-stethoscope" style="color: #059669;"></i> Doctor Consultation Suite</h4>
+            <div style="font-size: 0.85rem; margin-bottom: 10px;"><strong>Patient:</strong> Emily Davis (#PT-3918) — Age 34</div>
+            <div style="background: #ECFDF5; padding: 12px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 12px;">
+              <strong>Chief Complaint:</strong> Seasonal rhinitis, dry cough for 5 days.<br>
+              <strong>Vitals:</strong> BP 118/76 | HR 72 | SpO2 99% | Temp 98.4°F
+            </div>
+            <div style="font-size: 0.75rem; color: #059669; font-weight: 600;">
+              <i class="fa fa-check"></i> E-Prescription issued & sent via WhatsApp
+            </div>
+          </div>
+        </div>
+        <div class="showcase-content">
+          <span class="topbar-badge" style="width: fit-content; margin-bottom: 12px; background: #ECFDF5; color: #059669;">Module 02</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 14px;">Clinic Management System (CMS & EMR)</h2>
+          <p style="color: var(--gray-500); margin-bottom: 20px;">Built for solo practitioners and multi-specialty polyclinics looking for a fast, elegant, and clutter-free clinical recording software.</p>
+          <ul class="sector-list" style="margin-bottom: 24px;">
+            <li><i class="fa fa-check"></i> <strong>Smart Slot Scheduling:</strong> Prevent patient overcrowding with dynamic appointment duration.</li>
+            <li><i class="fa fa-check"></i> <strong>WhatsApp Patient Reminders:</strong> Cut appointment no-show rates by up to 68%.</li>
+            <li><i class="fa fa-check"></i> <strong>Voice-to-Text Clinical Dictation:</strong> Complete medical notes without manual typing.</li>
+            <li><i class="fa fa-check"></i> <strong>Specialty Clinical Templates:</strong> Pediatrics, Cardiology, OB/GYN, Dental, Dermatology.</li>
+          </ul>
+          <a href="signup.html" class="btn btn-primary" style="width: fit-content;">Try Clinic CMS</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. SECTION 4: LABORATORY LIMS ===================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="showcase-card">
+        <div class="showcase-content">
+          <span class="topbar-badge" style="width: fit-content; margin-bottom: 12px; background: #E0F2FE; color: #0284C7;">Module 03</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 14px;">Laboratory Information Management (LIMS)</h2>
+          <p style="color: var(--gray-500); margin-bottom: 20px;">Automate end-to-end pathology and diagnostic workflows with our bidirectional analyzer integration engine and automated report delivery.</p>
+          <ul class="sector-list" style="margin-bottom: 24px;">
+            <li><i class="fa fa-check"></i> <strong>Bi-Directional Interfacing:</strong> Compatible with Sysmex, Roche, Abbott, Beckman Coulter.</li>
+            <li><i class="fa fa-check"></i> <strong>Barcode Phlebotomy:</strong> Automatic barcode tube generation prevents sample mix-ups.</li>
+            <li><i class="fa fa-check"></i> <strong>Auto-Delta Check:</strong> Highlights drastic fluctuations against past patient history.</li>
+            <li><i class="fa fa-check"></i> <strong>Instant WhatsApp Dispatch:</strong> Verified reports sent with QR-code authenticity checks.</li>
+          </ul>
+          <a href="signup.html" class="btn btn-primary" style="width: fit-content;">Request LIMS Demo</a>
+        </div>
+        <div class="showcase-preview" style="background: #F8FAFC;">
+          <div style="background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #E2E8F0; width: 100%;">
+            <img src="assets/images/lab-analyzer.webp" alt="Pathology Laboratory Automation" class="showcase-photo">
+            <h4 style="margin-bottom: 12px; color: var(--dark-900);"><i class="fa fa-vials" style="color: #0284C7;"></i> Phlebotomy & Analyzer Stream</h4>
+            <div style="font-size: 0.8rem; margin-bottom: 10px;">Sysmex XN-1000 Hematology Analyzer Connected</div>
+            <div style="border-left: 3px solid #0284C7; padding-left: 12px; margin-bottom: 12px; font-size: 0.8rem; color: #475569;">
+              Tube Barcode: <strong>#882194-EDTA</strong><br>
+              Patient: <strong>Arthur Collins</strong> | Test: <strong>CBC + ESR</strong><br>
+              Status: <span style="color: #059669; font-weight: bold;">Transmitted & Digitally Signed</span>
+            </div>
+            <div class="topbar-badge" style="background: #E0F2FE; color: #0284C7; font-size: 0.75rem;">
+              <i class="fa fa-clock"></i> Total Turnaround Time: 14 mins
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. SECTION 5: PHARMACY & INVENTORY ERP ===================== -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      <div class="showcase-card">
+        <div class="showcase-preview" style="background: #F8FAFC;">
+          <div style="background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #E2E8F0; width: 100%;">
+            <img src="assets/images/pharmacy-store.webp" alt="Pharmacy Stock & Dispensing" class="showcase-photo">
+            <h4 style="margin-bottom: 12px; color: var(--dark-900);"><i class="fa fa-pills" style="color: #D97706;"></i> Intelligent Drug Stock Alert</h4>
+            <div style="background: #FEF3C7; padding: 12px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 12px; color: #92400E;">
+              <strong><i class="fa fa-triangle-exclamation"></i> Reorder Threshold Triggered</strong><br>
+              Item: Inj. Ceftriaxone 1g (Batch C-99)<br>
+              Current Stock: 14 Vials (Minimum: 50 Vials)
+            </div>
+            <div style="font-size: 0.75rem; color: #64748B;">
+              Automated PO #PO-4091 generated and queued for supplier approval.
+            </div>
+          </div>
+        </div>
+        <div class="showcase-content">
+          <span class="topbar-badge" style="width: fit-content; margin-bottom: 12px; background: #FEF3C7; color: #D97706;">Module 04</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 14px;">Pharmacy POS & Central Supply Chain ERP</h2>
+          <p style="color: var(--gray-500); margin-bottom: 20px;">Control medicine pilferage, eliminate stockouts, and streamline multi-outlet inventory transfers with our pharmaceutical retail and hospital engine.</p>
+          <ul class="sector-list" style="margin-bottom: 24px;">
+            <li><i class="fa fa-check"></i> <strong>FIFO & Expiry Enforcement:</strong> First-In-First-Out dispensing stops medicine losses.</li>
+            <li><i class="fa fa-check"></i> <strong>Direct EMR Sync:</strong> Nurse or doctor e-prescriptions appear immediately in the pharmacy.</li>
+            <li><i class="fa fa-check"></i> <strong>Drug Interaction Warnings:</strong> Automatic alert for lethal contraindications.</li>
+            <li><i class="fa fa-check"></i> <strong>Tax & GST Invoicing:</strong> Formatted multi-currency invoices in 3 seconds.</li>
+          </ul>
+          <a href="signup.html" class="btn btn-primary" style="width: fit-content;">Try Pharmacy POS</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. SECTION 6: RADIOLOGY & PACS INTEGRATION ===================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="showcase-card">
+        <div class="showcase-content">
+          <span class="topbar-badge" style="width: fit-content; margin-bottom: 12px; background: #EDE9FE; color: #7C3AED;">Module 05</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 14px;">Radiology & PACS Imaging Integration</h2>
+          <p style="color: var(--gray-500); margin-bottom: 20px;">Integrated DICOM viewer and Radiology Information System (RIS). View X-rays, CT scans, MRIs, and ultrasounds directly in the patient medical record.</p>
+          <ul class="sector-list" style="margin-bottom: 24px;">
+            <li><i class="fa fa-check"></i> <strong>Zero-Footprint Web DICOM Viewer:</strong> High-resolution zooming and measuring on any browser.</li>
+            <li><i class="fa fa-check"></i> <strong>Modality Worklist (MWL):</strong> Eliminates manual patient data re-entry on imaging scanners.</li>
+            <li><i class="fa fa-check"></i> <strong>Structured Radiologist Reporting:</strong> Customizable templates for rapid diagnostic reporting.</li>
+          </ul>
+          <a href="signup.html" class="btn btn-primary" style="width: fit-content;">View PACS Features</a>
+        </div>
+        <div class="showcase-preview" style="background: #F8FAFC;">
+          <div style="background: #1E293B; color: #fff; padding: 24px; border-radius: 12px; width: 100%; text-align: center;">
+            <img src="assets/images/radiology-scan.webp" alt="Radiology Scan DICOM PACS" class="showcase-photo">
+            <i class="fa fa-x-ray" style="font-size: 2rem; color: #A78BFA; margin-bottom: 8px;"></i>
+            <h4 style="color: #fff; margin-bottom: 6px;">Web DICOM Viewer Active</h4>
+            <p style="font-size: 0.8rem; color: #94A3B8;">Study: Chest X-Ray PA View | Modality: CR | 5.2 MB Lossless</p>
+            <div style="font-size: 0.75rem; color: #34D399; margin-top: 10px;">
+              <i class="fa fa-check"></i> Calibrated & NABH Diagnostic Compliant
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7. SECTION 7: TELEHEALTH & REMOTE MONITORING ===================== -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      <div class="showcase-card">
+        <div class="showcase-preview" style="background: #F8FAFC;">
+          <div style="background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #E2E8F0; width: 100%;">
+            <img src="assets/images/telehealth-doctor.webp" alt="Telehealth Consultation" class="showcase-photo">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <strong>Tele-Consult Room #TC-88</strong>
+              <span class="status-badge confirmed">Encrypted WebRTC</span>
+            </div>
+            <div style="font-size: 0.75rem; color: #64748B;">
+              Integrated with digital e-signature and instant invoice settlement.
+            </div>
+          </div>
+        </div>
+        <div class="showcase-content">
+          <span class="topbar-badge" style="width: fit-content; margin-bottom: 12px; background: #EEF2FF; color: #4F46E5;">Module 06</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 14px;">Telehealth & Remote Patient Monitoring</h2>
+          <p style="color: var(--gray-500); margin-bottom: 20px;">Deliver borderless medical consultations with encrypted WebRTC video, digital consent capture, and continuous vital monitoring from home.</p>
+          <ul class="sector-list" style="margin-bottom: 24px;">
+            <li><i class="fa fa-check"></i> <strong>Zero App Install:</strong> Patients join video call via secure browser link on smartphone or laptop.</li>
+            <li><i class="fa fa-check"></i> <strong>In-Call EMR Access:</strong> Doctors can review past reports and prescribe while video consult is live.</li>
+            <li><i class="fa fa-check"></i> <strong>Remote Vitals Sync:</strong> Connects with Bluetooth pulse oximeters and blood pressure monitors.</li>
+          </ul>
+          <a href="signup.html" class="btn btn-primary" style="width: fit-content;">Schedule Telehealth Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8. SECTION 8: CASHLESS INSURANCE & TPA BILLING ===================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="showcase-card">
+        <div class="showcase-content">
+          <span class="topbar-badge" style="width: fit-content; margin-bottom: 12px; background: #ECFDF5; color: #059669;">Module 07</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 14px;">Cashless TPA Insurance & Billing Suite</h2>
+          <p style="color: var(--gray-500); margin-bottom: 20px;">Speed up insurance claim approvals, eliminate claim rejections, and handle complex multi-payer co-pay billing with automated verification.</p>
+          <ul class="sector-list" style="margin-bottom: 24px;">
+            <li><i class="fa fa-check"></i> <strong>Pre-Auth Automation:</strong> Pre-populated medical necessity forms sent directly to TPA.</li>
+            <li><i class="fa fa-check"></i> <strong>Package Split Tariff:</strong> Automatically differentiates patient co-pay from insurance payable.</li>
+            <li><i class="fa fa-check"></i> <strong>Real-Time Denial Prevention:</strong> Rule-based checker flags missing ICD-10 or OT notes.</li>
+          </ul>
+          <a href="signup.html" class="btn btn-primary" style="width: fit-content;">Test TPA Workflow</a>
+        </div>
+        <div class="showcase-preview" style="background: #F8FAFC;">
+          <div style="background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #E2E8F0; width: 100%;">
+            <img src="assets/images/hospital-building.webp" alt="Hospital Insurance Claims" class="showcase-photo">
+            <h4 style="margin-bottom: 12px; color: var(--dark-900);"><i class="fa fa-file-invoice-dollar" style="color: #059669;"></i> Insurance Claim #CLM-2089</h4>
+            <div style="font-size: 0.8rem; margin-bottom: 8px;"><strong>Insurer:</strong> United Health Care / Star Health</div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; padding: 6px 0; border-bottom: 1px solid #F1F5F9;">
+              <span>Total Surgery Bill:</span><strong>$8,400.00</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; padding: 6px 0; border-bottom: 1px solid #F1F5F9; color: #059669;">
+              <span>TPA Approved Cashless:</span><strong>$7,200.00</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; padding: 6px 0;">
+              <span>Patient Co-Pay Balance:</span><strong>$1,200.00</strong>
+            </div>
+            <span class="status-badge confirmed" style="margin-top: 10px;">Pre-Auth Verified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 9. SECTION 9: PATIENT PORTAL & MOBILE APPS ===================== -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      <div class="showcase-card">
+        <div class="showcase-preview" style="background: #F8FAFC;">
+          <div style="background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #E2E8F0; width: 100%;">
+            <img src="assets/images/patient-mobile.webp" alt="Stackly Patient Mobile Health Locker" class="showcase-photo">
+            <div style="text-align: center; margin-bottom: 16px;">
+              <h4 style="margin-top: 8px;">Stackly Patient Health Locker</h4>
+            </div>
+            <div style="font-size: 0.8rem; background: #FAF5FF; padding: 10px; border-radius: 6px; margin-bottom: 10px;">
+              <i class="fa fa-file-pdf" style="color: #DC2626;"></i> <strong>Lab Report Downloaded:</strong> Blood Lipid Panel
+            </div>
+            <div style="font-size: 0.8rem; background: #EFF6FF; padding: 10px; border-radius: 6px;">
+              <i class="fa fa-bell" style="color: #2563EB;"></i> <strong>Upcoming Appointment:</strong> Tomorrow at 10:30 AM
+            </div>
+          </div>
+        </div>
+        <div class="showcase-content">
+          <span class="topbar-badge" style="width: fit-content; margin-bottom: 12px; background: #FAF5FF; color: #9333EA;">Module 08</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 14px;">Patient Engagement & White-Label Mobile App</h2>
+          <p style="color: var(--gray-500); margin-bottom: 20px;">Empower your patients with a beautifully branded iOS and Android hospital app to book appointments, view diagnostic reports, and manage family health.</p>
+          <ul class="sector-list" style="margin-bottom: 24px;">
+            <li><i class="fa fa-check"></i> <strong>White-Label Customization:</strong> Your hospital logo, brand colors, and doctor directory.</li>
+            <li><i class="fa fa-check"></i> <strong>Digital Health Locker:</strong> Patients maintain lifetime encrypted medical histories.</li>
+            <li><i class="fa fa-check"></i> <strong>Medicine Adherence Reminders:</strong> Push notifications for medication dosages.</li>
+          </ul>
+          <a href="signup.html" class="btn btn-primary" style="width: fit-content;">Explore Mobile App</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 10. SECTION 10: ONBOARDING, MIGRATION & SLA (CTA) ===================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa fa-route"></i> 7-Day Transition</span>
+        <h2 class="section-title">Seamless Migration from Your <span class="text-gradient">Legacy HMS</span></h2>
+        <p class="section-desc">Zero patient record loss. Zero clinical downtime. Handled end-to-end by Stackly clinical migration engineers.</p>
+      </div>
+
+      <div class="sectors-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 40px;">
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/billing-desk.webp" alt="Data Audit" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div class="sector-icon"><i class="fa fa-database"></i></div>
+          <h4>1. Data Audit & Mapping</h4>
+          <p>Extract legacy patient records, past prescriptions, and billing tariff books with cryptographic data integrity.</p>
+        </div>
+
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/emr-tablet.webp" alt="Dual Run Sandbox" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div class="sector-icon" style="background: #ECFDF5; color: #059669;"><i class="fa fa-arrows-split-up-and-left"></i></div>
+          <h4>2. Dual-Run Sandbox</h4>
+          <p>Simulate live OPD consultations, IPD ward transfers, and billing without disrupting existing patient care.</p>
+        </div>
+
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/nurse-station.webp" alt="Staff Training" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div class="sector-icon" style="background: #FAF5FF; color: #9333EA;"><i class="fa fa-chalkboard-user"></i></div>
+          <h4>3. Role-Based Training</h4>
+          <p>Hands-on clinical training for doctors, nurses, pharmacists, and lab technicians in under 2 hours.</p>
+        </div>
+
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/doctor-team.webp" alt="Zero-Downtime Go Live" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div class="sector-icon" style="background: #FFFBEB; color: #D97706;"><i class="fa fa-rocket"></i></div>
+          <h4>4. Floor Support Go-Live</h4>
+          <p>Stackly engineers on-site and in war-room 24/7 to ensure flawless cutover and immediate staff assistance.</p>
+        </div>
+      </div>
+
+      <div class="cta-banner">
+        <img src="assets/images/cta-medical-tech.webp" alt="Seamless Migration" style="max-width: 580px; width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-lg); margin: 0 auto 20px; display: block; border: 2px solid rgba(255,255,255,0.25); box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+        <h2>Seamless Migration from Your Legacy HMS in 7 Days</h2>
+        <p>Worried about patient data loss? Our dedicated clinical migration engineering team has safely migrated over 15 million medical records from desktop servers to Stackly Cloud without a minute of hospital downtime.</p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-secondary btn-lg"><i class="fa fa-cloud-arrow-up"></i> Request Migration Assessment</a>
+          <a href="signup.html" class="btn btn-outline-white btn-lg"><i class="fa fa-laptop-medical"></i> Start 14-Day Free Sandbox</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 16px;">
+            <img src="assets/images/stackly-logo-white.png" alt="Stackly Health Logo">
+          </a>
+          <p>Stackly Health is the pioneering cloud healthcare management platform inspired by global leaders like MocDoc. Delivering seamless hospital, clinic, diagnostic, and pharmacy digital transformation.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Portals &amp; Security</h4>
+          <div class="footer-links">
+            <a href="login.html">Doctor &amp; Staff Login</a>
+            <a href="dashboard-user.html">Patient Health Portal</a>
+            <a href="dashboard-admin.html">Hospital Admin Cockpit</a>
+            <a href="signup.html">Register Facility</a>
+            <a href="contact.html">NABH Compliance Guide</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>24/7 Clinical Support</h4>
+          <div class="footer-links" style="font-size: 0.85rem;">
+            <p><i class="fa fa-phone" style="color: var(--primary);"></i> +1 (800) 555-0199</p>
+            <p><i class="fa fa-envelope" style="color: var(--primary);"></i> support@stacklyhealth.com</p>
+            <p><i class="fa fa-location-dot" style="color: var(--primary);"></i> 750 Tech Boulevard, Silicon Healthcare Hub, CA 94025</p>
+            <p><i class="fa fa-location-dot" style="color: var(--accent-teal);"></i> MMR Complex, Executive Tower, Salem, TN 636008, India</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Health Technologies Inc. All rights reserved. MocDoc architecture benchmarked.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

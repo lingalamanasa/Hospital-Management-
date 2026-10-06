@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store Overview & Global Operations — STACKLY Atelier Admin</title>
+  <meta name="description" content="Operational snapshot across global salons. Live inventory tracking, VIP fitting appointments, orders, and boutique revenue.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+
+  <!-- Google Fonts: Playfair Display & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/atelier-dashboard.css">
+</head>
+<body>
+
+  <!-- TOP WINE NAVIGATION -->
+  <header class="top-wine-header">
+    <div class="top-tier-primary">
+      <div class="brand-cluster">
+        <a href="dashboard.html" class="brand-logo-text">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          STACKLY
+        </a>
+        <div class="top-role-badge">
+          <span class="dot"></span>
+          <span>ATELIER ADMIN</span>
+        </div>
+        <div class="role-switcher-toggle">
+          <a href="bespoke-fittings.html" class="role-btn-toggle"><i class="fa fa-user"></i> VIP Client</a>
+          <a href="store-overview.html" class="role-btn-toggle active"><i class="fa fa-shield-halved"></i> Atelier Admin</a>
+        </div>
+      </div>
+      <div class="top-user-meta">
+        <span class="top-user-email">lingalamanasa123@gmail.com</span>
+        <div class="top-user-avatar" title="Admin Console"><i class="fa fa-user"></i></div>
+      </div>
+    </div>
+    <div class="top-tier-secondary">
+      <div class="welcome-phrase">
+        Welcome, <strong>Lingalamanasa123</strong>
+        <span class="welcome-role-tag">ATELIER ADMIN</span>
+      </div>
+      <div class="current-tab-crumb">Store Overview</div>
+    </div>
+  </header>
+
+  <div class="dashboard-body-container">
+    <!-- SIDEBAR -->
+    <aside class="atelier-sidebar">
+      <div>
+        <div class="sidebar-section-label">BOUTIQUE OPERATIONS</div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="store-overview.html" class="sidebar-menu-btn active">
+              <span class="btn-inner"><i class="fa fa-table-cells-large"></i> Store Overview</span>
+              <span class="dot-indicator"></span>
+            </a>
+          </li>
+          <li>
+            <a href="boutique-catalog.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-tag"></i> Boutique Catalog</span>
+            </a>
+          </li>
+          <li>
+            <a href="client-orders.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-bag-shopping"></i> Client Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="artisans-inventory.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-scissors"></i> Artisans & Inventory</span>
+            </a>
+          </li>
+          <li>
+            <a href="financial-analytics.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-chart-line"></i> Financial Analytics</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-user-bottom">
+        <div class="sidebar-user-badge-card">
+          <div class="user-profile-row">
+            <div class="user-profile-circle"><i class="fa fa-user"></i></div>
+            <div class="user-profile-info">
+              <div class="user-profile-name">Lingalamanasa123</div>
+              <div class="user-profile-email">lingalamanasa123@gmail.com</div>
+            </div>
+          </div>
+          <a href="login.html" class="logout-btn-box" onclick="return confirm('Sign out of STACKLY?');">
+            <i class="fa fa-arrow-right-from-bracket"></i> LOGOUT
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEW: 5 SECTIONS -->
+    <main class="atelier-main">
+
+      <!-- SECTION 1: HERO (MATCHING SCREENSHOT 2) -->
+      <section class="dashboard-section anim-fade-in delay-1">
+        <div class="section-header-row">
+          <div>
+            <span class="section-badge-index">01 · BOUTIQUE OPERATIONS</span>
+            <h1 class="section-main-title">Everything happening across STACKLY Ateliers, at a glance</h1>
+            <p class="section-desc">Operational snapshot across global salons. Live inventory tracking, VIP fitting appointments, orders, and boutique revenue.</p>
+          </div>
+          <div>
+            <button class="hero-action-btn" onclick="openExportModal()">
+              EXPORT SALES REPORT <i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: 4 OPERATIONAL KPIS (MATCHING SCREENSHOT 2) -->
+      <section class="dashboard-section anim-fade-in delay-2">
+        <span class="section-badge-index">SECTION 02 · EXECUTIVE INDICATORS</span>
+        <h2 class="section-sub-title" style="margin-bottom: 16px;">Global Atelier Capacity & Active VIP Clients</h2>
+        <div class="grid-4-col">
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label"><i class="fa fa-bag-shopping"></i> ACTIVE ORDERS</span>
+              <span class="kpi-card-pill rose">+3</span>
+            </div>
+            <div class="kpi-card-number">14</div>
+            <div class="kpi-card-desc">Bespoke couture garments currently in atelier production.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label"><i class="fa fa-users"></i> VIP CLIENTS ACTIVE</span>
+              <span class="kpi-card-pill rose">+12</span>
+            </div>
+            <div class="kpi-card-number">98</div>
+            <div class="kpi-card-desc">Private salon appointments and client suites this month.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label"><i class="fa fa-scissors"></i> MASTER TAILORS</span>
+              <span class="kpi-card-pill gray">0</span>
+            </div>
+            <div class="kpi-card-number">11</div>
+            <div class="kpi-card-desc">Artisans and patternmakers on active commission.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label"><i class="fa fa-star"></i> ALTERATIONS</span>
+              <span class="kpi-card-pill rose">+1</span>
+            </div>
+            <div class="kpi-card-number">2</div>
+            <div class="kpi-card-desc">Priority express gala fittings requiring stylist attention.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: REVENUE TREND & ATELIER STATUS (MATCHING SCREENSHOT 2) -->
+      <section class="dashboard-section anim-fade-in delay-3">
+        <span class="section-badge-index">SECTION 03 · FINANCIAL & FULFILLMENT VELOCITY</span>
+        <div style="display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; margin-top: 14px;">
+          <!-- Chart -->
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+              <div>
+                <h3 style="font-size: 1.1rem; font-weight: 700; color: #1A1A1E;">Boutique revenue & orders trend</h3>
+              </div>
+              <span style="font-size: 0.78rem; color: #8C90A0; font-weight: 500;">Last 12 months</span>
+            </div>
+            <div style="position: relative; height: 190px; padding-left: 45px;">
+              <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 40px; display: flex; flex-direction: column; justify-content: space-between; font-size: 0.72rem; color: #9AA0B0; text-align: right;">
+                <span>$120k</span><span>$90k</span><span>$60k</span><span>$30k</span><span>$0</span>
+              </div>
+              <svg viewBox="0 0 540 180" style="width: 100%; height: 100%; overflow: visible;" preserveAspectRatio="none">
+                <line x1="0" y1="5" x2="540" y2="5" stroke="#F1F2F6" stroke-width="1" />
+                <line x1="0" y1="48" x2="540" y2="48" stroke="#F1F2F6" stroke-width="1" />
+                <line x1="0" y1="92" x2="540" y2="92" stroke="#F1F2F6" stroke-width="1" />
+                <line x1="0" y1="135" x2="540" y2="135" stroke="#F1F2F6" stroke-width="1" />
+                <line x1="0" y1="178" x2="540" y2="178" stroke="#F1F2F6" stroke-width="1" />
+                <path d="M 0,165 Q 160,140 300,110 T 540,65" fill="none" stroke="#F48FB1" stroke-width="2.5" stroke-dasharray="6,5" />
+                <path d="M 0,158 Q 160,130 300,90 T 540,30" fill="none" stroke="#A32850" stroke-width="3" />
+                <circle cx="540" cy="30" r="5" fill="#A32850" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Atelier Status -->
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #1A1A1E;">Atelier status</h3>
+              <span style="font-size: 0.78rem; color: #8C90A0; font-weight: 500;">Live • today</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; height: calc(100% - 46px);">
+              <div style="background: #FDFBFC; border: 1px solid #EFEAEB; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 0.70rem; font-weight: 700; color: #4B4E5A; text-transform: uppercase;">FULFILLMENT</span>
+                  <span class="kpi-card-pill rose">• OK</span>
+                </div>
+                <div>
+                  <div style="font-size: 2.1rem; font-weight: 700; color: #1A1A1E; line-height: 1; margin-bottom: 6px;">100%</div>
+                  <div style="font-size: 0.75rem; color: #6E7182;">All bespoke deliveries on schedule.</div>
+                </div>
+              </div>
+
+              <div style="background: #FDFBFC; border: 1px solid #EFEAEB; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 0.70rem; font-weight: 700; color: #4B4E5A; text-transform: uppercase;">FABRIC IMPORTS</span>
+                  <span class="kpi-card-pill amber">• PENDING</span>
+                </div>
+                <div>
+                  <div style="font-size: 2.1rem; font-weight: 700; color: #1A1A1E; line-height: 1; margin-bottom: 6px;">4</div>
+                  <div style="font-size: 0.75rem; color: #6E7182;">Como silk awaiting salon intake.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: GLOBAL SALON LIVE STATUS -->
+      <section class="dashboard-section anim-fade-in delay-4">
+        <span class="section-badge-index">SECTION 04 · GLOBAL SALON HUBS</span>
+        <h2 class="section-sub-title">Flagship Salons Live Performance</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Real-time occupancy across VIP dressing suites and master artisan benches.</p>
+
+        <div class="grid-4-col">
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 0.70rem; font-weight: 700; color: #821B3D; text-transform: uppercase;">SALEM FLAGSHIP</span>
+              <span class="kpi-card-pill emerald">92% Utilized</span>
+            </div>
+            <div style="font-size: 1.3rem; font-weight: 700; margin-bottom: 4px;">4 Suites Active</div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">6 Master Tailors on Commission</p>
+            <div class="progress-track"><div class="progress-fill" style="width: 92%;"></div></div>
+          </div>
+
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 0.70rem; font-weight: 700; color: #821B3D; text-transform: uppercase;">PARIS MONTAIGNE</span>
+              <span class="kpi-card-pill emerald">85% Utilized</span>
+            </div>
+            <div style="font-size: 1.3rem; font-weight: 700; margin-bottom: 4px;">3 Suites Active</div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">3 Haute Couture Drapers</p>
+            <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+          </div>
+
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 0.70rem; font-weight: 700; color: #821B3D; text-transform: uppercase;">MILAN GALLERIA</span>
+              <span class="kpi-card-pill emerald">78% Utilized</span>
+            </div>
+            <div style="font-size: 1.3rem; font-weight: 700; margin-bottom: 4px;">2 Suites Active</div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">2 Senior Patternmakers</p>
+            <div class="progress-track"><div class="progress-fill" style="width: 78%;"></div></div>
+          </div>
+
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 0.70rem; font-weight: 700; color: #821B3D; text-transform: uppercase;">NEW YORK MADISON</span>
+              <span class="kpi-card-pill amber">60% Utilized</span>
+            </div>
+            <div style="font-size: 1.3rem; font-weight: 700; margin-bottom: 4px;">2 Suites Active</div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">Private Fitting Penthouse</p>
+            <div class="progress-track"><div class="progress-fill" style="width: 60%;"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: LIVE PRODUCTION ALERTS & ARTISAN SCHEDULE -->
+      <section class="dashboard-section anim-fade-in delay-5">
+        <span class="section-badge-index">SECTION 05 · PRODUCTION DISPATCH</span>
+        <h2 class="section-sub-title">Live Atelier Alerts & Critical Milestones</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Urgent client alterations, express gala deadlines, and fabric intake milestones.</p>
+
+        <div class="luxury-table-wrap">
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>Priority</th>
+                <th>Alert Event</th>
+                <th>Salon Suite</th>
+                <th>Client / Order</th>
+                <th>Action Required</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="kpi-card-pill rose">High Express</span></td>
+                <td>Autumn Gala Final Hemming Adjustment</td>
+                <td>Salem Flagship</td>
+                <td>Lingalamanasa123 (#STK-8921)</td>
+                <td>Complete hand-slip stitch before Oct 14 fitting</td>
+                <td><span class="kpi-card-pill rose">On Bench</span></td>
+              </tr>
+              <tr>
+                <td><span class="kpi-card-pill amber">Customs Intake</span></td>
+                <td>4 Bolts Como Silk Velvet Arrived at Customs</td>
+                <td>Milan to Salem</td>
+                <td>Shipment #CM-881</td>
+                <td>White-glove courier release approval</td>
+                <td><span class="kpi-card-pill amber">Pending Sign</span></td>
+              </tr>
+              <tr>
+                <td><span class="kpi-card-pill emerald">Ready for Dispatch</span></td>
+                <td>Cashmere Trench Coat Final Press</td>
+                <td>Paris Montaigne</td>
+                <td>Order #STK-8934</td>
+                <td>Pack in cedarwood garment chest with scent sachet</td>
+                <td><span class="kpi-card-pill emerald">Inspected</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- EXPORT MODAL -->
+  <div class="modal-overlay" id="modalExport">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title">Export Atelier Operations Report</div>
+        <button class="modal-close-btn" onclick="closeModal('modalExport')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-form-group">
+          <label class="modal-label">Period</label>
+          <select class="modal-select">
+            <option>Last 12 Months (Fiscal Year 2025-2026)</option>
+            <option>Current Quarter (Q3 Haute Couture)</option>
+            <option>Current Month to Date</option>
+          </select>
+        </div>
+        <div class="modal-form-group">
+          <label class="modal-label">Format</label>
+          <select class="modal-select">
+            <option>Executive PDF Dossier with SVG Visualizations</option>
+            <option>Full Financial CSV & General Ledger</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-outline-pill" onclick="closeModal('modalExport')">Cancel</button>
+        <button class="hero-action-btn" onclick="downloadReport()">Download Report</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-popup" id="toastBox">
+    <i class="fa fa-circle-check" style="color: #F48FB1;"></i>
+    <span id="toastMsg">Success</span>
+  </div>
+
+  <script>
+    function openExportModal() { document.getElementById('modalExport').classList.add('active'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+    function downloadReport() {
+      closeModal('modalExport');
+      showToast('Generating executive sales & atelier report...');
+    }
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+  </script>
+</body>
+</html>
