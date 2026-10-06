@@ -44,6 +44,20 @@ img, svg {
   animation: dashWobbleEnter 0.55s cubic-bezier(0.25, 1.25, 0.5, 1) both;
 }
 
+/* Base Layout Containers */
+.main {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.sec, .card {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 /* Mobile Sidebar Drawer Toggle Button */
 .dash-menu-toggle {
   display: none;
@@ -104,22 +118,57 @@ img, svg {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* Responsive Table Wrapper */
+/* Responsive Table Wrapper & Hint */
+.dash-table-hint {
+  display: none;
+  font-size: 0.72rem;
+  color: #64748B;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-align: right;
+  padding: 2px 4px;
+}
+
 .table-responsive {
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin-top: 8px;
   margin-bottom: 8px;
   border-radius: 8px;
   border: 1px solid #E2EBF5;
+  background: #FFFFFF;
+  box-sizing: border-box;
 }
 
 .table-responsive table,
 .sec > table {
   width: 100%;
-  min-width: 580px;
+  min-width: 440px;
   border-collapse: collapse;
+}
+
+.table-responsive::-webkit-scrollbar,
+.sec > table::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track,
+.sec > table::-webkit-scrollbar-track {
+  background: #F1F5F9;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb,
+.sec > table::-webkit-scrollbar-thumb {
+  background: #94A3B8;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover,
+.sec > table::-webkit-scrollbar-thumb:hover {
+  background: #64748B;
 }
 
 /* Breakpoint: Tablet & Below (max-width: 1024px) */
@@ -159,24 +208,29 @@ img, svg {
     flex: 1;
     width: 100%;
     min-width: 0;
-    padding: 24px 20px 50px;
+    padding: 22px 18px 50px;
   }
 
   .kgrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
   }
 
-  .grid3 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+  .cgrid, .agrid, .sgrid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .grid3, .grid4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
   }
 }
 
 /* Breakpoint: Mobile & Small Tablet (max-width: 768px) */
 @media (max-width: 768px) {
   .t1 {
-    padding: 10px 16px;
+    padding: 10px 14px;
     flex-wrap: wrap;
     gap: 10px;
   }
@@ -192,89 +246,215 @@ img, svg {
 
   .rbadge {
     font-size: 0.65rem;
-    padding: 3px 10px;
+    padding: 3px 8px;
   }
 
   .swlink {
     font-size: 0.7rem;
-    padding: 2px 10px;
+    padding: 3px 8px;
   }
 
   .t2 {
-    padding: 8px 16px;
+    padding: 8px 14px;
     flex-wrap: wrap;
     gap: 6px;
     font-size: 0.8rem;
   }
 
   .main {
-    padding: 18px 14px 40px;
+    padding: 16px 12px 38px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
   }
 
   .htitle {
-    font-size: 1.55rem;
-    line-height: 1.25;
+    font-size: 1.45rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .hdesc {
+    font-size: 0.85rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 20px !important;
   }
 
   .hero-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 14px;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
   }
 
   .hero-row > div:last-child {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
   }
 
   .hero-row .abtn, .hero-row .abtn-o {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
   }
 
-  .kgrid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .grid2, .grid3, .grid4 {
+  /* Single Column Stack on All Dashboard Grids */
+  .kgrid, .cgrid, .agrid, .sgrid, .grid2, .grid3, .grid4 {
     grid-template-columns: 1fr !important;
-    gap: 12px !important;
+    gap: 14px !important;
   }
 
   .qa {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .sec, .card {
+    padding: 16px 14px !important;
+    border-radius: 12px !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
 
   .scard {
-    padding: 16px 14px;
+    padding: 14px 12px !important;
+  }
+
+  .chead {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    align-items: center !important;
+    margin-bottom: 14px !important;
+  }
+
+  .chead .abtn {
+    margin-left: auto !important;
+  }
+
+  .appt-item {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    padding: 10px 12px !important;
+  }
+
+  .appt-item .pill {
+    margin-left: auto !important;
+  }
+
+  .result-item {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    padding: 10px 12px !important;
+  }
+
+  .result-item .pill {
+    margin-left: auto !important;
   }
 
   .row-item {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 12px 14px;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    padding: 10px 12px !important;
   }
 
   .row-item .abtn {
-    margin-left: auto;
+    margin-left: auto !important;
   }
 
-  .sec {
-    padding: 18px 14px;
-    border-radius: 10px;
+  /* Trend Chart Container */
+  .chwrap {
+    padding-left: 32px !important;
+    height: 160px !important;
   }
 
-  /* Wrap all tables in scrollable block if not already inside .table-responsive */
+  .chy {
+    width: 30px !important;
+    font-size: 0.65rem !important;
+  }
+
+  .chleg {
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  /* Table Mobile Scroll Hint & Polish */
+  .dash-table-hint {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .table-responsive {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border: 1px solid #E2EBF5 !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    margin: 8px 0 !important;
+    box-shadow: inset -10px 0 8px -8px rgba(0, 0, 0, 0.05);
+  }
+
+  .table-responsive table,
   .sec > table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    width: 100%;
+    width: 100% !important;
+    min-width: 440px !important;
+    border-collapse: collapse !important;
+    display: table !important;
+  }
+
+  .table-responsive th,
+  .sec table th {
+    padding: 8px 10px !important;
+    font-size: 0.70rem !important;
+    letter-spacing: 0.04em !important;
+    white-space: nowrap !important;
+    background: #EFF6FF !important;
+    color: #1E3A5F !important;
+  }
+
+  .table-responsive td,
+  .sec table td {
+    padding: 8px 10px !important;
+    font-size: 0.76rem !important;
+    white-space: nowrap !important;
+    color: #374151 !important;
+  }
+
+  .table-responsive td .abtn,
+  .sec table td .abtn,
+  .table-responsive td a.abtn,
+  .sec table td a.abtn {
+    padding: 5px 12px !important;
+    font-size: 0.70rem !important;
+    white-space: nowrap !important;
+    border-radius: 6px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  .table-responsive td .pill,
+  .sec table td .pill {
+    padding: 2px 8px !important;
+    font-size: 0.68rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* Direct un-wrapped table fallback */
+  .sec > table {
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border: 1px solid #E2EBF5;
+    border-radius: 8px;
   }
 
   .modal-box {
@@ -312,29 +492,55 @@ img, svg {
   }
 
   .main {
-    padding: 14px 10px 36px;
+    padding: 12px 10px 32px !important;
   }
 
   .htitle {
-    font-size: 1.35rem;
+    font-size: 1.3rem !important;
   }
 
   .hdesc {
-    font-size: 0.82rem;
+    font-size: 0.80rem !important;
+  }
+
+  .sec, .card {
+    padding: 14px 10px !important;
+    border-radius: 10px !important;
   }
 
   .qa {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .abtn, .abtn-o {
-    padding: 10px 16px;
-    font-size: 0.78rem;
+    padding: 9px 14px;
+    font-size: 0.76rem;
   }
 
   .kcard {
-    padding: 16px;
+    padding: 14px;
     min-height: auto;
+  }
+
+  .knum {
+    font-size: 1.8rem;
+  }
+
+  .table-responsive table,
+  .sec > table {
+    min-width: 420px !important;
+  }
+
+  .table-responsive th,
+  .sec table th {
+    padding: 7px 8px !important;
+    font-size: 0.68rem !important;
+  }
+
+  .table-responsive td,
+  .sec table td {
+    padding: 7px 8px !important;
+    font-size: 0.72rem !important;
   }
 
   .toast {

@@ -77,13 +77,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Wrap any raw tables in responsive containers
-  document.querySelectorAll('.sec > table').forEach(table => {
+  // 4. Wrap any raw tables in responsive containers with swipe hint
+  document.querySelectorAll('.sec > table, .card > table').forEach(table => {
     if (!table.parentElement.classList.contains('table-responsive')) {
       const wrapper = document.createElement('div');
       wrapper.className = 'table-responsive';
+      wrapper.scrollLeft = 0;
       table.parentNode.insertBefore(wrapper, table);
       wrapper.appendChild(table);
+
+      const hint = document.createElement('div');
+      hint.className = 'dash-table-hint';
+      hint.innerHTML = '<i class="fa fa-arrows-left-right"></i> Scroll table horizontally';
+      wrapper.parentNode.insertBefore(hint, wrapper);
     }
   });
 });
