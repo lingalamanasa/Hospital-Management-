@@ -26,14 +26,31 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.appendChild(backdrop);
     }
 
-    // 3. Add Close Button at the top of the sidebar on mobile if not present
-    if (!sidebar.querySelector('.sidebar-close-btn')) {
-      const closeBtn = document.createElement('button');
-      closeBtn.className = 'sidebar-close-btn';
-      closeBtn.setAttribute('aria-label', 'Close Menu');
-      closeBtn.innerHTML = '<i class="fa fa-xmark"></i>';
-      sidebar.insertBefore(closeBtn, sidebar.firstChild);
-      closeBtn.addEventListener('click', closeSidebar);
+    // 3. Add Drawer Header with Stackly Logo and Close Button on mobile
+    let drawerHeader = sidebar.querySelector('.sidebar-drawer-header');
+    if (!drawerHeader) {
+      // Remove any previously inserted loose close button
+      const looseClose = sidebar.querySelector(':scope > .sidebar-close-btn');
+      if (looseClose) looseClose.remove();
+
+      drawerHeader = document.createElement('div');
+      drawerHeader.className = 'sidebar-drawer-header';
+
+      const topBrand = document.querySelector('.top-hdr .brand a.brand-name, .top-hdr a.brand-name');
+      const homeHref = topBrand ? (topBrand.getAttribute('href') || 'dashboard-user.html') : 'dashboard-user.html';
+
+      drawerHeader.innerHTML = `
+        <a href="${homeHref}" class="sidebar-brand-logo" aria-label="Stackly Health">
+          <img src="assets/images/stackly-logo.png" alt="Stackly Health">
+        </a>
+        <button class="sidebar-close-btn" aria-label="Close Menu">
+          <i class="fa fa-xmark"></i>
+        </button>
+      `;
+
+      sidebar.insertBefore(drawerHeader, sidebar.firstChild);
+      const closeBtn = drawerHeader.querySelector('.sidebar-close-btn');
+      if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
     }
 
     function openSidebar() {
