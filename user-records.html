@@ -137,10 +137,10 @@
         </tbody></table>
       </div>
       <div class="sec"><div class="sec-title"><i class="fa fa-upload"></i> Upload Medical Documents</div>
-        <div class="scard"><div style="font-size:.9rem;color:#374151;margin-bottom:14px;">Upload reports, scans, or prescriptions from outside hospitals.</div>
-          <input type="file" accept=".pdf,.jpg,.png" style="margin-bottom:14px;width:100%;">
-          <a href="404.html" class="abtn" style="text-decoration:none;"><i class="fa fa-cloud-upload-alt"></i>Upload Document</a>
-        </div>
+        <form onsubmit="event.preventDefault(); window.location.href='404.html';" class="scard"><div style="font-size:.9rem;color:#374151;margin-bottom:14px;">Upload reports, scans, or prescriptions from outside hospitals.</div>
+          <input type="file" required accept=".pdf,.jpg,.png" style="margin-bottom:14px;width:100%;">
+          <button type="submit" class="abtn" style="cursor:pointer;border:none;"><i class="fa fa-cloud-upload-alt"></i>Upload Document</button>
+        </form>
       </div>
       <div class="sec"><div class="sec-title"><i class="fa fa-shield-halved"></i> Allergy & Immunization</div>
         <div class="grid2">

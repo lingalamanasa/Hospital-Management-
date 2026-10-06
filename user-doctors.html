@@ -125,10 +125,10 @@
         </div>
       </div>
       <div class="sec"><div class="sec-title"><i class="fa fa-message"></i> Message Your Doctor</div>
-        <div class="scard"><div style="margin-bottom:12px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">To</label><select style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"><option>Dr. Rajesh Kumar</option><option>Dr. Priya Nair</option><option>Dr. Sunita Rao</option></select></div>
-          <div style="margin-bottom:12px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Message</label><textarea rows="3" placeholder="Type your query or symptom update..." style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"></textarea></div>
-          <a href="404.html" class="abtn" style="text-decoration:none;"><i class="fa fa-paper-plane"></i>Send Message</a>
-        </div>
+        <form onsubmit="event.preventDefault(); window.location.href='404.html';" class="scard"><div style="margin-bottom:12px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">To</label><select required style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"><option>Dr. Rajesh Kumar</option><option>Dr. Priya Nair</option><option>Dr. Sunita Rao</option></select></div>
+          <div style="margin-bottom:12px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Message</label><textarea required rows="3" placeholder="Type your query or symptom update..." style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"></textarea></div>
+          <button type="submit" class="abtn" style="cursor:pointer;border:none;"><i class="fa fa-paper-plane"></i>Send Message</button>
+        </form>
       </div>
       <div class="sec"><div class="sec-title"><i class="fa fa-calendar"></i> Doctor Availability</div>
         <table><thead><tr><th>Doctor</th><th>Specialty</th><th>Available Days</th><th>OPD Hours</th><th>Consultation Fee</th></tr></thead>

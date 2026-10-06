@@ -118,8 +118,25 @@
 
       <div class="sec"><div class="sec-title"><i class="fa fa-video"></i> Start Telehealth Session</div>
         <div class="grid2">
-          <div class="scard"><div class="scard-label"><i class="fa fa-user-doctor"></i>Select Doctor</div><select style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;margin:10px 0;"><option>Dr. Rajesh Kumar — Cardiology</option><option>Dr. Priya Nair — Neurology</option><option>Dr. Sunita Rao — Gynecology</option></select><div style="font-size:.8rem;color:#6B7280;margin-bottom:14px;">Dr. Rajesh Kumar is currently <span class="pill pg">Available</span></div><a href="404.html" class="abtn" style="text-decoration:none;"><i class="fa fa-video"></i>Start Video Call</a></div>
-          <div class="scard"><div class="scard-label"><i class="fa fa-calendar-plus"></i>Schedule for Later</div><div style="margin-bottom:10px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Date & Time</label><input type="datetime-local" style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"></div><a href="404.html" class="abtn" style="text-decoration:none;"><i class="fa fa-calendar-check"></i>Schedule Session</a></div>
+          <form onsubmit="event.preventDefault(); window.location.href='404.html';" class="scard">
+            <div class="scard-label"><i class="fa fa-user-doctor"></i>Select Doctor</div>
+            <select required style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;margin:10px 0;">
+              <option value="">Select Doctor</option>
+              <option selected>Dr. Rajesh Kumar — Cardiology</option>
+              <option>Dr. Priya Nair — Neurology</option>
+              <option>Dr. Sunita Rao — Gynecology</option>
+            </select>
+            <div style="font-size:.8rem;color:#6B7280;margin-bottom:14px;">Dr. Rajesh Kumar is currently <span class="pill pg">Available</span></div>
+            <button type="submit" class="abtn" style="cursor:pointer;border:none;"><i class="fa fa-video"></i>Start Video Call</button>
+          </form>
+          <form onsubmit="event.preventDefault(); window.location.href='404.html';" class="scard">
+            <div class="scard-label"><i class="fa fa-calendar-plus"></i>Schedule for Later</div>
+            <div style="margin-bottom:10px;">
+              <label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Date & Time</label>
+              <input type="datetime-local" required style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;">
+            </div>
+            <button type="submit" class="abtn" style="cursor:pointer;border:none;"><i class="fa fa-calendar-check"></i>Schedule Session</button>
+          </form>
         </div>
       </div>
       <div class="sec"><div class="sec-title"><i class="fa fa-history"></i> Past Telehealth Sessions</div>

@@ -137,12 +137,12 @@
         </tbody></table>
       </div>
       <div class="sec"><div class="sec-title"><i class="fa fa-user-plus"></i> Add Staff Member</div>
-        <div class="grid2">
-          <div><div style="margin-bottom:14px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Full Name</label><input type="text" placeholder="Dr. Name" style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"></div>
-          <div><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Role</label><select style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"><option>Doctor</option><option>Nurse</option><option>Lab Technician</option><option>Admin Staff</option><option>Pharmacist</option></select></div></div>
-          <div><div style="margin-bottom:14px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Department</label><select style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"><option>Cardiology</option><option>General Medicine</option><option>Orthopedics</option><option>Gynecology</option><option>ICU</option></select></div>
-          <button class="abtn" onclick="alert('Staff member added!')"><i class="fa fa-user-plus"></i>Add Staff</button></div>
-        </div>
+        <form onsubmit="event.preventDefault(); window.location.href='404.html';" class="grid2">
+          <div><div style="margin-bottom:14px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Full Name</label><input type="text" placeholder="Dr. Name" required style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"></div>
+          <div><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Role</label><select required style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"><option>Doctor</option><option>Nurse</option><option>Lab Technician</option><option>Admin Staff</option><option>Pharmacist</option></select></div></div>
+          <div><div style="margin-bottom:14px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Department</label><select required style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"><option>Cardiology</option><option>General Medicine</option><option>Orthopedics</option><option>Gynecology</option><option>ICU</option></select></div>
+          <button type="submit" class="abtn" style="cursor:pointer;border:none;"><i class="fa fa-user-plus"></i>Add Staff</button></div>
+        </form>
       </div>
       <div class="sec"><div class="sec-title"><i class="fa fa-chart-bar"></i> Attendance Summary — This Month</div>
         <div class="grid3">

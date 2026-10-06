@@ -127,11 +127,11 @@
         </div>
       </div>
       <div class="sec"><div class="sec-title"><i class="fa fa-file-medical"></i> Generate Report</div>
-        <div class="grid2">
-          <div><div style="margin-bottom:14px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Report Type</label><select style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"><option>Daily Clinical Operations</option><option>Monthly Revenue & Billing</option><option>Patient Admission & Discharge</option><option>Lab Utilization Report</option><option>NABH Quality Indicators</option><option>Staff Attendance & Productivity</option></select></div></div>
-          <div><div style="margin-bottom:14px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Date Range</label><select style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"><option>Today</option><option>Last 7 Days</option><option>Last 30 Days</option><option>Last 12 Months</option></select></div>
-          <button class="abtn" onclick="alert('Report generated!')"><i class="fa fa-download"></i>Generate & Download</button></div>
-        </div>
+        <form onsubmit="event.preventDefault(); window.location.href='404.html';" class="grid2">
+          <div><div style="margin-bottom:14px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Report Type</label><select required style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"><option value="">Select Report Type</option><option selected>Daily Clinical Operations</option><option>Monthly Revenue & Billing</option><option>Patient Admission & Discharge</option><option>Lab Utilization Report</option><option>NABH Quality Indicators</option><option>Staff Attendance & Productivity</option></select></div></div>
+          <div><div style="margin-bottom:14px;"><label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:6px;">Date Range</label><select required style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;"><option value="">Select Date Range</option><option selected>Today</option><option>Last 7 Days</option><option>Last 30 Days</option><option>Last 12 Months</option></select></div>
+          <button type="submit" class="abtn" style="cursor:pointer;border:none;"><i class="fa fa-download"></i>Generate & Download</button></div>
+        </form>
       </div>
       <div class="sec"><div class="sec-title"><i class="fa fa-certificate"></i> NABH Quality Indicators</div>
         <table><thead><tr><th>Indicator</th><th>Target</th><th>Current Value</th><th>Status</th></tr></thead>
