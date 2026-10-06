@@ -1145,14 +1145,14 @@ ul {
 }
 
 .comparison-table th.highlight-col {
-  background: var(--primary);
-  color: var(--white);
+  background: #F8FAFC;
+  color: var(--dark-900);
 }
 
 .comparison-table td.highlight-col {
-  background: rgba(99, 85, 255, 0.04);
+  background: #F8FAFC;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--dark-800);
 }
 
 .comparison-table i.fa-check-circle {
