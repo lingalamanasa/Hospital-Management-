@@ -1202,6 +1202,13 @@ ul {
   margin-top: 8px;
 }
 
+.hub-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  font-size: 0.825rem;
+}
+
 .table-scroll-notice {
   display: none;
   font-size: 0.8rem;
@@ -2348,6 +2355,10 @@ html, body {
   }
 
   .blog-categories-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hub-features-grid {
     grid-template-columns: 1fr !important;
   }
 
