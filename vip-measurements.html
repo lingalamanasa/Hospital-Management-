@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIP Measurements & Silhouette Blueprint — STACKLY Atelier</title>
+  <meta name="description" content="View your bespoke biometric measurements, millimeter precision pattern adjustments, and 3D silhouette archive.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+
+  <!-- Google Fonts: Playfair Display & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/atelier-dashboard.css">
+</head>
+<body>
+
+  <!-- TOP WINE NAVIGATION -->
+  <header class="top-wine-header">
+    <div class="top-tier-primary">
+      <div class="brand-cluster">
+        <a href="dashboard.html" class="brand-logo-text">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          STACKLY
+        </a>
+        <div class="top-role-badge">
+          <span class="dot"></span>
+          <span>VIP CLIENT</span>
+        </div>
+        <div class="role-switcher-toggle">
+          <a href="vip-measurements.html" class="role-btn-toggle active"><i class="fa fa-user"></i> VIP Client</a>
+          <a href="store-overview.html" class="role-btn-toggle"><i class="fa fa-shield-halved"></i> Atelier Admin</a>
+        </div>
+      </div>
+      <div class="top-user-meta">
+        <span class="top-user-email">lingalamanasa123@gmail.com</span>
+        <div class="top-user-avatar" title="VIP Profile"><i class="fa fa-user"></i></div>
+      </div>
+    </div>
+    <div class="top-tier-secondary">
+      <div class="welcome-phrase">
+        Welcome, <strong>Lingalamanasa123</strong>
+        <span class="welcome-role-tag">VIP CLIENT</span>
+      </div>
+      <div class="current-tab-crumb">VIP Measurements</div>
+    </div>
+  </header>
+
+  <div class="dashboard-body-container">
+    <!-- SIDEBAR -->
+    <aside class="atelier-sidebar">
+      <div>
+        <div class="sidebar-section-label">YOUR ATELIER SUITE</div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="wardrobe-orders.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-box-archive"></i> My Wardrobe & Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="bespoke-fittings.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-scissors"></i> Bespoke Fittings</span>
+            </a>
+          </li>
+          <li>
+            <a href="curated-wishlist.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-heart"></i> Curated Wishlist</span>
+            </a>
+          </li>
+          <li>
+            <a href="stylist-sessions.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-star"></i> Stylist Sessions</span>
+            </a>
+          </li>
+          <li>
+            <a href="vip-measurements.html" class="sidebar-menu-btn active">
+              <span class="btn-inner"><i class="fa fa-ruler-combined"></i> VIP Measurements</span>
+              <span class="dot-indicator"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-user-bottom">
+        <div class="sidebar-user-badge-card">
+          <div class="user-profile-row">
+            <div class="user-profile-circle"><i class="fa fa-user"></i></div>
+            <div class="user-profile-info">
+              <div class="user-profile-name">Lingalamanasa123</div>
+              <div class="user-profile-email">lingalamanasa123@gmail.com</div>
+            </div>
+          </div>
+          <a href="login.html" class="logout-btn-box" onclick="return confirm('Sign out of STACKLY?');">
+            <i class="fa fa-arrow-right-from-bracket"></i> LOGOUT
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEW: 5 SECTIONS -->
+    <main class="atelier-main">
+
+      <!-- SECTION 1: HERO & BIOMETRIC FIT PROFILE -->
+      <section class="dashboard-section anim-fade-in delay-1">
+        <div class="section-header-row">
+          <div>
+            <span class="section-badge-index">SECTION 01 · ANATOMIC SILHOUETTE</span>
+            <h1 class="section-main-title">VIP Precision Measurement Blueprint</h1>
+            <p class="section-desc">Millimeter-accurate 3D volumetric metrics recorded by Master Marco in Salem Flagship Salon. Synchronized globally across all STACKLY ateliers.</p>
+          </div>
+          <div>
+            <button class="hero-action-btn" onclick="scrollToRemount()">
+              SCHEDULE RE-MEASUREMENT <i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid-4-col">
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">LAST RECORDED</span>
+              <span class="kpi-card-pill emerald">Verified</span>
+            </div>
+            <div class="kpi-card-number" style="font-size: 1.6rem; margin: 10px 0;">Sep 12, 2026</div>
+            <div class="kpi-card-desc">Recorded by Master Tailor Marco.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">ANATOMIC POINTS</span>
+            </div>
+            <div class="kpi-card-number">38 pts</div>
+            <div class="kpi-card-desc">Full 360-degree biometric silhouette.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">POSTURE CALIBRATION</span>
+              <span class="kpi-card-pill rose">Erect S-Curve</span>
+            </div>
+            <div class="kpi-card-number">Bal. +2°</div>
+            <div class="kpi-card-desc">Left shoulder ease compensation applied.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">PATTERN ARCHIVES</span>
+            </div>
+            <div class="kpi-card-number">14</div>
+            <div class="kpi-card-desc">Custom block patterns stored in vault.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: DETAILED MEASUREMENT BLUEPRINT (38 POINTS) -->
+      <section class="dashboard-section anim-fade-in delay-2">
+        <span class="section-badge-index">SECTION 02 · BLUEPRINT SPECS</span>
+        <h2 class="section-sub-title">Primary Silhouette Measurements (Centimeters)</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">All bespoke patterns are drafted from these exact metrics, adjusted for garment ease (Couture Corset = 0cm ease, Overcoat = +6cm ease).</p>
+
+        <div class="grid-3-col">
+          <div class="content-card">
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: #821B3D; margin-bottom: 12px; border-bottom: 1px solid #ECEAEB; padding-bottom: 8px;">Upper Torso & Shoulders</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.84rem;">
+              <div style="display: flex; justify-content: space-between;"><span>Shoulder Width (Acromion to Acromion):</span> <strong>39.5 cm</strong></div>
+              <div style="display: flex; justify-content: space-between;"><span>Full Bust Circumference:</span> <strong>88.0 cm</strong></div>
+              <div style="display: flex; justify-content: space-between;"><span>Underbust Band:</span> <strong>74.5 cm</strong></div>
+              <div style="display: flex; justify-content: space-between;"><span>Front Chest Width:</span> <strong>33.0 cm</strong></div>
+              <div style="display: flex; justify-content: space-between;"><span>Back Cross Width:</span> <strong>35.2 cm</strong></div>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: #821B3D; margin-bottom: 12px; border-bottom: 1px solid #ECEAEB; padding-bottom: 8px;">Waist & Pelvic Curve</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.84rem;">
+              <div style="display: flex; justify-content: space-between;"><span>Natural Waist:</span> <strong>66.5 cm</strong></div>
+              <div style="display: flex; justify-content: space-between;"><span>High Hip (7cm below waist):</span> <strong>82.0 cm</strong></div>
+              <div style="display: flex; justify-content: space-between;"><span>Full Seat / Low Hip:</span> <strong>93.5 cm</strong></div>
+              <div style="display: flex; justify-content: space-between;"><span>Nape to Natural Waist:</span> <strong>41.0 cm</strong></div>
+              <div style="display: flex; justify-content: space-between;"><span>Side Seam (Waist to Floor):</span> <strong>108.5 cm</strong></div>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: #821B3D; margin-bottom: 12px; border-bottom: 1px solid #ECEAEB; padding-bottom: 8px;">Arms & Inseam</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.84rem;">
+              <div style="display: flex; justify-content: space-between;"><span>Sleeve Length (Shoulder to Wrist):</span> <strong>59.0 cm</strong></div>
+              <div style="display: flex; justify-content: space-between;"><span>Bicep Circumference:</span> <strong>27.2 cm</strong></div>
+              <div style="display: flex; justify-content: space-between;"><span>Wrist Circumference:</span> <strong>15.5 cm</strong></div>
+              <div style="display: flex; justify-content: space-between;"><span>Inside Leg Inseam:</span> <strong>82.5 cm</strong></div>
+              <div style="display: flex; justify-content: space-between;"><span>Thigh Girth:</span> <strong>52.0 cm</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: PATTERN ALTERATION HISTORY & DRIFT -->
+      <section class="dashboard-section anim-fade-in delay-3">
+        <span class="section-badge-index">SECTION 03 · FIT PROGRESSION</span>
+        <h2 class="section-sub-title">Historic Fit Drift & Re-measurement Log</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">We track subtle posture or dimension shifts over time to guarantee each commission requires fewer fitting iterations.</p>
+
+        <div class="luxury-table-wrap">
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>Date of Session</th>
+                <th>Salon Suite</th>
+                <th>Master Measurer</th>
+                <th>Waist Shift</th>
+                <th>Bust Shift</th>
+                <th>Pattern Adjust Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sep 12, 2026</td>
+                <td>Salem Flagship</td>
+                <td>Master Marco</td>
+                <td>-0.5 cm</td>
+                <td>0.0 cm</td>
+                <td><span class="kpi-card-pill emerald">Applied to Autumn Gala Block</span></td>
+              </tr>
+              <tr>
+                <td>Apr 04, 2026</td>
+                <td>Paris Montaigne</td>
+                <td>Amélie Laurent</td>
+                <td>0.0 cm</td>
+                <td>+0.4 cm</td>
+                <td><span class="kpi-card-pill gray">Archived to Master Block B</span></td>
+              </tr>
+              <tr>
+                <td>Nov 19, 2025</td>
+                <td>Milan Galleria</td>
+                <td>Matteo Rossi</td>
+                <td>+0.2 cm</td>
+                <td>-0.2 cm</td>
+                <td><span class="kpi-card-pill gray">Baseline Block Verified</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 4: 3D DIGITAL FABRIC DRAPE SIMULATOR -->
+      <section class="dashboard-section anim-fade-in delay-4">
+        <span class="section-badge-index">SECTION 04 · DIGITAL SIMULATION</span>
+        <h2 class="section-sub-title">3D Avatar Fit & Fabric Drape Simulator</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Preview how heavy velvet vs. fluid silk charmeuse falls against your exact volumetric torso model.</p>
+
+        <div class="content-card" style="background: linear-gradient(135deg, #FAF8F9 0%, #F5EEF0 100%);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div>
+              <span class="kpi-card-pill rose" style="margin-bottom: 8px; display: inline-block;">AVATAR #VIP-MANASA-3D</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 6px;">3D Volumetric Mesh Render Ready</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Calibrated with Como Silk Velvet tension specs (420 g/m² weight rating).</p>
+              <div style="display: flex; gap: 8px;">
+                <button class="btn-outline-pill" onclick="showToast('Simulating Fluid Silk Fall...')"><i class="fa fa-rotate"></i> Silk Charmeuse</button>
+                <button class="btn-outline-pill" onclick="showToast('Simulating Velvet Drape...')"><i class="fa fa-rotate"></i> Como Silk Velvet</button>
+                <button class="btn-outline-pill" onclick="showToast('Simulating Wool Structure...')"><i class="fa fa-rotate"></i> Loro Piana Wool</button>
+              </div>
+            </div>
+            <div style="text-align: center; padding: 20px; background: #FFF; border-radius: 12px; border: 1px solid var(--card-border); box-shadow: var(--card-shadow);">
+              <i class="fa fa-person" style="font-size: 3.5rem; color: #821B3D; margin-bottom: 8px;"></i>
+              <div style="font-weight: 700; font-size: 0.85rem;">Zero Fitting Tension</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Optimal drape achieved</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: SCHEDULE IN-PERSON RE-MEASUREMENT -->
+      <section class="dashboard-section anim-fade-in delay-5" id="remeasurementSection">
+        <span class="section-badge-index">SECTION 05 · RE-MEASUREMENT</span>
+        <h2 class="section-sub-title">Schedule Master Tailor In-Person Re-Measurement</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Complimentary bi-annual re-measurements ensure your garments drape with bespoke perfection.</p>
+
+        <div class="content-card">
+          <form onsubmit="handleRemeasureSubmit(event)">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px;">
+              <div>
+                <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #4B4E5A; display: block; margin-bottom: 6px;">Salon Facility</label>
+                <select class="modal-select" required>
+                  <option>Salem Flagship Suite — VIP Salon 1</option>
+                  <option>Paris Montaigne Atelier — Suite 4</option>
+                  <option>Milan Galleria Suite — Duomo View</option>
+                  <option>New York Madison Suite — Penthouse</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #4B4E5A; display: block; margin-bottom: 6px;">Lead Master Tailor</label>
+                <select class="modal-select" required>
+                  <option>Master Tailor Marco (Salem)</option>
+                  <option>Amélie Laurent (Paris)</option>
+                  <option>Matteo Rossi (Milan)</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #4B4E5A; display: block; margin-bottom: 6px;">Preferred Date</label>
+                <input type="date" class="modal-input" value="2026-11-15" required>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <button type="submit" class="hero-action-btn">
+                Confirm Re-Measurement Slot <i class="fa fa-calendar-check"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="toast-popup" id="toastBox">
+    <i class="fa fa-circle-check" style="color: #F48FB1;"></i>
+    <span id="toastMsg">Success</span>
+  </div>
+
+  <script>
+    function scrollToRemount() {
+      document.getElementById('remeasurementSection').scrollIntoView({ behavior: 'smooth' });
+      showToast('Jumped to re-measurement booking');
+    }
+    function handleRemeasureSubmit(e) {
+      e.preventDefault();
+      showToast('Re-measurement appointment confirmed with Master Tailor Marco!');
+    }
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+  </script>
+</body>
+</html>

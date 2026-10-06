@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bespoke Fittings & Tailoring Suites — STACKLY VIP Atelier</title>
+  <meta name="description" content="Schedule private sessions in our Salem flagship salon or international suites in Paris, Milan & New York.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+
+  <!-- Google Fonts: Playfair Display & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/atelier-dashboard.css">
+</head>
+<body>
+
+  <!-- TOP WINE NAVIGATION -->
+  <header class="top-wine-header">
+    <div class="top-tier-primary">
+      <div class="brand-cluster">
+        <a href="dashboard.html" class="brand-logo-text">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          STACKLY
+        </a>
+        <div class="top-role-badge">
+          <span class="dot"></span>
+          <span>VIP CLIENT</span>
+        </div>
+        <div class="role-switcher-toggle">
+          <a href="bespoke-fittings.html" class="role-btn-toggle active"><i class="fa fa-user"></i> VIP Client</a>
+          <a href="store-overview.html" class="role-btn-toggle"><i class="fa fa-shield-halved"></i> Atelier Admin</a>
+        </div>
+      </div>
+      <div class="top-user-meta">
+        <span class="top-user-email">lingalamanasa123@gmail.com</span>
+        <div class="top-user-avatar" title="VIP Profile"><i class="fa fa-user"></i></div>
+      </div>
+    </div>
+    <div class="top-tier-secondary">
+      <div class="welcome-phrase">
+        Welcome, <strong>Lingalamanasa123</strong>
+        <span class="welcome-role-tag">VIP CLIENT</span>
+      </div>
+      <div class="current-tab-crumb">Bespoke Fittings</div>
+    </div>
+  </header>
+
+  <div class="dashboard-body-container">
+    <!-- SIDEBAR -->
+    <aside class="atelier-sidebar">
+      <div>
+        <div class="sidebar-section-label">YOUR ATELIER SUITE</div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="wardrobe-orders.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-box-archive"></i> My Wardrobe & Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="bespoke-fittings.html" class="sidebar-menu-btn active">
+              <span class="btn-inner"><i class="fa fa-scissors"></i> Bespoke Fittings</span>
+              <span class="dot-indicator"></span>
+            </a>
+          </li>
+          <li>
+            <a href="curated-wishlist.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-heart"></i> Curated Wishlist</span>
+            </a>
+          </li>
+          <li>
+            <a href="stylist-sessions.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-star"></i> Stylist Sessions</span>
+            </a>
+          </li>
+          <li>
+            <a href="vip-measurements.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-ruler-combined"></i> VIP Measurements</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-user-bottom">
+        <div class="sidebar-user-badge-card">
+          <div class="user-profile-row">
+            <div class="user-profile-circle"><i class="fa fa-user"></i></div>
+            <div class="user-profile-info">
+              <div class="user-profile-name">Lingalamanasa123</div>
+              <div class="user-profile-email">lingalamanasa123@gmail.com</div>
+            </div>
+          </div>
+          <a href="login.html" class="logout-btn-box" onclick="return confirm('Sign out of STACKLY?');">
+            <i class="fa fa-arrow-right-from-bracket"></i> LOGOUT
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEW: 5 SECTIONS -->
+    <main class="atelier-main">
+
+      <!-- SECTION 1: HERO & ACTION (MATCHING SCREENSHOT 1) -->
+      <section class="dashboard-section anim-fade-in delay-1">
+        <div class="section-header-row">
+          <div>
+            <span class="section-badge-index">02 · PRIVATE ATELIER SUITES</span>
+            <h1 class="section-main-title">Bespoke Fitting Appointments & Tailoring Suites</h1>
+            <p class="section-desc">Schedule private sessions in our Salem flagship salon or international suites in Paris, Milan & New York.</p>
+          </div>
+          <div>
+            <button class="hero-action-btn" onclick="openBookingModal()">
+              BOOK NEW SUITE SESSION <i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: 4 FITTING KPIS & SILHOUETTE STATISTICS -->
+      <section class="dashboard-section anim-fade-in delay-2">
+        <span class="section-badge-index">SECTION 02 · ATELIER METRICS</span>
+        <h2 class="section-sub-title" style="margin-bottom: 16px;">Global Suite Access & Fitting Progress</h2>
+        <div class="grid-4-col">
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">UPCOMING FITTINGS</span>
+              <span class="kpi-card-pill rose">Confirmed</span>
+            </div>
+            <div class="kpi-card-number">2</div>
+            <div class="kpi-card-desc">Sessions scheduled in Salem and Paris salons.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">COMPLETED FITTINGS</span>
+            </div>
+            <div class="kpi-card-number">8</div>
+            <div class="kpi-card-desc">Perfect silhouettes achieved this year.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">ALTERATION SPECS</span>
+            </div>
+            <div class="kpi-card-number">14</div>
+            <div class="kpi-card-desc">Custom pattern modifications archived.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">SALON SUITES ACCESS</span>
+            </div>
+            <div class="kpi-card-number">4</div>
+            <div class="kpi-card-desc">Global VIP access to private dressing suites.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: CONFIRMED SALON APPOINTMENTS (MATCHING SCREENSHOT 1) -->
+      <section class="dashboard-section anim-fade-in delay-3">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+          <div>
+            <span class="section-badge-index">SECTION 03 · CONFIRMED CALENDAR</span>
+            <h2 class="section-sub-title" style="margin-bottom: 0;">Confirmed Salon Appointments</h2>
+          </div>
+          <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 500;">Upcoming 30 Days</span>
+        </div>
+
+        <div class="grid-3-col">
+          <!-- Card 1 -->
+          <div class="content-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 200px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 0.70rem; font-weight: 700; color: #555967; text-transform: uppercase;">SALEM FLAGSHIP SUITE</span>
+                <span class="kpi-card-pill rose">• OCT 14</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.18rem; margin-bottom: 6px;">Autumn Gala Final Draping</h3>
+              <p style="font-size: 0.80rem; color: var(--text-muted); margin-bottom: 16px;">2:00 PM – 3:30 PM • Master Tailor Marco</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button class="btn-outline-pill" style="flex: 1; justify-content: center; padding: 7px 12px; font-size: 0.76rem;" onclick="openRescheduleModal('Autumn Gala Final Draping')">Reschedule</button>
+              <button class="hero-action-btn" style="flex: 1.2; justify-content: center; padding: 7px 14px; font-size: 0.76rem;" onclick="openPassModal('Salem Flagship Suite', 'Autumn Gala Final Draping', 'OCT 14, 2:00 PM – 3:30 PM', 'Master Tailor Marco')">View Suite Pass</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="content-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 200px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 0.70rem; font-weight: 700; color: #555967; text-transform: uppercase;">PARIS MONTAIGNE ATELIER</span>
+                <span class="kpi-card-pill rose">• NOV 02</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.18rem; margin-bottom: 6px;">Cashmere Blazer Sleeve Adjustment</h3>
+              <p style="font-size: 0.80rem; color: var(--text-muted); margin-bottom: 16px;">11:30 AM – 1:00 PM • Stylist Amélie</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button class="btn-outline-pill" style="flex: 1; justify-content: center; padding: 7px 12px; font-size: 0.76rem;" onclick="openRescheduleModal('Cashmere Blazer Sleeve Adjustment')">Reschedule</button>
+              <button class="hero-action-btn" style="flex: 1.2; justify-content: center; padding: 7px 14px; font-size: 0.76rem;" onclick="openPassModal('Paris Montaigne Atelier', 'Cashmere Blazer Sleeve Adjustment', 'NOV 02, 11:30 AM – 1:00 PM', 'Stylist Amélie')">View Suite Pass</button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="content-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 200px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 0.70rem; font-weight: 700; color: #555967; text-transform: uppercase;">MILAN GALLERIA SUITE</span>
+                <span class="kpi-card-pill amber">• DEC 18</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.18rem; margin-bottom: 6px;">Silk Charmeuse Gown Hemming</h3>
+              <p style="font-size: 0.80rem; color: var(--text-muted); margin-bottom: 16px;">4:00 PM – 5:15 PM • Senior Fitter Matteo</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button class="btn-outline-pill" style="flex: 1; justify-content: center; padding: 7px 12px; font-size: 0.76rem;" onclick="openRescheduleModal('Silk Charmeuse Gown Hemming')">Reschedule</button>
+              <button class="hero-action-btn" style="flex: 1.2; justify-content: center; padding: 7px 14px; font-size: 0.76rem;" onclick="openPassModal('Milan Galleria Suite', 'Silk Charmeuse Gown Hemming', 'DEC 18, 4:00 PM – 5:15 PM', 'Senior Fitter Matteo')">View Suite Pass</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: INTERACTIVE SUITE BOOKING & TAILOR SELECTION -->
+      <section class="dashboard-section anim-fade-in delay-4">
+        <span class="section-badge-index">SECTION 04 · INSTANT SUITE RESERVATION</span>
+        <h2 class="section-sub-title">Reserve a Private Global Atelier Suite</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Private fitting suites include champagne service, master draper attendance, and 360-degree mirrored lighting.</p>
+
+        <div class="content-card" style="background: #FFF; border: 1px solid var(--card-border);">
+          <form onsubmit="handleQuickBooking(event)">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px;">
+              <div>
+                <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #4B4E5A; display: block; margin-bottom: 6px;">Global Salon</label>
+                <select class="modal-select" style="width: 100%;" required>
+                  <option>Salem Flagship Suite — VIP Salon 1</option>
+                  <option>Paris Montaigne Atelier — Suite 4</option>
+                  <option>Milan Galleria Suite — Duomo View</option>
+                  <option>New York Madison Suite — Penthouse</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #4B4E5A; display: block; margin-bottom: 6px;">Fitting Session Type</label>
+                <select class="modal-select" style="width: 100%;" required>
+                  <option>Final Silhouette Draping</option>
+                  <option>Initial Basting Try-on</option>
+                  <option>Alteration & Hemming Adjust</option>
+                  <option>Master Tailor Measurement</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #4B4E5A; display: block; margin-bottom: 6px;">Preferred Date & Time</label>
+                <input type="datetime-local" class="modal-input" value="2026-10-24T14:30" style="width: 100%;" required>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <button type="submit" class="hero-action-btn">
+                Confirm & Add to Suite Pass <i class="fa fa-calendar-check"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- SECTION 5: FITTING ARCHIVES & TAILOR ANATOMICAL NOTES -->
+      <section class="dashboard-section anim-fade-in delay-5">
+        <span class="section-badge-index">SECTION 05 · SILHOUETTE ARCHIVE</span>
+        <h2 class="section-sub-title">Archived Fitting Notes & Tailor Adjustments</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Master patternmakers preserve an immutable record of posture adjustments, drape notes, and shoulder angle corrections.</p>
+
+        <div class="luxury-table-wrap">
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Salon Suite</th>
+                <th>Garment</th>
+                <th>Master Draper</th>
+                <th>Alteration Spec Record</th>
+                <th>Passcode</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sep 12, 2026</td>
+                <td>Salem Flagship</td>
+                <td>Black Tie Silk Tuxedo</td>
+                <td>Master Marco</td>
+                <td>Waist suppressed -1.2cm, collar raised +4mm</td>
+                <td><span class="kpi-card-pill rose">STK-FIT-9021</span></td>
+              </tr>
+              <tr>
+                <td>Jul 28, 2026</td>
+                <td>Paris Montaigne</td>
+                <td>Pleated Voile Gown</td>
+                <td>Amélie Laurent</td>
+                <td>Shoulder strap angle tilted 3° for posture balance</td>
+                <td><span class="kpi-card-pill rose">STK-FIT-8742</span></td>
+              </tr>
+              <tr>
+                <td>May 14, 2026</td>
+                <td>Milan Galleria</td>
+                <td>Double Breasted Blazer</td>
+                <td>Matteo Rossi</td>
+                <td>Armhole lowered 8mm for ease of movement</td>
+                <td><span class="kpi-card-pill rose">STK-FIT-8104</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- SUITE PASS MODAL -->
+  <div class="modal-overlay" id="modalSuitePass">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title">VIP Salon Suite Pass</div>
+        <button class="modal-close-btn" onclick="closeModal('modalSuitePass')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="background: linear-gradient(135deg, #1C050D 0%, #3B0D1C 100%); border-radius: 12px; padding: 22px; color: #FFF; border: 1px solid #821B3D;">
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(255,255,255,0.25); padding-bottom: 10px; margin-bottom: 14px;">
+            <div>
+              <div style="font-size: 0.68rem; color: #E8B4C4; letter-spacing: 0.1em; text-transform: uppercase;">STACKLY HAUTE COUTURE</div>
+              <div style="font-family: var(--font-serif); font-size: 1.15rem;" id="passLocTitle">Salem Flagship Suite</div>
+            </div>
+            <span class="top-role-badge" style="background: rgba(255,255,255,0.15);">VIP PASS</span>
+          </div>
+          <div style="margin-bottom: 12px;">
+            <div style="font-size: 0.70rem; color: rgba(255,255,255,0.7);">FITTING APPOINTMENT</div>
+            <div style="font-size: 1.1rem; font-weight: 700;" id="passAptTitle">Autumn Gala Final Draping</div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; font-size: 0.82rem;">
+            <div>
+              <div style="color: rgba(255,255,255,0.6); font-size: 0.68rem;">SCHEDULED TIME</div>
+              <div id="passTime">OCT 14, 2:00 PM – 3:30 PM</div>
+            </div>
+            <div>
+              <div style="color: rgba(255,255,255,0.6); font-size: 0.68rem;">MASTER TAILOR</div>
+              <div id="passArtisan">Master Tailor Marco</div>
+            </div>
+          </div>
+          <div style="border-top: 1px dashed rgba(255,255,255,0.25); padding-top: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 0.74rem;">
+            <span><i class="fa fa-qrcode" style="font-size: 1.6rem; vertical-align: middle; margin-right: 6px;"></i> Passcode: <strong>STK-VIP-8841</strong></span>
+            <span style="color: #E8B4C4;">Valet Reserved</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-outline-pill" onclick="window.print()">Print Pass</button>
+        <button class="hero-action-btn" style="padding: 8px 18px;" onclick="closeModal('modalSuitePass')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-popup" id="toastBox">
+    <i class="fa fa-circle-check" style="color: #F48FB1;"></i>
+    <span id="toastMsg">Success</span>
+  </div>
+
+  <script>
+    function openModal(id) { document.getElementById(id).classList.add('active'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+    function openBookingModal() { window.scrollTo({ top: 900, behavior: 'smooth' }); showToast('Jumped to Instant Suite Reservation'); }
+    function openPassModal(loc, title, time, artisan) {
+      document.getElementById('passLocTitle').textContent = loc;
+      document.getElementById('passAptTitle').textContent = title;
+      document.getElementById('passTime').textContent = time;
+      document.getElementById('passArtisan').textContent = artisan;
+      openModal('modalSuitePass');
+    }
+    function openRescheduleModal(title) {
+      showToast('Opening reschedule options for ' + title);
+    }
+    function handleQuickBooking(e) {
+      e.preventDefault();
+      showToast('Private Atelier Suite reserved! Check your calendar.');
+    }
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+  </script>
+</body>
+</html>

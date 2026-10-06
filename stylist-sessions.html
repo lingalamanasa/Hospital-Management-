@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylist Sessions & Private Consultations — STACKLY VIP Atelier</title>
+  <meta name="description" content="1-on-1 private consultations with Master Stylists, silhouette DNA analysis, wardrobe planning, and couture sketching.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+
+  <!-- Google Fonts: Playfair Display & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/atelier-dashboard.css">
+</head>
+<body>
+
+  <!-- TOP WINE NAVIGATION -->
+  <header class="top-wine-header">
+    <div class="top-tier-primary">
+      <div class="brand-cluster">
+        <a href="dashboard.html" class="brand-logo-text">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          STACKLY
+        </a>
+        <div class="top-role-badge">
+          <span class="dot"></span>
+          <span>VIP CLIENT</span>
+        </div>
+        <div class="role-switcher-toggle">
+          <a href="stylist-sessions.html" class="role-btn-toggle active"><i class="fa fa-user"></i> VIP Client</a>
+          <a href="store-overview.html" class="role-btn-toggle"><i class="fa fa-shield-halved"></i> Atelier Admin</a>
+        </div>
+      </div>
+      <div class="top-user-meta">
+        <span class="top-user-email">lingalamanasa123@gmail.com</span>
+        <div class="top-user-avatar" title="VIP Profile"><i class="fa fa-user"></i></div>
+      </div>
+    </div>
+    <div class="top-tier-secondary">
+      <div class="welcome-phrase">
+        Welcome, <strong>Lingalamanasa123</strong>
+        <span class="welcome-role-tag">VIP CLIENT</span>
+      </div>
+      <div class="current-tab-crumb">Stylist Sessions</div>
+    </div>
+  </header>
+
+  <div class="dashboard-body-container">
+    <!-- SIDEBAR -->
+    <aside class="atelier-sidebar">
+      <div>
+        <div class="sidebar-section-label">YOUR ATELIER SUITE</div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="wardrobe-orders.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-box-archive"></i> My Wardrobe & Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="bespoke-fittings.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-scissors"></i> Bespoke Fittings</span>
+            </a>
+          </li>
+          <li>
+            <a href="curated-wishlist.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-heart"></i> Curated Wishlist</span>
+            </a>
+          </li>
+          <li>
+            <a href="stylist-sessions.html" class="sidebar-menu-btn active">
+              <span class="btn-inner"><i class="fa fa-star"></i> Stylist Sessions</span>
+              <span class="dot-indicator"></span>
+            </a>
+          </li>
+          <li>
+            <a href="vip-measurements.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-ruler-combined"></i> VIP Measurements</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-user-bottom">
+        <div class="sidebar-user-badge-card">
+          <div class="user-profile-row">
+            <div class="user-profile-circle"><i class="fa fa-user"></i></div>
+            <div class="user-profile-info">
+              <div class="user-profile-name">Lingalamanasa123</div>
+              <div class="user-profile-email">lingalamanasa123@gmail.com</div>
+            </div>
+          </div>
+          <a href="login.html" class="logout-btn-box" onclick="return confirm('Sign out of STACKLY?');">
+            <i class="fa fa-arrow-right-from-bracket"></i> LOGOUT
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEW: 5 SECTIONS -->
+    <main class="atelier-main">
+
+      <!-- SECTION 1: HERO & STYLIST OVERVIEW -->
+      <section class="dashboard-section anim-fade-in delay-1">
+        <div class="section-header-row">
+          <div>
+            <span class="section-badge-index">SECTION 01 · COUTURE STYLING CONCIERGE</span>
+            <h1 class="section-main-title">Private Master Stylist Consultations</h1>
+            <p class="section-desc">Collaborate 1-on-1 with Parisian drapers and Salem master tailors to curate your seasonal capsule wardrobe and event looks.</p>
+          </div>
+          <div>
+            <button class="hero-action-btn" onclick="openBookingSession()">
+              BOOK STYLIST CONSULT <i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid-4-col">
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">NEXT SESSION</span>
+              <span class="kpi-card-pill rose">Confirmed</span>
+            </div>
+            <div class="kpi-card-number" style="font-size: 1.6rem; margin: 10px 0;">Nov 02, 11:30 AM</div>
+            <div class="kpi-card-desc">Paris Montaigne with Senior Stylist Amélie.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">HOURS COMPLETED</span>
+            </div>
+            <div class="kpi-card-number">24 hrs</div>
+            <div class="kpi-card-desc">Personal consultation archived this year.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">STYLE DNA PROFILE</span>
+              <span class="kpi-card-pill emerald">100% Active</span>
+            </div>
+            <div class="kpi-card-number">Grade A</div>
+            <div class="kpi-card-desc">Full posture, shoulder & hue calibration.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">CUSTOM SKETCHES</span>
+            </div>
+            <div class="kpi-card-number">8</div>
+            <div class="kpi-card-desc">Original gouache couture illustrations.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: MASTER STYLISTS & ARTISANS PROFILES -->
+      <section class="dashboard-section anim-fade-in delay-2">
+        <span class="section-badge-index">SECTION 02 · ATELIER ARTISANS</span>
+        <h2 class="section-sub-title">Your Assigned Master Stylists & Tailors</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Every VIP client is matched with a personal styling director and lead draping technician.</p>
+
+        <div class="grid-3-col">
+          <div class="content-card">
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+              <div style="width: 52px; height: 52px; border-radius: 50%; background: #62102A; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 700;">AL</div>
+              <div>
+                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 2px;">Amélie Laurent</h4>
+                <div style="font-size: 0.76rem; color: #821B3D; font-weight: 700; text-transform: uppercase;">Head of Haute Couture Styling</div>
+              </div>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 14px;">Former Paris Fashion Week draping director. Specializes in cascading silk charmeuse and gala eveningwear.</p>
+            <button class="btn-outline-pill" style="width: 100%; justify-content: center;" onclick="showToast('Requesting session with Amélie...')">
+              <i class="fa fa-calendar-plus"></i> Request Session
+            </button>
+          </div>
+
+          <div class="content-card">
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+              <div style="width: 52px; height: 52px; border-radius: 50%; background: #781636; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 700;">MM</div>
+              <div>
+                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 2px;">Master Marco</h4>
+                <div style="font-size: 0.76rem; color: #821B3D; font-weight: 700; text-transform: uppercase;">Salem Flagship Master Tailor</div>
+              </div>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 14px;">35 years master bespoke cutting. Specialist in Savile Row hand-canvassed construction and sharp silhouettes.</p>
+            <button class="btn-outline-pill" style="width: 100%; justify-content: center;" onclick="showToast('Requesting session with Master Marco...')">
+              <i class="fa fa-calendar-plus"></i> Request Session
+            </button>
+          </div>
+
+          <div class="content-card">
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+              <div style="width: 52px; height: 52px; border-radius: 50%; background: #821B3D; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 700;">MR</div>
+              <div>
+                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 2px;">Matteo Rossi</h4>
+                <div style="font-size: 0.76rem; color: #821B3D; font-weight: 700; text-transform: uppercase;">Milan Master Patternmaker</div>
+              </div>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 14px;">Italian precision draper. Specializes in luxury cashmere overcoats, tailoring ease, and architectural collars.</p>
+            <button class="btn-outline-pill" style="width: 100%; justify-content: center;" onclick="showToast('Requesting session with Matteo...')">
+              <i class="fa fa-calendar-plus"></i> Request Session
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: SCHEDULE 1-ON-1 VIRTUAL OR IN-PERSON CONSULTATION -->
+      <section class="dashboard-section anim-fade-in delay-3" id="bookingSection">
+        <span class="section-badge-index">SECTION 03 · RESERVATION</span>
+        <h2 class="section-sub-title">Book a 1-on-1 Private Styling Session</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Choose between high-definition 4K video consultation or an in-person salon appointment.</p>
+
+        <div class="content-card">
+          <form onsubmit="handleSessionSubmit(event)">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px;">
+              <div>
+                <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #4B4E5A; display: block; margin-bottom: 6px;">Format</label>
+                <select class="modal-select" required>
+                  <option>Private Salon Suite (Salem Flagship)</option>
+                  <option>Private Salon Suite (Paris Montaigne)</option>
+                  <option>4K Ultra-HD Video Consultation with Swatch Box</option>
+                  <option>Residence / Hotel Suite Call-out</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #4B4E5A; display: block; margin-bottom: 6px;">Consultation Focus</label>
+                <select class="modal-select" required>
+                  <option>Autumn Gala & Black Tie Lookbook</option>
+                  <option>Seasonal Capsule Wardrobe Planning</option>
+                  <option>Pre-Runway Fabric Selection</option>
+                  <option>Custom Embroidery & Monogramming</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; color: #4B4E5A; display: block; margin-bottom: 6px;">Preferred Date</label>
+                <input type="datetime-local" class="modal-input" value="2026-11-08T15:00" required>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <button type="submit" class="hero-action-btn">
+                Confirm Styling Session <i class="fa fa-calendar-check"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- SECTION 4: COLOR HARMONIZATION & STYLE DNA MATRIX -->
+      <section class="dashboard-section anim-fade-in delay-4">
+        <span class="section-badge-index">SECTION 04 · CHROMATIC HARMONY</span>
+        <h2 class="section-sub-title">Your Biometric Color Harmonization Matrix</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Calibrated under 5000K museum-grade light to perfectly flatter skin tone, contrast ratio, and eye coloration.</p>
+
+        <div class="grid-4-col">
+          <div class="content-card" style="border-top: 4px solid #6E1230;">
+            <div style="font-size: 0.70rem; font-weight: 700; color: #821B3D; text-transform: uppercase;">Primary Anchor</div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin: 4px 0 8px 0;">Imperial Burgundy</h4>
+            <p style="font-size: 0.78rem; color: var(--text-muted);">Optimal for evening gowns & velvet lapels. Accentuation score: 98%.</p>
+          </div>
+          <div class="content-card" style="border-top: 4px solid #1A2E3B;">
+            <div style="font-size: 0.70rem; font-weight: 700; color: #1A2E3B; text-transform: uppercase;">Secondary Anchor</div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin: 4px 0 8px 0;">Nocturne Midnight</h4>
+            <p style="font-size: 0.78rem; color: var(--text-muted);">Deep blue-black for structured tuxedos & cashmere overcoats.</p>
+          </div>
+          <div class="content-card" style="border-top: 4px solid #D4AF37;">
+            <div style="font-size: 0.70rem; font-weight: 700; color: #B45309; text-transform: uppercase;">Accent Metallic</div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin: 4px 0 8px 0;">Champagne Bullion</h4>
+            <p style="font-size: 0.78rem; color: var(--text-muted);">French gold-wire filigree for buttons, cufflinks & micro-piping.</p>
+          </div>
+          <div class="content-card" style="border-top: 4px solid #E8DFD8;">
+            <div style="font-size: 0.70rem; font-weight: 700; color: #6A6E7D; text-transform: uppercase;">Neutral Balance</div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin: 4px 0 8px 0;">Alabaster Faille</h4>
+            <p style="font-size: 0.78rem; color: var(--text-muted);">Crisp matte silk for internal linings, blouses & pocket squares.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: PAST STYLING SKETCHES & ARCHIVES -->
+      <section class="dashboard-section anim-fade-in delay-5">
+        <span class="section-badge-index">SECTION 05 · ORIGINAL ILLUSTRATIONS</span>
+        <h2 class="section-sub-title">Archived Haute Couture Sketches & Briefs</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Hand-drawn gouache sketches signed by your stylist, preserved in high-resolution digital format.</p>
+
+        <div class="luxury-table-wrap">
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>Sketch Ref</th>
+                <th>Concept Name</th>
+                <th>Lead Artist</th>
+                <th>Date Drawn</th>
+                <th>Commission Status</th>
+                <th>Dossier</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>SK-GOUACHE-112</strong></td>
+                <td>Autumn Gala Silhouette Drape</td>
+                <td>Amélie Laurent</td>
+                <td>Aug 14, 2026</td>
+                <td><span class="kpi-card-pill rose">In Atelier Production</span></td>
+                <td><button class="btn-outline-pill" style="padding: 4px 12px; font-size: 0.72rem;" onclick="showToast('Loading 4K Gouache Sketch...')">View Sketch</button></td>
+              </tr>
+              <tr>
+                <td><strong>SK-GOUACHE-094</strong></td>
+                <td>Cashmere Travel Trench Coat</td>
+                <td>Matteo Rossi</td>
+                <td>Jun 02, 2026</td>
+                <td><span class="kpi-card-pill emerald">Delivered to Client</span></td>
+                <td><button class="btn-outline-pill" style="padding: 4px 12px; font-size: 0.72rem;" onclick="showToast('Loading Spec Archive...')">Archived</button></td>
+              </tr>
+              <tr>
+                <td><strong>SK-GOUACHE-081</strong></td>
+                <td>Duchess Silk Evening Jumpsuit</td>
+                <td>Master Marco</td>
+                <td>Mar 20, 2026</td>
+                <td><span class="kpi-card-pill gray">Concept Approved</span></td>
+                <td><button class="btn-outline-pill" style="padding: 4px 12px; font-size: 0.72rem;" onclick="showToast('Commission Hold Active')">Hold Spec</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="toast-popup" id="toastBox">
+    <i class="fa fa-circle-check" style="color: #F48FB1;"></i>
+    <span id="toastMsg">Success</span>
+  </div>
+
+  <script>
+    function openBookingSession() {
+      document.getElementById('bookingSection').scrollIntoView({ behavior: 'smooth' });
+      showToast('Jumped to session booking');
+    }
+    function handleSessionSubmit(e) {
+      e.preventDefault();
+      showToast('Stylist session reserved! Confirmation dossier sent to your email.');
+    }
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Wardrobe & Orders — STACKLY VIP Atelier</title>
+  <meta name="description" content="View your bespoke wardrobe, handcrafted couture commissions, active production timelines, and private white-glove delivery tracking.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+
+  <!-- Google Fonts: Playfair Display & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/atelier-dashboard.css">
+</head>
+<body>
+
+  <!-- TOP WINE NAVIGATION -->
+  <header class="top-wine-header">
+    <div class="top-tier-primary">
+      <div class="brand-cluster">
+        <a href="dashboard.html" class="brand-logo-text">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          STACKLY
+        </a>
+        <div class="top-role-badge">
+          <span class="dot"></span>
+          <span>VIP CLIENT</span>
+        </div>
+        <div class="role-switcher-toggle">
+          <a href="wardrobe-orders.html" class="role-btn-toggle active"><i class="fa fa-user"></i> VIP Client</a>
+          <a href="store-overview.html" class="role-btn-toggle"><i class="fa fa-shield-halved"></i> Atelier Admin</a>
+        </div>
+      </div>
+      <div class="top-user-meta">
+        <span class="top-user-email">lingalamanasa123@gmail.com</span>
+        <div class="top-user-avatar" title="VIP Profile"><i class="fa fa-user"></i></div>
+      </div>
+    </div>
+    <div class="top-tier-secondary">
+      <div class="welcome-phrase">
+        Welcome, <strong>Lingalamanasa123</strong>
+        <span class="welcome-role-tag">VIP CLIENT</span>
+      </div>
+      <div class="current-tab-crumb">My Wardrobe & Orders</div>
+    </div>
+  </header>
+
+  <div class="dashboard-body-container">
+    <!-- SIDEBAR -->
+    <aside class="atelier-sidebar">
+      <div>
+        <div class="sidebar-section-label">YOUR ATELIER SUITE</div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="wardrobe-orders.html" class="sidebar-menu-btn active">
+              <span class="btn-inner"><i class="fa fa-box-archive"></i> My Wardrobe & Orders</span>
+              <span class="dot-indicator"></span>
+            </a>
+          </li>
+          <li>
+            <a href="bespoke-fittings.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-scissors"></i> Bespoke Fittings</span>
+            </a>
+          </li>
+          <li>
+            <a href="curated-wishlist.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-heart"></i> Curated Wishlist</span>
+            </a>
+          </li>
+          <li>
+            <a href="stylist-sessions.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-star"></i> Stylist Sessions</span>
+            </a>
+          </li>
+          <li>
+            <a href="vip-measurements.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-ruler-combined"></i> VIP Measurements</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-user-bottom">
+        <div class="sidebar-user-badge-card">
+          <div class="user-profile-row">
+            <div class="user-profile-circle"><i class="fa fa-user"></i></div>
+            <div class="user-profile-info">
+              <div class="user-profile-name">Lingalamanasa123</div>
+              <div class="user-profile-email">lingalamanasa123@gmail.com</div>
+            </div>
+          </div>
+          <a href="login.html" class="logout-btn-box" onclick="return confirm('Sign out of STACKLY?');">
+            <i class="fa fa-arrow-right-from-bracket"></i> LOGOUT
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEW: 5 SECTIONS -->
+    <main class="atelier-main">
+
+      <!-- SECTION 1: HERO & ORDERS METRIC SNAPSHOT -->
+      <section class="dashboard-section anim-fade-in delay-1">
+        <div class="section-header-row">
+          <div>
+            <span class="section-badge-index">SECTION 01 · CLIENT ATELIER OVERVIEW</span>
+            <h1 class="section-main-title">Haute Couture Wardrobe & Commission Orders</h1>
+            <p class="section-desc">Track real-time crafting status for bespoke gowns, tailored cashmere blazers, and custom embroidery crafted in Paris and Salem ateliers.</p>
+          </div>
+          <div>
+            <button class="hero-action-btn" onclick="showToast('Initiating new bespoke order inquiry...')">
+              COMMISSION NEW GARMENT <i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid-4-col">
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">ACTIVE COMMISSIONS</span>
+              <span class="kpi-card-pill rose">In Atelier</span>
+            </div>
+            <div class="kpi-card-number">3</div>
+            <div class="kpi-card-desc">Hand-tailored garments currently on artisan mannequins.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">WARDROBE ARCHIVE</span>
+            </div>
+            <div class="kpi-card-number">19</div>
+            <div class="kpi-card-desc">Archived bespoke pieces preserved in climate storage.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">ALTERATIONS PENDING</span>
+              <span class="kpi-card-pill amber">Express</span>
+            </div>
+            <div class="kpi-card-number">1</div>
+            <div class="kpi-card-desc">Hemming refinement for Autumn Gala gown.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">WHITE-GLOVE DISPATCH</span>
+              <span class="kpi-card-pill emerald">Scheduled</span>
+            </div>
+            <div class="kpi-card-number">1</div>
+            <div class="kpi-card-desc">Private courier delivery to Salem residence Oct 18.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: ACTIVE ATELIER COMMISSIONS & PRODUCTION PIPELINE -->
+      <section class="dashboard-section anim-fade-in delay-2">
+        <span class="section-badge-index">SECTION 02 · CRAFTING TIMELINE</span>
+        <h2 class="section-sub-title">Active Haute Couture Commission Pipelines</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Every piece undergoes 4 master stages: Silhouette Patterning, Raw Cut & Basting, Master Fitting, and Hand Finishing.</p>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <!-- Garment 1 -->
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <span class="kpi-card-pill rose" style="margin-bottom: 6px; display: inline-block;">ORDER #STK-8921 • SALEM FLAGSHIP</span>
+                <h3 style="font-family: var(--font-serif); font-size: 1.25rem;">Midnight Silk Velvet Gala Tuxedo Gown</h3>
+                <div style="font-size: 0.82rem; color: var(--text-muted);">Lead Artisan: Master Tailor Marco • Silk Imported from Como, Italy</div>
+              </div>
+              <div style="text-align: right;">
+                <span class="kpi-card-pill emerald" style="font-size: 0.78rem;">Stage 3 of 4: Master Fitting</span>
+                <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">Target Completion: Oct 18, 2026</div>
+              </div>
+            </div>
+            <div class="progress-track" style="margin-bottom: 10px;">
+              <div class="progress-fill" style="width: 75%;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.74rem; color: var(--text-muted);">
+              <span style="color: #A83256; font-weight: 700;"><i class="fa fa-check"></i> Pattern Cutting</span>
+              <span style="color: #A83256; font-weight: 700;"><i class="fa fa-check"></i> Basting Stitches</span>
+              <span style="color: #A83256; font-weight: 700;"><i class="fa fa-spinner fa-spin"></i> Final Fitting Refinement</span>
+              <span>Hand Press & White Glove Pack</span>
+            </div>
+          </div>
+
+          <!-- Garment 2 -->
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <span class="kpi-card-pill rose" style="margin-bottom: 6px; display: inline-block;">ORDER #STK-8934 • PARIS MONTAIGNE</span>
+                <h3 style="font-family: var(--font-serif); font-size: 1.25rem;">Double-Faced Cashmere Belted Trench Coat</h3>
+                <div style="font-size: 0.82rem; color: var(--text-muted);">Lead Stylist: Amélie Laurent • 100% Mongolian Cashmere in Camel Tone</div>
+              </div>
+              <div style="text-align: right;">
+                <span class="kpi-card-pill amber" style="font-size: 0.78rem;">Stage 2 of 4: Raw Cut & Basting</span>
+                <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">Target Completion: Nov 05, 2026</div>
+              </div>
+            </div>
+            <div class="progress-track" style="margin-bottom: 10px;">
+              <div class="progress-fill" style="width: 48%;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.74rem; color: var(--text-muted);">
+              <span style="color: #A83256; font-weight: 700;"><i class="fa fa-check"></i> Pattern Cutting</span>
+              <span style="color: #A83256; font-weight: 700;"><i class="fa fa-spinner fa-spin"></i> Hand Basting</span>
+              <span>First Fitting Session</span>
+              <span>Lining Hand-Stitch & Delivery</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: ARCHIVED HAUTE COUTURE PIECES & CARE GUIDE -->
+      <section class="dashboard-section anim-fade-in delay-3">
+        <span class="section-badge-index">SECTION 03 · PERPETUAL VAULT</span>
+        <h2 class="section-sub-title">Your Archived Haute Couture Wardrobe</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Access high-resolution pattern specs, climate control preservation status, and request annual dry refresh.</p>
+
+        <div class="grid-3-col">
+          <div class="content-card">
+            <span class="kpi-card-pill gray" style="font-size: 0.68rem; margin-bottom: 8px; display: inline-block;">COMPLETED MAY 2026</span>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 6px;">Silk Charmeuse Pleated Gown</h4>
+            <p style="font-size: 0.80rem; color: var(--text-muted); margin-bottom: 14px;">Worn at Venice Biennale. Archived in Salem VIP climate room #2.</p>
+            <button class="btn-outline-pill" style="width: 100%; justify-content: center;" onclick="showToast('Requesting Vault Refresh...')">
+              <i class="fa fa-sparkles"></i> Request Vault Refresh
+            </button>
+          </div>
+          <div class="content-card">
+            <span class="kpi-card-pill gray" style="font-size: 0.68rem; margin-bottom: 8px; display: inline-block;">COMPLETED FEB 2026</span>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 6px;">Hand-Embroidered Velvet Kimono</h4>
+            <p style="font-size: 0.80rem; color: var(--text-muted); margin-bottom: 14px;">Gold-wire bullion embroidery with French silk lining.</p>
+            <button class="btn-outline-pill" style="width: 100%; justify-content: center;" onclick="showToast('Viewing pattern archive...')">
+              <i class="fa fa-file-lines"></i> View Pattern Specs
+            </button>
+          </div>
+          <div class="content-card">
+            <span class="kpi-card-pill gray" style="font-size: 0.68rem; margin-bottom: 8px; display: inline-block;">COMPLETED NOV 2025</span>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 6px;">Virgin Wool Hourglass Blazer</h4>
+            <p style="font-size: 0.80rem; color: var(--text-muted); margin-bottom: 14px;">Horn buttons, peaked lapels with custom silhouette shoulder padding.</p>
+            <button class="btn-outline-pill" style="width: 100%; justify-content: center;" onclick="showToast('Requesting alteration...')">
+              <i class="fa fa-scissors"></i> Request Alteration
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: ALTERATIONS & REPAIR LOG -->
+      <section class="dashboard-section anim-fade-in delay-4">
+        <span class="section-badge-index">SECTION 04 · REFINEMENT & ALTERATIONS</span>
+        <h2 class="section-sub-title">Garment Alteration & Silhouette Refit Log</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Submit complimentary VIP adjustments for any garment within 24 months of atelier crafting.</p>
+
+        <div class="luxury-table-wrap">
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>Garment Name</th>
+                <th>Request Type</th>
+                <th>Salon Suite</th>
+                <th>Assigned Artisan</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Autumn Gala Final Gown</strong></td>
+                <td>Waist Drape Nipping (-1.5 cm)</td>
+                <td>Salem Flagship</td>
+                <td>Master Marco</td>
+                <td><span class="kpi-card-pill rose">In Progress</span></td>
+                <td><button class="btn-outline-pill" style="padding: 4px 12px; font-size: 0.72rem;" onclick="showToast('Opening Alteration Specs')">View Spec</button></td>
+              </tr>
+              <tr>
+                <td><strong>Cashmere Blazer Sleeves</strong></td>
+                <td>Sleeve Shortening & Button Shift</td>
+                <td>Paris Montaigne</td>
+                <td>Amélie Laurent</td>
+                <td><span class="kpi-card-pill emerald">Ready for Pickup</span></td>
+                <td><button class="btn-outline-pill" style="padding: 4px 12px; font-size: 0.72rem;" onclick="showToast('Suite Pass Generated')">Pass</button></td>
+              </tr>
+              <tr>
+                <td><strong>Pleated Evening Skirt</strong></td>
+                <td>Hem Re-leveling for 100mm Stilettos</td>
+                <td>Milan Galleria</td>
+                <td>Matteo Rossi</td>
+                <td><span class="kpi-card-pill gray">Completed</span></td>
+                <td><button class="btn-outline-pill" style="padding: 4px 12px; font-size: 0.72rem;" onclick="showToast('Viewing Archive')">Archived</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 5: WHITE-GLOVE DISPATCH & DELIVERY PASS -->
+      <section class="dashboard-section anim-fade-in delay-5">
+        <div class="section-header-row">
+          <div>
+            <span class="section-badge-index">SECTION 05 · LOGISTICS CONCIERGE</span>
+            <h2 class="section-sub-title">White-Glove Private Courier Manifest</h2>
+            <p class="section-desc">Track insured, temperature-controlled delivery direct to your residence or private yacht suite.</p>
+          </div>
+          <div>
+            <button class="btn-outline-pill" onclick="showToast('Updating delivery instructions...')">
+              <i class="fa fa-location-dot"></i> Update Delivery Address
+            </button>
+          </div>
+        </div>
+
+        <div class="content-card" style="background: linear-gradient(135deg, #FFF 0%, #FDF2F5 100%); border-color: #E8B4C4;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 18px;">
+              <div style="width: 50px; height: 50px; border-radius: 50%; background: #A83256; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                <i class="fa fa-truck-fast"></i>
+              </div>
+              <div>
+                <span class="kpi-card-pill rose" style="font-size: 0.70rem;">DISPATCH MANIFEST #WG-8841-SALEM</span>
+                <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-top: 4px;">Insured Courier Delivery in Progress</h4>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">ETA: Friday, October 18, 2026 between 11:00 AM – 1:00 PM</p>
+              </div>
+            </div>
+            <button class="hero-action-btn" onclick="showToast('Displaying real-time courier GPS coordinates...')">
+              LIVE COURIER TRACKING <i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="toast-popup" id="toastBox">
+    <i class="fa fa-circle-check" style="color: #F48FB1;"></i>
+    <span id="toastMsg">Success</span>
+  </div>
+
+  <script>
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+  </script>
+</body>
+</html>

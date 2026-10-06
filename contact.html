@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us & Request Live Demo — Stackly Health | Global Healthcare ERP</title>
+  <meta name="description" content="Get in touch with Stackly Health's clinical technology advisors. Schedule a live demo for your hospital, clinic, diagnostic lab, or pharmacy.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/svg+xml">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+
+  <style>
+        /* ===== STACKLY ANIMATED PRELOADER ===== */
+    #stackly-preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: radial-gradient(circle at center, #0F172A 0%, #070B14 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s ease;
+    }
+    #stackly-preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .pl-anim-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .pl-pulse-orb {
+      position: relative;
+      width: 76px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pl-ring-outer {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top-color: #38BDF8;
+      border-right-color: #38BDF8;
+      animation: plSpinOuter 1.4s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+    }
+    .pl-ring-inner {
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      border: 2px dashed rgba(59, 130, 246, 0.6);
+      border-bottom-color: #2563EB;
+      animation: plSpinInner 2s linear infinite reverse;
+    }
+    .pl-icon-center {
+      position: relative;
+      z-index: 2;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1E40AF, #0284C7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 1.3rem;
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.6);
+      animation: plHeartbeat 1.25s ease-in-out infinite;
+    }
+    .pl-ecg {
+      width: 140px;
+      height: 28px;
+      overflow: visible;
+    }
+    .pl-ecg-bg {
+      fill: none;
+      stroke: rgba(56, 189, 248, 0.15);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .pl-ecg-wave {
+      fill: none;
+      stroke: #38BDF8;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      filter: drop-shadow(0 0 6px #38BDF8);
+      animation: plEcgDraw 1.5s ease-in-out infinite;
+    }
+    .pl-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #FFFFFF, #BAE6FD);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.04em;
+    }
+    .pl-bar {
+      width: 130px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .pl-bar-fill {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 35%;
+      background: linear-gradient(90deg, #2563EB, #38BDF8);
+      border-radius: 999px;
+      animation: plBarProgress 1.4s ease-in-out infinite;
+    }
+    @keyframes plSpinOuter {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes plSpinInner {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes plHeartbeat {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 16px rgba(56, 189, 248, 0.5); }
+      14% { transform: scale(1.15); box-shadow: 0 0 28px rgba(56, 189, 248, 0.9); }
+      28% { transform: scale(1.02); box-shadow: 0 0 18px rgba(56, 189, 248, 0.6); }
+      42% { transform: scale(1.12); box-shadow: 0 0 26px rgba(56, 189, 248, 0.85); }
+    }
+    @keyframes plEcgDraw {
+      0% { stroke-dashoffset: 200; opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { stroke-dashoffset: -200; opacity: 0; }
+    }
+    @keyframes plBarProgress {
+      0% { left: -35%; width: 30%; }
+      50% { width: 60%; }
+      100% { left: 100%; width: 30%; }
+    }
+  </style>
+
+</head>
+<body>
+    <!-- ===== STACKLY ANIMATED PRELOADER ===== -->
+  <div id="stackly-preloader" role="status" aria-label="Loading">
+    <div class="pl-anim-container">
+      <div class="pl-pulse-orb">
+        <div class="pl-ring-outer"></div>
+        <div class="pl-ring-inner"></div>
+        <div class="pl-icon-center">
+          <i class="fa fa-heart-pulse"></i>
+        </div>
+      </div>
+      <svg class="pl-ecg" viewBox="0 0 180 36">
+        <path class="pl-ecg-bg" d="M 0,18 L 50,18 L 60,6 L 70,30 L 80,3 L 90,32 L 100,18 L 180,18" />
+        <path class="pl-ecg-wave" d="M 0,18 L 50,18 L 60,6 L 70,30 L 80,3 L 90,32 L 100,18 L 180,18" />
+      </svg>
+    </div>
+    <div class="pl-label">Stackly Support & Care</div>
+    <div class="pl-bar"><div class="pl-bar-fill"></div></div>
+  </div>
+
+  <script>
+    (function() {
+      var pl = document.getElementById('stackly-preloader');
+      function hide() { if (pl) pl.classList.add('hidden'); }
+      window.addEventListener('load', function() { setTimeout(hide, 800); });
+      setTimeout(hide, 2500);
+    })();
+  </script>
+
+  <!-- ===================== TOPBAR ===================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <div class="topbar-item">
+          <i class="fa fa-phone-alt" style="color: var(--accent-teal);"></i>
+          <span>Clinical Emergency Line: <a href="tel:+18005550199">+1 (800) 555-0199</a></span>
+        </div>
+        <div class="topbar-item">
+          <i class="fa fa-envelope" style="color: var(--accent-teal);"></i>
+          <a href="mailto:contact@stacklyhealth.com">contact@stacklyhealth.com</a>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <span class="topbar-badge"><i class="fa fa-clock"></i> Avg Response: 12 Mins</span>
+        <div class="topbar-item"><a href="login.html"><i class="fa fa-lock"></i> Staff Login</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo" aria-label="Stackly Health Home">
+          <img src="assets/images/stackly-logo.png" alt="Stackly Health Logo">
+          <span class="brand-badge">Health ERP</span>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="login.html" class="btn btn-outline btn-sm"><i class="fa fa-arrow-right-to-bracket"></i> Login</a>
+          <a href="signup.html" class="btn btn-primary btn-sm"><i class="fa fa-user-plus"></i> Signup</a>
+          <button class="mobile-toggle" aria-label="Toggle menu"><i class="fa fa-bars"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== 1. CONTACT HERO SECTION ===================== -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 20px;">
+        <span class="section-badge"><i class="fa fa-headset"></i> Healthcare Advisory</span>
+        <h1 class="hero-title">Connect with Our <span class="text-gradient">Clinical Technology Experts</span></h1>
+        <p class="section-desc">Whether you need an on-site hospital demonstration, architectural integration consultation, or emergency technical support, our healthcare team is standing by.</p>
+      </div>
+
+      <div style="width: 100%; margin-top: 20px; margin-bottom: 24px;">
+        <img src="assets/images/contact-hero.webp" alt="Stackly Clinical Technology Advisory Team" style="width: 100%; height: 380px; object-fit: cover; border-radius: var(--radius-lg); display: block; box-shadow: var(--shadow-md);">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. MULTI-CHANNEL CONTACT CARDS ===================== -->
+  <section class="section-padding bg-light" style="padding-top: 0;">
+    <div class="container">
+      <div class="sectors-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/surgery-ot.webp" alt="Emergency Desk" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div class="sector-icon" style="background: #FEF2F2; color: #DC2626;"><i class="fa fa-phone-volume"></i></div>
+          <h4>Clinical Emergency Desk</h4>
+          <p>For live hospital servers, ICU monitoring disruptions, or pharmacy dispatch emergencies.</p>
+          <a href="404.html" style="font-weight: 700; color: #DC2626;">+1 (800) 555-0199</a>
+        </div>
+
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/hospital-building.webp" alt="Licensing & Sales" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div class="sector-icon"><i class="fa fa-building-circle-check"></i></div>
+          <h4>Hospital Licensing & Sales</h4>
+          <p>Custom multi-branch enterprise pricing, bed-capacity tiers, and on-premise hybrid setups.</p>
+          <a href="404.html" style="font-weight: 700; color: var(--primary);">sales@stacklyhealth.com</a>
+        </div>
+
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/lab-analyzer.webp" alt="LIMS Interfacing" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div class="sector-icon" style="background: #ECFDF5; color: #059669;"><i class="fa fa-microchip"></i></div>
+          <h4>LIMS & Analyzer APIs</h4>
+          <p>Technical interfacing team for diagnostic analyzer drivers, DICOM PACS, and HL7/FHIR feeds.</p>
+          <a href="404.html" style="font-weight: 700; color: #059669;">api-support@stacklyhealth.com</a>
+        </div>
+
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/medical-board-press.webp" alt="Medical Board Meeting" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div class="sector-icon" style="background: #FAF5FF; color: #9333EA;"><i class="fa fa-newspaper"></i></div>
+          <h4>Press & Medical Board</h4>
+          <p>Clinical study collaborations, hospital accreditations, and keynote symposium invites.</p>
+          <a href="404.html" style="font-weight: 700; color: #9333EA;">advisory@stacklyhealth.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. INTERACTIVE HOSPITAL DEMO BOOKING FORM ===================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-form-card">
+          <span class="topbar-badge" style="margin-bottom: 12px;">Live Demonstration</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 8px;">Schedule a Tailored Healthcare Demo</h2>
+          <p style="color: var(--gray-500); margin-bottom: 28px;">Our clinical solutions architect will prepare a custom walkthrough focused on your hospital's specialty, departments, and bed capacity.</p>
+
+          <form id="hospitalDemoForm" onsubmit="event.preventDefault(); document.getElementById('demoFeedback').style.display='block';">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label">Full Name *</label>
+                <input type="text" class="form-control" placeholder="Dr. Sarah Jenkins" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Official Work Email *</label>
+                <input type="email" class="form-control" placeholder="s.jenkins@cityhospital.org" required>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label">Hospital / Organization Name *</label>
+                <input type="text" class="form-control" placeholder="City General Hospital" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Facility Type</label>
+                <select class="form-control">
+                  <option>Multi-Specialty Hospital</option>
+                  <option>Super-Specialty Tertiary Care</option>
+                  <option>Day Care Surgical Center</option>
+                  <option>Diagnostic & Pathology Lab Chain</option>
+                  <option>Single / Multi-Doctor Polyclinic</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label">Bed Capacity</label>
+                <select class="form-control">
+                  <option>Daycare / Clinic (No Beds)</option>
+                  <option>Under 50 Beds</option>
+                  <option>50 - 150 Beds</option>
+                  <option>150 - 300 Beds</option>
+                  <option>300+ Enterprise Beds</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Preferred Demo Date</label>
+                <input type="date" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Modules of Interest (Select All That Apply)</label>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; font-size: 0.85rem; color: #475569; margin-top: 8px;">
+                <label><input type="checkbox" checked> OPD / IPD Beds</label>
+                <label><input type="checkbox" checked> Doctor EMR</label>
+                <label><input type="checkbox" checked> Lab (LIMS)</label>
+                <label><input type="checkbox" checked> Pharmacy POS</label>
+                <label><input type="checkbox"> Telehealth</label>
+                <label><input type="checkbox"> TPA Insurance</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Specific Hospital Challenges or Inquiries</label>
+              <textarea class="form-control" rows="3" placeholder="Tell us about your current software, migration needs, or integration requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <i class="fa fa-calendar-check"></i> Confirm Demo Request
+            </button>
+          </form>
+
+          <div id="demoFeedback" style="display: none; margin-top: 20px; background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; padding: 16px; border-radius: 10px;">
+            <i class="fa fa-check-circle" style="font-size: 1.2rem; vertical-align: middle;"></i>
+            <strong>Demo Confirmed!</strong> A senior healthcare consultant will review your facility requirements and send the calendar invitation link within 15 minutes.
+          </div>
+        </div>
+
+        <!-- Sidebar Info -->
+        <div class="info-cards-stack">
+          <img src="assets/images/doctor-consult.webp" alt="Personalized Clinical Walkthrough" class="showcase-photo" style="height: 180px; margin-bottom: 20px;">
+          <div class="info-box">
+            <div class="info-icon"><i class="fa fa-clock"></i></div>
+            <div>
+              <h4>Rapid Response Guarantee</h4>
+              <p style="font-size: 0.85rem; color: #64748B;">Our dedicated medical systems team reviews all hospital inquiries in under 15 minutes during operating hours.</p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-icon" style="background: #ECFDF5; color: #059669;"><i class="fa fa-shield-halved"></i></div>
+            <div>
+              <h4>Confidential NDA Standard</h4>
+              <p style="font-size: 0.85rem; color: #64748B;">All hospital data, patient bed metrics, and existing IT infrastructure details are held strictly under mutual non-disclosure.</p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-icon" style="background: #FAF5FF; color: #9333EA;"><i class="fa fa-laptop-medical"></i></div>
+            <div>
+              <h4>Zero-Obligation Sandbox</h4>
+              <p style="font-size: 0.85rem; color: #64748B;">Test Stackly Health in your own test staging environment with dummy patient and bed data for 14 days free.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. GLOBAL HEADQUARTERS & REGIONAL HUBS ===================== -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa fa-earth-americas"></i> Worldwide Presence</span>
+        <h2 class="section-title">Our Global <span class="text-gradient">Healthcare Hubs</span></h2>
+        <p class="section-desc">Engineering and clinical deployment offices across primary global medical corridors.</p>
+      </div>
+
+      <div class="sectors-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/hospital-building.webp" alt="North America HQ" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 120px; object-fit: cover;">
+          <h4>North America (HQ)</h4>
+          <p style="font-size: 0.85rem; color: #64748B;">Silicon Healthcare Hub<br>750 Tech Boulevard, Suite 400<br>Palo Alto, CA 94025, USA</p>
+          <a href="404.html" style="font-size: 0.8rem; font-weight: 600; color: var(--primary); text-decoration: none; display: inline-block;">+1 (800) 555-0199</a>
+        </div>
+
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/clinic-poly.webp" alt="Harley Street UK" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 120px; object-fit: cover;">
+          <h4>United Kingdom & Europe</h4>
+          <p style="font-size: 0.85rem; color: #64748B;">Harley Street Medical Quarter<br>42 Cavendish Square<br>London W1G 0PR, UK</p>
+          <a href="404.html" style="font-size: 0.8rem; font-weight: 600; color: var(--primary); text-decoration: none; display: inline-block;">+44 20 7946 0991</a>
+        </div>
+
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/nabh-hospital.webp" alt="Dubai Healthcare City" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 120px; object-fit: cover;">
+          <h4>Middle East Hub</h4>
+          <p style="font-size: 0.85rem; color: #64748B;">Dubai Healthcare City (DHCC)<br>Building 64, Al Razi Complex<br>Dubai, United Arab Emirates</p>
+          <a href="404.html" style="font-size: 0.8rem; font-weight: 600; color: var(--primary); text-decoration: none; display: inline-block;">+971 4 391 0000</a>
+        </div>
+
+        <div class="sector-card" style="padding-top: 0; overflow: hidden;">
+          <img src="assets/images/lab-analyzer.webp" alt="Bangalore Lab" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 120px; object-fit: cover;">
+          <h4>Asia Pacific Hub</h4>
+          <p style="font-size: 0.85rem; color: #64748B;">HealthTech TechPark<br>Block 4, Outer Ring Road<br>Bangalore, Karnataka 560103, India</p>
+          <a href="404.html" style="font-size: 0.8rem; font-weight: 600; color: var(--primary); text-decoration: none; display: inline-block;">+91 80 4910 8800</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. LOCATION MAP SECTION ===================== -->
+  <section class="section-padding bg-white" id="location-map" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa fa-location-dot"></i> Find Us</span>
+        <h2 class="section-title">Our <span class="text-gradient">Primary Healthcare Office</span></h2>
+        <p class="section-desc">Visit our regional headquarters or connect with our nearest clinical advisory hub.</p>
+      </div>
+
+      <!-- Location Info Bar -->
+      <div style="
+        background: #fff;
+        border: 1.5px solid #E2E8F0;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        padding: 22px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        z-index: 2;
+      ">
+        <!-- Pin badge -->
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="
+            background: linear-gradient(135deg, var(--primary) 0%, #7C3AED 100%);
+            color: #fff;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99,102,241,0.35);
+          "><i class="fa fa-location-dot"></i></div>
+          <div>
+            <div style="font-weight: 700; font-size: 1.05rem; color: var(--dark-900);">Stackly Health — Asia Pacific Hub</div>
+            <div style="font-size: 0.85rem; color: #64748B;">HealthTech TechPark, Block 4, Outer Ring Road, Bangalore, Karnataka 560103, India</div>
+          </div>
+        </div>
+
+        <!-- Status & Buttons -->
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <span class="status-badge confirmed" style="font-size: 0.8rem;">
+            <i class="fa fa-circle" style="font-size: 0.55rem;"></i> Mon – Sat, 9 AM – 7 PM IST
+          </span>
+          <a
+            href="404.html"
+            class="btn btn-outline btn-sm"
+            id="getDirectionsBtn"
+            style="display: inline-flex; align-items: center; gap: 6px;"
+          >
+            <i class="fa fa-diamond-turn-right"></i> Get Directions
+          </a>
+          <a
+            href="404.html"
+            class="btn btn-primary btn-sm"
+            id="bookAppointmentMapBtn"
+            style="display: inline-flex; align-items: center; gap: 6px;"
+          >
+            <i class="fa fa-calendar-check"></i> Book Appointment
+          </a>
+        </div>
+      </div>
+
+      <!-- OpenStreetMap Embed -->
+      <div style="
+        width: 100%;
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+        overflow: hidden;
+        border: 1.5px solid #E2E8F0;
+        border-top: none;
+        box-shadow: var(--shadow-md);
+        position: relative;
+      ">
+        <!-- Primary Atelier Tag -->
+        <div style="
+          position: absolute;
+          top: 16px; left: 16px;
+          z-index: 10;
+          background: var(--primary);
+          color: #fff;
+          font-size: 0.78rem;
+          font-weight: 700;
+          padding: 6px 14px;
+          border-radius: 20px;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          box-shadow: 0 4px 14px rgba(99,102,241,0.4);
+          letter-spacing: 0.3px;
+        ">
+          <i class="fa fa-building-columns"></i> PRIMARY OFFICE
+        </div>
+
+        <iframe
+          id="hospitalMapFrame"
+          title="Stackly Health Asia Pacific Hub Location"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=77.5246%2C12.9116%2C77.6246%2C12.9716&amp;layer=mapnik&amp;marker=12.9416%2C77.5746"
+          style="width: 100%; height: 420px; border: none; display: block;"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+
+        <!-- Map note -->
+        <div style="
+          background: #F8FAFC;
+          padding: 10px 20px;
+          font-size: 0.78rem;
+          color: #94A3B8;
+          text-align: center;
+          border-top: 1px solid #E2E8F0;
+        ">
+          Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener" style="color: var(--primary);">OpenStreetMap</a> contributors. All office visits are by prior appointment only.
+        </div>
+      </div>
+
+      <!-- Quick Info Tiles below map -->
+      <div style="
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 24px;
+        margin-bottom: 40px;
+      ">
+        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-md); padding: 20px; display: flex; align-items: flex-start; gap: 14px;">
+          <div style="background: #EEF2FF; color: var(--primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <i class="fa fa-plane-arrival"></i>
+          </div>
+          <div>
+            <div style="font-weight: 700; font-size: 0.95rem; color: var(--dark-900); margin-bottom: 4px;">Nearest Airport</div>
+            <div style="font-size: 0.83rem; color: #64748B;">Kempegowda International Airport (BLR) — ~35 km, ~50 min drive</div>
+          </div>
+        </div>
+        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-md); padding: 20px; display: flex; align-items: flex-start; gap: 14px;">
+          <div style="background: #ECFDF5; color: #059669; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <i class="fa fa-train-subway"></i>
+          </div>
+          <div>
+            <div style="font-weight: 700; font-size: 0.95rem; color: var(--dark-900); margin-bottom: 4px;">Nearest Metro</div>
+            <div style="font-size: 0.83rem; color: #64748B;">Marathahalli Metro Station (Purple Line) — ~1.2 km, 5 min walk</div>
+          </div>
+        </div>
+        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-md); padding: 20px; display: flex; align-items: flex-start; gap: 14px;">
+          <div style="background: #FAF5FF; color: #9333EA; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <i class="fa fa-square-parking"></i>
+          </div>
+          <div>
+            <div style="font-weight: 700; font-size: 0.95rem; color: var(--dark-900); margin-bottom: 4px;">Parking Available</div>
+            <div style="font-size: 0.83rem; color: #64748B;">Free basement parking for 200+ vehicles. Valet available on request.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. INTERACTIVE MAP & BRANCH LOCATOR ===================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="showcase-card" style="padding: 0;">
+        <div class="showcase-content" style="padding: 40px;">
+          <span class="topbar-badge" style="width: fit-content; margin-bottom: 12px;">Active Data Centers</span>
+          <h3 style="font-size: 2rem; margin-bottom: 16px;">Geo-Distributed High-Throughput Nodes</h3>
+          <p style="color: var(--gray-500); margin-bottom: 20px;">All hospital transactions are served with under 25ms latency via tier-4 AWS and Azure HIPAA-compliant cloud regions.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <span class="status-badge confirmed"><i class="fa fa-circle"></i> US-East (Virginia)</span>
+            <span class="status-badge confirmed"><i class="fa fa-circle"></i> EU-Central (Frankfurt)</span>
+            <span class="status-badge confirmed"><i class="fa fa-circle"></i> ME-South (Dubai)</span>
+            <span class="status-badge confirmed"><i class="fa fa-circle"></i> AP-South (Mumbai)</span>
+          </div>
+        </div>
+        <div class="showcase-preview" style="background: #0B0F19; color: #fff; text-align: center; padding: 20px;">
+          <img src="assets/images/encryption-lock.webp" alt="Encrypted Healthcare Cloud" class="showcase-photo" style="height: 160px; margin-bottom: 14px;">
+          <h4 style="color: #fff; margin-bottom: 6px;">Global Mesh Active</h4>
+          <p style="font-size: 0.85rem; color: #94A3B8;">256-bit encrypted inter-hospital data routing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. SUPPORT SLA & DEDICATED HEALTHCARE DESK ===================== -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa fa-certificate"></i> Enterprise SLA</span>
+        <h2 class="section-title">Our Uncompromising <span class="text-gradient">Service Level Agreement</span></h2>
+        <p class="section-desc">We recognize that in healthcare, software uptime is a patient safety imperative.</p>
+      </div>
+
+      <div class="sectors-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="sector-card" style="text-align: center; padding-top: 0; overflow: hidden;">
+          <img src="assets/images/ot-lights.webp" alt="15-Min Response" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div style="font-size: 1.8rem; color: #DC2626; margin-bottom: 8px;"><i class="fa fa-bell-concierge"></i></div>
+          <h4>15-Min Critical Response</h4>
+          <p style="font-size: 0.85rem; color: #64748B;">For Severity-1 incidents impacting patient triage, ICU beds, or surgical suites.</p>
+        </div>
+
+        <div class="sector-card" style="text-align: center; padding-top: 0; overflow: hidden;">
+          <img src="assets/images/doctor-consult.webp" alt="Account Lead" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div style="font-size: 1.8rem; color: var(--primary); margin-bottom: 8px;"><i class="fa fa-user-tie"></i></div>
+          <h4>Dedicated Clinical Account Lead</h4>
+          <p style="font-size: 0.85rem; color: #64748B;">A named health informatics specialist assigned to coordinate doctor training and updates.</p>
+        </div>
+
+        <div class="sector-card" style="text-align: center; padding-top: 0; overflow: hidden;">
+          <img src="assets/images/bi-analytics.webp" alt="Health Monitoring" class="card-img-top" style="margin: 0 -26px 14px; width: calc(100% + 52px); height: 130px; object-fit: cover;">
+          <div style="font-size: 1.8rem; color: #059669; margin-bottom: 8px;"><i class="fa fa-shield-halved"></i></div>
+          <h4>Continuous Health Monitoring</h4>
+          <p style="font-size: 0.85rem; color: #64748B;">Automated synthetic transaction probes every 30 seconds across core modules.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7. HOSPITAL ONBOARDING ROADMAP (4 STEPS) ===================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa fa-shoe-prints"></i> Implementation Roadmap</span>
+        <h2 class="section-title">From Kickoff to Go-Live in <span class="text-gradient">Just 4 Phases</span></h2>
+        <p class="section-desc">Our battle-tested onboarding protocol ensures smooth transition without disrupting ongoing patient care.</p>
+      </div>
+
+      <div class="workflow-row" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="workflow-step">
+          <img src="assets/images/doctor-prescription.webp" alt="Clinical Audit" class="workflow-step-img">
+          <div class="step-num">1</div>
+          <h4>Clinical Audit</h4>
+          <p>We map your existing hospital OPD, IPD, lab analyzers, and pharmacy rate lists.</p>
+        </div>
+
+        <div class="workflow-step">
+          <img src="assets/images/encryption-lock.webp" alt="Data Migration" class="workflow-step-img">
+          <div class="step-num">2</div>
+          <h4>Data Migration</h4>
+          <p>Secure extraction and validation of historical patient records, lab test catalogs, and inventory.</p>
+        </div>
+
+        <div class="workflow-step">
+          <img src="assets/images/nurse-station.webp" alt="Staff Simulation" class="workflow-step-img">
+          <div class="step-num">3</div>
+          <h4>Staff Simulation</h4>
+          <p>Role-specific interactive training for doctors, head nurses, lab techs, and billing cashiers.</p>
+        </div>
+
+        <div class="workflow-step">
+          <img src="assets/images/doctor-team.webp" alt="Go-Live Floor Care" class="workflow-step-img">
+          <div class="step-num">4</div>
+          <h4>Go-Live & Floor Care</h4>
+          <p>Our implementation specialists provide on-site floor support during the first 72 hours of live operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8. FREQUENTLY ASKED QUESTIONS (FAQ) ===================== -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa fa-circle-question"></i> Common Questions</span>
+        <h2 class="section-title">Frequently Asked Questions by <span class="text-gradient">Hospital Administrators</span></h2>
+        <p class="section-desc">Everything you need to know about transitioning to Stackly Cloud Health ERP.</p>
+      </div>
+
+      <div style="max-width: 860px; margin: 0 auto 24px;">
+        <img src="assets/images/telehealth-screen.webp" alt="Stackly Clinical Architecture Support" style="width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+      </div>
+
+      <div style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px;">
+        <div style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: var(--dark-900);"><i class="fa fa-question-circle" style="color: var(--primary);"></i> How long does a 200-bed hospital take to migrate to Stackly?</h4>
+          <p style="font-size: 0.9rem; color: #64748B;">Most tertiary hospitals complete complete data migration, staff training, and analyzer interfacing within 7 to 14 days, with zero downtime to active inpatient care.</p>
+        </div>
+
+        <div style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: var(--dark-900);"><i class="fa fa-question-circle" style="color: var(--primary);"></i> Does Stackly support our existing lab biochemistry analyzers?</h4>
+          <p style="font-size: 0.9rem; color: #64748B;">Yes. Stackly LIMS includes pre-built drivers for over 200+ analyzer machines from Roche, Abbott, Beckman Coulter, Sysmex, Siemens, and Mindray via RS-232 and TCP/IP ASTM/HL7 protocols.</p>
+        </div>
+
+        <div style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: var(--dark-900);"><i class="fa fa-question-circle" style="color: var(--primary);"></i> Is Stackly compliant with NABH 5th edition and ABDM?</h4>
+          <p style="font-size: 0.9rem; color: #64748B;">Yes. Stackly comes with pre-configured NABH clinical quality indicators, infection control audit logs, and full Ayushman Bharat Digital Mission (ABDM) Milestone 1, 2, and 3 certifications.</p>
+        </div>
+
+        <div style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: var(--dark-900);"><i class="fa fa-question-circle" style="color: var(--primary);"></i> Can our doctors use Stackly on iPads or tablets during rounds?</h4>
+          <p style="font-size: 0.9rem; color: #64748B;">Absolutely. Stackly is 100% responsive and optimized for iPad, Android tablets, and smartphones with touch-friendly e-prescribing and voice-to-text dictation.</p>
+        </div>
+
+        <div style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: var(--dark-900);"><i class="fa fa-question-circle" style="color: var(--primary);"></i> What happens if our hospital local internet connection goes down?</h4>
+          <p style="font-size: 0.9rem; color: #64748B;">Stackly supports an intelligent Local Offline Sync Cache that allows front desk staff and nurses to record vitals and check in patients even during broadband outages. Data auto-synchronizes the moment the connection restores.</p>
+        </div>
+
+        <div style="background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: var(--dark-900);"><i class="fa fa-question-circle" style="color: var(--primary);"></i> How is patient medical data protected and backed up?</h4>
+          <p style="font-size: 0.9rem; color: #64748B;">We implement 256-bit AES encryption at rest, TLS 1.3 in transit, automated hourly geo-redundant backups, and granular role-based nurse/doctor access controls strictly aligned with HIPAA and ISO 27001.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 9. VIRTUAL SUPPORT & CHAT WIDGET TRIGGER ===================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div style="background: #FAF5FF; border: 1.5px dashed var(--primary); border-radius: var(--radius-xl); padding: 40px; text-align: center;">
+        <img src="assets/images/telehealth-screen.webp" alt="Virtual Clinical Support" class="showcase-photo" style="max-width: 480px; height: 180px; margin: 0 auto 18px;">
+        <div style="font-size: 2.2rem; color: var(--primary); margin-bottom: 10px;"><i class="fa fa-comments"></i></div>
+        <h3>Need Immediate Clinical Assistance?</h3>
+        <p style="color: var(--gray-500); max-width: 600px; margin: 0 auto 20px;">Our live clinical chat specialists are available 24/7 to answer hardware compatibility and module configuration questions.</p>
+        <a href="404.html" class="btn btn-primary">
+          <i class="fa fa-message"></i> Start Live Healthcare Chat Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 10. EMERGENCY HOTLINE PRIORITY BANNER ===================== -->
+  <section class="section-padding bg-dark" style="padding: 60px 0;">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+        <div>
+          <span class="topbar-badge" style="background: rgba(239, 68, 68, 0.2); color: #EF4444; border-color: rgba(239, 68, 68, 0.4);">
+            <i class="fa fa-triangle-exclamation"></i> Critical Priority Line
+          </span>
+          <h3 style="color: #fff; font-size: 1.8rem; margin: 10px 0 6px;">Are You an Operating Room or Emergency Ward in Need?</h3>
+          <p style="color: #94A3B8; font-size: 0.95rem;">Dial our dedicated zero-wait tier-1 clinical support line directly.</p>
+        </div>
+        <div>
+          <a href="tel:+18005550199" class="btn btn-secondary btn-lg" style="background: #EF4444; border-color: #EF4444;">
+            <i class="fa fa-phone"></i> Call Emergency Desk (+1-800-555-0199)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 16px;">
+            <img src="assets/images/stackly-logo-white.png" alt="Stackly Health Logo">
+          </a>
+          <p>Stackly Health is the pioneering cloud healthcare management platform inspired by global leaders like MocDoc. Delivering seamless hospital, clinic, diagnostic, and pharmacy digital transformation.</p>
+          <div class="footer-socials">
+            <a href="404.html" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="404.html" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="404.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Portals &amp; Security</h4>
+          <div class="footer-links">
+            <a href="404.html">Doctor &amp; Staff Login</a>
+            <a href="404.html">Patient Health Portal</a>
+            <a href="404.html">Hospital Admin Cockpit</a>
+            <a href="404.html">Register Facility</a>
+            <a href="404.html">NABH Compliance Guide</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>24/7 Clinical Support</h4>
+          <div class="footer-links" style="font-size: 0.85rem;">
+            <p><a href="404.html" style="color: inherit; text-decoration: none;"><i class="fa fa-phone" style="color: var(--primary);"></i> +1 (800) 555-0199</a></p>
+            <p><a href="404.html" style="color: inherit; text-decoration: none;"><i class="fa fa-envelope" style="color: var(--primary);"></i> support@stacklyhealth.com</a></p>
+            <p><a href="404.html" style="color: inherit; text-decoration: none;"><i class="fa fa-location-dot" style="color: var(--primary);"></i> 750 Tech Boulevard, Silicon Healthcare Hub, CA 94025</a></p>
+            <p><i class="fa fa-location-dot" style="color: var(--accent-teal);"></i> MMR Complex, Executive Tower, Salem, TN 636008, India</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Health Technologies Inc. All rights reserved. MocDoc architecture benchmarked.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

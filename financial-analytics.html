@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Analytics & Revenue Velocity — STACKLY Atelier Admin</title>
+  <meta name="description" content="Executive financial analytics, global salon revenue breakdown, VIP client lifetime value, and tax compliance ledger.">
+  <link rel="icon" href="assets/images/stackly-logo.png" type="image/png">
+
+  <!-- Google Fonts: Playfair Display & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/atelier-dashboard.css">
+</head>
+<body>
+
+  <!-- TOP WINE NAVIGATION -->
+  <header class="top-wine-header">
+    <div class="top-tier-primary">
+      <div class="brand-cluster">
+        <a href="dashboard.html" class="brand-logo-text">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          STACKLY
+        </a>
+        <div class="top-role-badge">
+          <span class="dot"></span>
+          <span>ATELIER ADMIN</span>
+        </div>
+        <div class="role-switcher-toggle">
+          <a href="bespoke-fittings.html" class="role-btn-toggle"><i class="fa fa-user"></i> VIP Client</a>
+          <a href="financial-analytics.html" class="role-btn-toggle active"><i class="fa fa-shield-halved"></i> Atelier Admin</a>
+        </div>
+      </div>
+      <div class="top-user-meta">
+        <span class="top-user-email">lingalamanasa123@gmail.com</span>
+        <div class="top-user-avatar" title="Admin Console"><i class="fa fa-user"></i></div>
+      </div>
+    </div>
+    <div class="top-tier-secondary">
+      <div class="welcome-phrase">
+        Welcome, <strong>Lingalamanasa123</strong>
+        <span class="welcome-role-tag">ATELIER ADMIN</span>
+      </div>
+      <div class="current-tab-crumb">Financial Analytics</div>
+    </div>
+  </header>
+
+  <div class="dashboard-body-container">
+    <!-- SIDEBAR -->
+    <aside class="atelier-sidebar">
+      <div>
+        <div class="sidebar-section-label">BOUTIQUE OPERATIONS</div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="store-overview.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-table-cells-large"></i> Store Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="boutique-catalog.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-tag"></i> Boutique Catalog</span>
+            </a>
+          </li>
+          <li>
+            <a href="client-orders.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-bag-shopping"></i> Client Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="artisans-inventory.html" class="sidebar-menu-btn">
+              <span class="btn-inner"><i class="fa fa-scissors"></i> Artisans & Inventory</span>
+            </a>
+          </li>
+          <li>
+            <a href="financial-analytics.html" class="sidebar-menu-btn active">
+              <span class="btn-inner"><i class="fa fa-chart-line"></i> Financial Analytics</span>
+              <span class="dot-indicator"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-user-bottom">
+        <div class="sidebar-user-badge-card">
+          <div class="user-profile-row">
+            <div class="user-profile-circle"><i class="fa fa-user"></i></div>
+            <div class="user-profile-info">
+              <div class="user-profile-name">Lingalamanasa123</div>
+              <div class="user-profile-email">lingalamanasa123@gmail.com</div>
+            </div>
+          </div>
+          <a href="login.html" class="logout-btn-box" onclick="return confirm('Sign out of STACKLY?');">
+            <i class="fa fa-arrow-right-from-bracket"></i> LOGOUT
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEW: 5 SECTIONS -->
+    <main class="atelier-main">
+
+      <!-- SECTION 1: HERO & FINANCIAL SUMMARY -->
+      <section class="dashboard-section anim-fade-in delay-1">
+        <div class="section-header-row">
+          <div>
+            <span class="section-badge-index">SECTION 01 · FISCAL VELOCITY</span>
+            <h1 class="section-main-title">Boutique Financial Performance & Margins</h1>
+            <p class="section-desc">Real-time revenue settlement, gross profit margins on bespoke couture, global salon earnings, and tax compliance dossiers.</p>
+          </div>
+          <div>
+            <button class="hero-action-btn" onclick="showToast('Exporting audited fiscal balance ledger...')">
+              EXPORT FISCAL LEDGER <i class="fa fa-file-invoice-dollar"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid-4-col">
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">ANNUAL REVENUE</span>
+              <span class="kpi-card-pill emerald">+28.4%</span>
+            </div>
+            <div class="kpi-card-number">$1.42M</div>
+            <div class="kpi-card-desc">Bespoke haute couture earnings FY26.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">GROSS MARGIN</span>
+              <span class="kpi-card-pill rose">Healthy</span>
+            </div>
+            <div class="kpi-card-number">68.2%</div>
+            <div class="kpi-card-desc">Net after precious textiles & labor.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">AVG COMMISSION TICKET</span>
+            </div>
+            <div class="kpi-card-number">$18,250</div>
+            <div class="kpi-card-desc">Across Salem, Paris & Milan salons.</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">RETAINER DEPOSITS</span>
+              <span class="kpi-card-pill emerald">Settled</span>
+            </div>
+            <div class="kpi-card-number">$84.0k</div>
+            <div class="kpi-card-desc">Advanced client deposits in escrow.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: INTERACTIVE 12-MONTH REVENUE & EXPENSE CHART -->
+      <section class="dashboard-section anim-fade-in delay-2">
+        <span class="section-badge-index">SECTION 02 · 12-MONTH TREND</span>
+        <h2 class="section-sub-title">Haute Couture Revenue & Volume Progression</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Tracking the historical correlation between runway collection unveiling and private salon suite bookings.</p>
+
+        <div class="content-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <div style="font-weight: 700; font-size: 1.1rem;">Rolling 12-Month Financial Trajectory ($USD)</div>
+            <div style="display: flex; gap: 16px; font-size: 0.78rem;">
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 14px; height: 3px; background: #A32850; border-radius: 2px;"></span> Revenue ($124,500/mo)</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 14px; height: 2px; border-bottom: 2px dashed #F48FB1;"></span> Volume Index</span>
+            </div>
+          </div>
+          <div style="position: relative; height: 220px; padding-left: 50px;">
+            <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 45px; display: flex; flex-direction: column; justify-content: space-between; font-size: 0.72rem; color: #9AA0B0; text-align: right;">
+              <span>$120k</span><span>$90k</span><span>$60k</span><span>$30k</span><span>$0</span>
+            </div>
+            <svg viewBox="0 0 540 180" style="width: 100%; height: 100%; overflow: visible;" preserveAspectRatio="none">
+              <line x1="0" y1="5" x2="540" y2="5" stroke="#F1F2F6" stroke-width="1" />
+              <line x1="0" y1="48" x2="540" y2="48" stroke="#F1F2F6" stroke-width="1" />
+              <line x1="0" y1="92" x2="540" y2="92" stroke="#F1F2F6" stroke-width="1" />
+              <line x1="0" y1="135" x2="540" y2="135" stroke="#F1F2F6" stroke-width="1" />
+              <line x1="0" y1="178" x2="540" y2="178" stroke="#F1F2F6" stroke-width="1" />
+              <path d="M 0,165 Q 160,140 300,110 T 540,65" fill="none" stroke="#F48FB1" stroke-width="2.5" stroke-dasharray="6,5" />
+              <path d="M 0,158 Q 160,130 300,90 T 540,30" fill="none" stroke="#A32850" stroke-width="3" />
+              <circle cx="540" cy="30" r="5" fill="#A32850" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: REVENUE BY GLOBAL SALON SUITE -->
+      <section class="dashboard-section anim-fade-in delay-3">
+        <span class="section-badge-index">SECTION 03 · GLOBAL DISTRIBUTION</span>
+        <h2 class="section-sub-title">Revenue Breakdown by International Salon Hub</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Performance metrics across our 4 flagship dressing and consultation suites.</p>
+
+        <div class="grid-4-col">
+          <div class="content-card">
+            <span class="kpi-card-pill rose" style="font-size: 0.68rem; margin-bottom: 8px; display: inline-block;">SALEM FLAGSHIP</span>
+            <div style="font-size: 1.6rem; font-weight: 700; margin-bottom: 4px;">$580,000</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">41% of Total Boutique Revenue</div>
+            <div class="progress-track"><div class="progress-fill" style="width: 41%;"></div></div>
+          </div>
+
+          <div class="content-card">
+            <span class="kpi-card-pill rose" style="font-size: 0.68rem; margin-bottom: 8px; display: inline-block;">PARIS MONTAIGNE</span>
+            <div style="font-size: 1.6rem; font-weight: 700; margin-bottom: 4px;">$440,000</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">31% of Total Boutique Revenue</div>
+            <div class="progress-track"><div class="progress-fill" style="width: 31%;"></div></div>
+          </div>
+
+          <div class="content-card">
+            <span class="kpi-card-pill rose" style="font-size: 0.68rem; margin-bottom: 8px; display: inline-block;">MILAN GALLERIA</span>
+            <div style="font-size: 1.6rem; font-weight: 700; margin-bottom: 4px;">$260,000</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">18% of Total Boutique Revenue</div>
+            <div class="progress-track"><div class="progress-fill" style="width: 18%;"></div></div>
+          </div>
+
+          <div class="content-card">
+            <span class="kpi-card-pill rose" style="font-size: 0.68rem; margin-bottom: 8px; display: inline-block;">NEW YORK MADISON</span>
+            <div style="font-size: 1.6rem; font-weight: 700; margin-bottom: 4px;">$140,000</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">10% of Total Boutique Revenue</div>
+            <div class="progress-track"><div class="progress-fill" style="width: 10%;"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: VIP CLIENT LIFETIME VALUE (LTV) -->
+      <section class="dashboard-section anim-fade-in delay-4">
+        <span class="section-badge-index">SECTION 04 · VIP RELATIONSHIPS</span>
+        <h2 class="section-sub-title">VIP Client Lifetime Value (LTV) & Top Tiers</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Top private couture patrons holding active atelier commissions.</p>
+
+        <div class="luxury-table-wrap">
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>VIP Client</th>
+                <th>Client Tier</th>
+                <th>Commissions Completed</th>
+                <th>Active Orders</th>
+                <th>Lifetime Spend (USD)</th>
+                <th>Atelier Suite</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Lingalamanasa123</strong></td>
+                <td><span class="top-role-badge" style="background: #A83256; color: #FFF; padding: 2px 10px; font-size: 0.68rem;">VIP CLIENT</span></td>
+                <td>8 Pieces</td>
+                <td>3 Active</td>
+                <td><strong>$148,500</strong></td>
+                <td>Salem Flagship & Paris</td>
+              </tr>
+              <tr>
+                <td><strong>Sofia Al-Mansoor</strong></td>
+                <td><span class="top-role-badge" style="background: #A83256; color: #FFF; padding: 2px 10px; font-size: 0.68rem;">VIP CLIENT</span></td>
+                <td>12 Pieces</td>
+                <td>2 Active</td>
+                <td><strong>$210,000</strong></td>
+                <td>Milan Galleria</td>
+              </tr>
+              <tr>
+                <td><strong>Elena Rostova</strong></td>
+                <td><span class="top-role-badge" style="background: #A83256; color: #FFF; padding: 2px 10px; font-size: 0.68rem;">VIP CLIENT</span></td>
+                <td>6 Pieces</td>
+                <td>1 Active</td>
+                <td><strong>$94,000</strong></td>
+                <td>New York Madison</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 5: INVOICE SETTLEMENT & TAX COMPLIANCE -->
+      <section class="dashboard-section anim-fade-in delay-5">
+        <span class="section-badge-index">SECTION 05 · COMPLIANCE LEDGER</span>
+        <h2 class="section-sub-title">International Tax & VAT Exemption Ledger</h2>
+        <p class="section-desc" style="margin-bottom: 20px;">Automated customs carnet settlement, European tourist VAT refunds, and multi-currency wire confirmations.</p>
+
+        <div class="content-card" style="background: linear-gradient(135deg, #1C050D 0%, #3B0D1C 100%); color: #FFF; border: 1px solid #821B3D;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <span class="top-role-badge" style="background: rgba(255,255,255,0.15); margin-bottom: 8px;">AUDITED STATEMENT</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #FFF; margin-bottom: 6px;">Q3 Haute Couture Fiscal Audit Certified</h3>
+              <p style="font-size: 0.85rem; color: rgba(255,255,255,0.75); margin-bottom: 0;">Multi-currency bank accounts synchronized in USD ($), EUR (€), and GBP (£) with zero discrepancy.</p>
+            </div>
+            <button class="hero-action-btn" style="background: #FFF; color: #821B3D;" onclick="showToast('Downloading Tax Compliance Package...')">
+              DOWNLOAD AUDIT DOSSIER <i class="fa fa-file-shield"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="toast-popup" id="toastBox">
+    <i class="fa fa-circle-check" style="color: #F48FB1;"></i>
+    <span id="toastMsg">Success</span>
+  </div>
+
+  <script>
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+  </script>
+</body>
+</html>
