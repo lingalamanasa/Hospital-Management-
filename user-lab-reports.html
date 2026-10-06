@@ -144,8 +144,10 @@
       </div>
       <div class="sec"><div class="sec-title"><i class="fa fa-share"></i> Share Reports</div>
         <div class="scard"><div style="font-size:.9rem;color:#374151;margin-bottom:14px;">Share your lab reports securely with your doctor or family member via email.</div>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;"><input type="email" placeholder="doctor@hospital.org" style="flex:1;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;">
-          <button class="abtn" onclick="alert('Report shared!')"><i class="fa fa-paper-plane"></i>Send</button></div>
+          <form onsubmit="event.preventDefault(); window.location.href='404.html';" style="display:flex;gap:12px;flex-wrap:wrap;">
+            <input type="email" placeholder="doctor@hospital.org" required style="flex:1;padding:10px 14px;border-radius:8px;border:1px solid #D1D5DB;font-size:.88rem;font-family:inherit;">
+            <button type="submit" class="abtn"><i class="fa fa-paper-plane"></i>Send</button>
+          </form>
         </div>
       </div>
     </main>

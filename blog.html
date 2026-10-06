@@ -565,10 +565,10 @@
         <p style="color: #C7D2FE; margin-bottom: 28px; font-size: 1.05rem;">
           Join 50,000+ medical directors, doctors, and health administrators receiving our curated weekly clinical research and hospital ERP case studies.
         </p>
-        <div style="display: flex; gap: 12px; justify-content: center; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
-          <input type="email" class="form-control" placeholder="Enter your hospital/professional email" style="flex: 1; min-width: 260px;">
-          <button class="btn btn-primary" onclick="alert('Thank you for subscribing to Stackly HealthTech Digest!');"><i class="fa fa-paper-plane"></i> Subscribe Free</button>
-        </div>
+        <form onsubmit="event.preventDefault(); window.location.href='404.html';" style="display: flex; gap: 12px; justify-content: center; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+          <input type="email" class="form-control" placeholder="Enter your hospital/professional email" style="flex: 1; min-width: 260px;" required>
+          <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Subscribe Free</button>
+        </form>
         <div style="font-size: 0.75rem; color: #A5B4FC; margin-top: 14px;">No spam. Unsubscribe anytime. Strictly medical and health informatics content.</div>
       </div>
     </div>
