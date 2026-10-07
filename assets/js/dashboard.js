@@ -94,19 +94,148 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Wrap any raw tables in responsive containers with swipe hint
-  document.querySelectorAll('.sec > table, .card > table').forEach(table => {
-    if (!table.parentElement.classList.contains('table-responsive')) {
-      const wrapper = document.createElement('div');
+  // 4. Transform table sections into Image 2 style card list on mobile
+  document.querySelectorAll('.sec > table, .card > table, .table-responsive > table').forEach(table => {
+    // Avoid double generation
+    const parentContainer = table.closest('.table-responsive') || table;
+    const parentSec = parentContainer.parentElement;
+    if (parentSec && parentSec.querySelector('.dash-cards-container')) {
+      return;
+    }
+
+    const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    if (!headers.length || !rows.length) return;
+
+    const cardsContainer = document.createElement('div');
+    cardsContainer.className = 'dash-cards-container';
+
+    rows.forEach((tr, idx) => {
+      const cells = Array.from(tr.querySelectorAll('td'));
+      if (!cells.length) return;
+
+      const card = document.createElement('div');
+      card.className = 'dash-card';
+
+      // 1. Determine what is Header ID vs Title
+      let idLabel = headers[0] || 'RECORD ID';
+      let idValue = cells[0] ? cells[0].textContent.trim() : ('#' + (idx + 1));
+      let titleLabel = headers.length > 1 ? headers[1] : 'DETAILS';
+      let titleValue = cells.length > 1 ? cells[1].textContent.trim() : '';
+      let subtitleValue = '';
+      let startIndex = 2;
+
+      // If Col 0 is a descriptive entity (Medication, Drug, Ward, Staff, Test Name)
+      if (/medication|drug|ward|staff|indicator|test name/i.test(headers[0])) {
+        idLabel = 'ITEM #' + (idx + 1);
+        idValue = cells[0].textContent.trim();
+        titleLabel = headers[0];
+        titleValue = cells[0].textContent.trim();
+        startIndex = 1;
+      } else if (titleValue === '—' || titleValue === '-' || !titleValue) {
+        titleLabel = headers[0];
+        titleValue = idValue;
+        startIndex = 1;
+      } else if (cells.length > 2 && !cells[2].querySelector('a, button, .pill') && cells[2].textContent.trim() !== '—') {
+        subtitleValue = cells[2].textContent.trim();
+        startIndex = 3;
+      }
+
+      const headerRow = document.createElement('div');
+      headerRow.className = 'dash-card-header';
+      headerRow.innerHTML = `
+        <span class="dash-card-lbl">${idLabel}</span>
+        <span class="dash-card-id">${idValue}</span>
+      `;
+      card.appendChild(headerRow);
+
+      // 2. Main title block
+      if (titleValue) {
+        const mainBlock = document.createElement('div');
+        mainBlock.className = 'dash-card-main';
+        mainBlock.innerHTML = `
+          <div class="dash-card-category">${titleLabel}</div>
+          <div class="dash-card-title">${titleValue}</div>
+          ${subtitleValue ? `<div class="dash-card-subtitle">${subtitleValue}</div>` : ''}
+        `;
+        card.appendChild(mainBlock);
+      }
+
+      // 3. Key-Value Rows (Remaining columns)
+      for (let i = startIndex; i < cells.length; i++) {
+        const lbl = headers[i] || 'DETAIL';
+        const cell = cells[i];
+
+        const row = document.createElement('div');
+        row.className = 'dash-card-row';
+
+        const rowLbl = document.createElement('span');
+        rowLbl.className = 'dash-card-row-lbl';
+        rowLbl.textContent = lbl;
+        row.appendChild(rowLbl);
+
+        const rowVal = document.createElement('div');
+        rowVal.className = 'dash-card-row-val';
+
+        // Check for interactive button / link
+        const actionBtn = cell.querySelector('a, button');
+        const pillElem = cell.querySelector('.pill, .status-badge');
+
+        if (actionBtn) {
+          const btnClone = actionBtn.cloneNode(true);
+          btnClone.className = 'dash-card-btn';
+          if (!btnClone.querySelector('i')) {
+            btnClone.innerHTML = '<i class="fa fa-file-lines"></i> ' + btnClone.textContent.trim();
+          }
+          rowVal.appendChild(btnClone);
+        } else if (pillElem) {
+          const pillText = pillElem.textContent.trim();
+          const pillClone = document.createElement('span');
+          const isAmber = /pending|due|review|in-progress|moderate/i.test(pillText);
+          const isRose = /critical|urgent|high|overdue/i.test(pillText);
+          pillClone.className = 'dash-card-pill' + (isAmber ? ' pill-amber' : isRose ? ' pill-rose' : '');
+          pillClone.innerHTML = (isAmber ? '<i class="fa fa-clock"></i> ' : isRose ? '<i class="fa fa-triangle-exclamation"></i> ' : '<i class="fa fa-check"></i> ') + pillText;
+          rowVal.appendChild(pillClone);
+        } else {
+          const text = cell.textContent.trim();
+          if (/^(resolved|completed|normal|active|paid|confirmed|ok)$/i.test(text)) {
+            const pillSpan = document.createElement('span');
+            pillSpan.className = 'dash-card-pill';
+            pillSpan.innerHTML = '<i class="fa fa-check"></i> ' + text;
+            rowVal.appendChild(pillSpan);
+          } else if (/^(pending|due|in-progress|moderate|review)$/i.test(text)) {
+            const pillSpan = document.createElement('span');
+            pillSpan.className = 'dash-card-pill pill-amber';
+            pillSpan.innerHTML = '<i class="fa fa-clock"></i> ' + text;
+            rowVal.appendChild(pillSpan);
+          } else if (/^(critical|urgent|high|overdue)$/i.test(text)) {
+            const pillSpan = document.createElement('span');
+            pillSpan.className = 'dash-card-pill pill-rose';
+            pillSpan.innerHTML = '<i class="fa fa-triangle-exclamation"></i> ' + text;
+            rowVal.appendChild(pillSpan);
+          } else {
+            rowVal.textContent = text;
+          }
+        }
+
+        row.appendChild(rowVal);
+        card.appendChild(row);
+      }
+
+      cardsContainer.appendChild(card);
+    });
+
+    // Ensure table is wrapped in .table-responsive for desktop
+    let wrapper = table.parentElement;
+    if (!wrapper.classList.contains('table-responsive')) {
+      wrapper = document.createElement('div');
       wrapper.className = 'table-responsive';
       wrapper.scrollLeft = 0;
       table.parentNode.insertBefore(wrapper, table);
       wrapper.appendChild(table);
-
-      const hint = document.createElement('div');
-      hint.className = 'dash-table-hint';
-      hint.innerHTML = '<i class="fa fa-arrows-left-right"></i> Scroll table horizontally';
-      wrapper.parentNode.insertBefore(hint, wrapper);
     }
+
+    // Insert cardsContainer directly after wrapper
+    wrapper.parentNode.insertBefore(cardsContainer, wrapper.nextSibling);
   });
 });

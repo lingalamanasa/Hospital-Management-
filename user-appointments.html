@@ -131,12 +131,101 @@
         </form>
       </div>
       <div class="sec"><div class="sec-title"><i class="fa fa-history"></i> Past Consultations</div>
-        <table><thead><tr><th>Date</th><th>Doctor</th><th>Department</th><th>Diagnosis</th><th>Action</th></tr></thead>
-        <tbody>
-          <tr><td>Sep 28, 2026</td><td>Dr. Rajesh Kumar</td><td>Cardiology</td><td>Hypertension Follow-up</td><td><a href="404.html" class="abtn" style="padding:5px 14px;font-size:.76rem;border-radius:6px;text-decoration:none;">View Summary</a></td></tr>
-          <tr><td>Sep 15, 2026</td><td>Dr. Sunita Rao</td><td>Gynecology</td><td>Routine Checkup</td><td><a href="404.html" class="abtn" style="padding:5px 14px;font-size:.76rem;border-radius:6px;text-decoration:none;">View Summary</a></td></tr>
-          <tr><td>Sep 2, 2026</td><td>Dr. Priya Nair</td><td>Neurology</td><td>Migraine Assessment</td><td><a href="404.html" class="abtn" style="padding:5px 14px;font-size:.76rem;border-radius:6px;text-decoration:none;">View Summary</a></td></tr>
-        </tbody></table>
+        <!-- Card list view for mobile (matches Image 2 style) -->
+        <div class="dash-cards-container">
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <span class="dash-card-lbl">CONSULTATION ID</span>
+              <span class="dash-card-id">#CON-7920</span>
+            </div>
+            <div class="dash-card-main">
+              <div class="dash-card-category">DOCTOR & DEPARTMENT</div>
+              <div class="dash-card-title">Dr. Rajesh Kumar</div>
+              <div class="dash-card-subtitle">Cardiology · OPD Room 4</div>
+            </div>
+            <div class="dash-card-row">
+              <span class="dash-card-row-lbl">DATE</span>
+              <span class="dash-card-row-val">Sep 28, 2026</span>
+            </div>
+            <div class="dash-card-row">
+              <span class="dash-card-row-lbl">STATUS</span>
+              <span class="dash-card-row-val"><span class="dash-card-pill"><i class="fa fa-check"></i> Completed</span></span>
+            </div>
+            <div class="dash-card-row">
+              <span class="dash-card-row-lbl">DIAGNOSIS</span>
+              <span class="dash-card-row-val">Hypertension Follow-up</span>
+            </div>
+            <div class="dash-card-row">
+              <span class="dash-card-row-lbl">ACTION</span>
+              <span class="dash-card-row-val"><a href="404.html" class="dash-card-btn"><i class="fa fa-file-lines"></i> Inspection Report</a></span>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <span class="dash-card-lbl">CONSULTATION ID</span>
+              <span class="dash-card-id">#CON-7561</span>
+            </div>
+            <div class="dash-card-main">
+              <div class="dash-card-category">DOCTOR & DEPARTMENT</div>
+              <div class="dash-card-title">Dr. Sunita Rao</div>
+              <div class="dash-card-subtitle">Gynecology · OPD Room 2</div>
+            </div>
+            <div class="dash-card-row">
+              <span class="dash-card-row-lbl">DATE</span>
+              <span class="dash-card-row-val">Sep 15, 2026</span>
+            </div>
+            <div class="dash-card-row">
+              <span class="dash-card-row-lbl">STATUS</span>
+              <span class="dash-card-row-val"><span class="dash-card-pill"><i class="fa fa-check"></i> Completed</span></span>
+            </div>
+            <div class="dash-card-row">
+              <span class="dash-card-row-lbl">DIAGNOSIS</span>
+              <span class="dash-card-row-val">Routine Checkup</span>
+            </div>
+            <div class="dash-card-row">
+              <span class="dash-card-row-lbl">ACTION</span>
+              <span class="dash-card-row-val"><a href="404.html" class="dash-card-btn"><i class="fa fa-file-lines"></i> Inspection Report</a></span>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <span class="dash-card-lbl">CONSULTATION ID</span>
+              <span class="dash-card-id">#CON-7104</span>
+            </div>
+            <div class="dash-card-main">
+              <div class="dash-card-category">DOCTOR & DEPARTMENT</div>
+              <div class="dash-card-title">Dr. Priya Nair</div>
+              <div class="dash-card-subtitle">Neurology · OPD Room 6</div>
+            </div>
+            <div class="dash-card-row">
+              <span class="dash-card-row-lbl">DATE</span>
+              <span class="dash-card-row-val">Sep 2, 2026</span>
+            </div>
+            <div class="dash-card-row">
+              <span class="dash-card-row-lbl">STATUS</span>
+              <span class="dash-card-row-val"><span class="dash-card-pill"><i class="fa fa-check"></i> Completed</span></span>
+            </div>
+            <div class="dash-card-row">
+              <span class="dash-card-row-lbl">DIAGNOSIS</span>
+              <span class="dash-card-row-val">Migraine Assessment</span>
+            </div>
+            <div class="dash-card-row">
+              <span class="dash-card-row-lbl">ACTION</span>
+              <span class="dash-card-row-val"><a href="404.html" class="dash-card-btn"><i class="fa fa-file-lines"></i> Inspection Report</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table><thead><tr><th>Date</th><th>Doctor</th><th>Department</th><th>Diagnosis</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Sep 28, 2026</td><td>Dr. Rajesh Kumar</td><td>Cardiology</td><td>Hypertension Follow-up</td><td><a href="404.html" class="abtn" style="padding:5px 14px;font-size:.76rem;border-radius:6px;text-decoration:none;">View Summary</a></td></tr>
+            <tr><td>Sep 15, 2026</td><td>Dr. Sunita Rao</td><td>Gynecology</td><td>Routine Checkup</td><td><a href="404.html" class="abtn" style="padding:5px 14px;font-size:.76rem;border-radius:6px;text-decoration:none;">View Summary</a></td></tr>
+            <tr><td>Sep 2, 2026</td><td>Dr. Priya Nair</td><td>Neurology</td><td>Migraine Assessment</td><td><a href="404.html" class="abtn" style="padding:5px 14px;font-size:.76rem;border-radius:6px;text-decoration:none;">View Summary</a></td></tr>
+          </tbody></table>
+        </div>
       </div>
       <div class="sec"><div class="sec-title"><i class="fa fa-phone"></i> Appointment Reminders</div>
         <div class="scard"><div class="scard-label"><i class="fa fa-bell"></i>SMS & Email Reminders</div><div style="font-size:.9rem;color:#374151;margin-top:8px;">You will receive a reminder 24 hours and 2 hours before each appointment via SMS to <strong>+91 98765 43210</strong> and email <strong>sarah@gmail.com</strong>.</div></div>
