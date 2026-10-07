@@ -136,8 +136,11 @@
     <main class="main">
       <div class="hero-row">
         <div>
+          <div class="welcome-back-msg" style="margin-bottom: 8px; font-size: 1.25rem; font-weight: 700; color: #1E3A5F; display: flex; align-items: center; gap: 8px;">
+            <span>Welcome back, <span class="welcome-user-name">Lingalamanasa123</span> 👋</span>
+          </div>
           <span class="htag">MY HEALTH PORTAL</span>
-          <h1 class="htitle">Good Morning, Sarah 👋</h1>
+          <h1 class="htitle">Good Morning, <span class="welcome-user-name">Lingalamanasa123</span> 👋</h1>
           <p class="hdesc">Your health summary, upcoming appointments, and recent lab results at a glance.</p>
         </div>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
@@ -213,18 +216,22 @@
               el.textContent = email;
             });
           }
-          if (name) {
-            document.querySelectorAll('.uname, .user-profile-name').forEach(function(el) {
-              el.textContent = name;
-            });
-            var wlc = document.querySelector('.wlc strong, .welcome-user-name');
-            if (wlc) {
-              wlc.textContent = name;
-            }
-            var htitle = document.querySelector('.htitle');
-            if (htitle && htitle.textContent.indexOf('Good Morning') !== -1) {
-              htitle.textContent = 'Good Morning, ' + name + ' 👋';
-            }
+          if (!name && email) {
+            name = email.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+          }
+          if (!name) {
+            name = 'Lingalamanasa123';
+          }
+          document.querySelectorAll('.uname, .user-profile-name, .welcome-user-name').forEach(function(el) {
+            el.textContent = name;
+          });
+          var wlc = document.querySelector('.wlc strong');
+          if (wlc) {
+            wlc.textContent = name;
+          }
+          var htitle = document.querySelector('.htitle');
+          if (htitle && htitle.textContent.indexOf('Good Morning') !== -1) {
+            htitle.innerHTML = 'Good Morning, <span class="welcome-user-name">' + name + '</span> 👋';
           }
         } catch(e) {}
       }
