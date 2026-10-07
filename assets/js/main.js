@@ -134,11 +134,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 5. Navbar Sticky GSAP Effect
+    // 5. Fixed Navbar Shadow on Scroll
     const siteHeader = document.querySelector('.site-header');
     if (siteHeader) {
+      document.body.classList.add('has-fixed-header');
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) {
+        if (window.scrollY > 15) {
           siteHeader.classList.add('scrolled');
         } else {
           siteHeader.classList.remove('scrolled');
