@@ -951,6 +951,11 @@ body:has(.site-header) {
   position: relative;
 }
 
+.workflow-row.four-cols,
+.workflow-row-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .workflow-step {
   background: var(--white);
   border: 1px solid var(--gray-200);
