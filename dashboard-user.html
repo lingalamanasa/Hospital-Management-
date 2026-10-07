@@ -98,20 +98,15 @@
 </head>
 <body>
   <header class="top-hdr">
-    <div class="t1">
+    <div class="t1" style="border-bottom: none;">
       <div class="brand">
         <a href="dashboard-user.html" class="brand-name"><img src="assets/images/stackly-logo.png" alt="Stackly Health"></a>
-        <span class="rbadge">PATIENT PORTAL</span>
         <a href="dashboard-admin.html" class="swlink"><i class="fa fa-shield-halved"></i> Admin View</a>
       </div>
       <div class="umeta">
         <span class="uemail">patient@stacklyhealth.com</span>
         <div class="uavatar"><i class="fa fa-user"></i></div>
       </div>
-    </div>
-    <div class="t2">
-      <div class="wlc">Welcome, <strong>Sarah Miller</strong><span class="rtag">PATIENT</span></div>
-      <div class="crumb" id="crumb">My Health Dashboard</div>
     </div>
   </header>
 
@@ -198,7 +193,7 @@
   <div class="toast" id="toast"><i class="fa fa-circle-check" style="color:#38BDF8;"></i><span id="tmsg">Done.</span></div>
 
   <script>
-    function tab(t,b){document.querySelectorAll('.nbtn').forEach(x=>{x.classList.remove('active');const d=x.querySelector('.dind');if(d)d.remove();});b.classList.add('active');const d=document.createElement('span');d.className='dind';b.appendChild(d);document.getElementById('crumb').textContent=t;toast('Viewing: '+t);}
+    function tab(t,b){document.querySelectorAll('.nbtn').forEach(x=>{x.classList.remove('active');const d=x.querySelector('.dind');if(d)d.remove();});b.classList.add('active');const d=document.createElement('span');d.className='dind';b.appendChild(d);const cr=document.getElementById('crumb');if(cr)cr.textContent=t;toast('Viewing: '+t);}
     function openModal(id){document.getElementById(id).classList.add('active');}
     function closeModal(id){document.getElementById(id).classList.remove('active');}
     function bookAppt(){closeModal('mAppt');toast('Appointment booked successfully!');}
