@@ -14,12 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
 
     if (document.querySelector('.hero-trust-tag')) {
+      const isMobile = window.innerWidth <= 768;
       heroTl.from('.hero-trust-tag', { opacity: 0, y: -20 })
             .from('.hero-title', { opacity: 0, y: 30 }, '-=0.4')
             .from('.hero-desc', { opacity: 0, y: 20 }, '-=0.5')
             .from('.hero-actions .btn', { opacity: 0, scale: 0.9, stagger: 0.15 }, '-=0.4')
             .from('.hero-stats-row .hero-stat-item', { opacity: 0, y: 20, stagger: 0.1 }, '-=0.3')
-            .from('.hero-device-card', { opacity: 0, x: 50, duration: 1 }, '-=0.8')
+            .from('.hero-device-card', { opacity: 0, x: isMobile ? 0 : 50, y: isMobile ? 25 : 0, duration: 1 }, '-=0.8')
             .from('.floating-badge', { opacity: 0, scale: 0.5, stagger: 0.2, ease: 'back.out(1.7)' }, '-=0.4');
     }
 

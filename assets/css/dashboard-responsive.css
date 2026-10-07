@@ -197,19 +197,75 @@ img, svg {
   background: #64748B;
 }
 
-/* Desktop Sticky Fixed Sidebar (Do not scroll sidebar with page content) */
+/* Desktop Fixed Header & Sidebar (Lock Header & Sidebar; only Right Side .main scrolls) */
 @media (min-width: 1025px) {
-  .sidebar {
-    position: sticky !important;
+  html, body {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  .top-hdr {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 58px !important;
+    z-index: 1000 !important;
+  }
+
+  .dbody {
+    display: flex !important;
+    position: fixed !important;
     top: 58px !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
     height: calc(100vh - 58px) !important;
     max-height: calc(100vh - 58px) !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .sidebar {
+    width: 250px !important;
+    min-width: 250px !important;
+    max-width: 250px !important;
+    height: 100% !important;
+    max-height: 100% !important;
     overflow-y: auto !important;
-    align-self: flex-start !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
     gap: 16px !important;
+  }
+
+  .main {
+    flex: 1 !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .main::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .main::-webkit-scrollbar-track {
+    background: #E2E8F0;
+  }
+
+  .main::-webkit-scrollbar-thumb {
+    background: #94A3B8;
+    border-radius: 4px;
+  }
+
+  .main::-webkit-scrollbar-thumb:hover {
+    background: #64748B;
   }
 
   .sbot {

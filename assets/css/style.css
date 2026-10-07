@@ -417,10 +417,16 @@ body:has(.site-header) {
   color: #1D4ED8;
   font-weight: 600;
   margin-bottom: 22px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-trust-tag .stars {
   color: #F59E0B;
+  display: inline-flex;
+  gap: 2px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .hero-title {
@@ -2059,9 +2065,73 @@ html, body {
     display: none;
   }
 
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    text-align: center;
+    gap: 32px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding: 0 4px !important;
+  }
+
+  .hero-trust-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    line-height: 1.35;
+    max-width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .hero-trust-tag .stars {
+    font-size: 0.75rem;
+    display: inline-flex;
+    gap: 2px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .hero-trust-tag span:not(.stars) {
+    display: inline;
+    text-align: center;
+    word-break: break-word;
+  }
+
   .hero-title {
-    font-size: clamp(1.85rem, 5.5vw, 2.4rem);
-    line-height: 1.25;
+    font-size: clamp(1.75rem, 5.8vw, 2.3rem);
+    line-height: 1.22;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+  }
+
+  .hero-desc {
+    font-size: clamp(0.92rem, 3.4vw, 1.05rem);
+    line-height: 1.62;
+    margin: 0 auto 28px;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 6px;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .section-title {
@@ -2072,8 +2142,9 @@ html, body {
   .hero-actions {
     flex-direction: column;
     width: 100%;
-    max-width: 360px;
-    margin: 0 auto 30px;
+    max-width: 320px;
+    margin: 0 auto 28px;
+    box-sizing: border-box;
   }
 
   .hero-actions .btn {
@@ -2084,6 +2155,22 @@ html, body {
     flex-direction: column;
     gap: 16px;
     align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-stat-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-visual {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
   }
 
   /* Grid fallbacks with !important to eliminate multi-column squishing */
@@ -2299,12 +2386,33 @@ html, body {
     display: none;
   }
 
+  .hero-trust-tag {
+    font-size: 0.74rem;
+    padding: 5px 10px;
+    gap: 6px;
+    line-height: 1.35;
+  }
+
+  .hero-trust-tag .stars {
+    font-size: 0.7rem;
+  }
+
   .hero-title {
-    font-size: 1.85rem;
+    font-size: clamp(1.5rem, 5.8vw, 1.85rem);
+    line-height: 1.22;
+    margin-bottom: 16px;
   }
 
   .hero-desc {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
+    line-height: 1.58;
+    padding: 0 4px;
+    margin-bottom: 24px;
+  }
+
+  .hero-actions {
+    max-width: 100%;
+    margin-bottom: 24px;
   }
 
   .section-badge {
@@ -2400,8 +2508,25 @@ html, body {
     height: 28px;
   }
 
+  .hero-trust-tag {
+    font-size: 0.68rem;
+    padding: 4px 8px;
+    gap: 4px;
+  }
+
+  .hero-trust-tag .stars {
+    font-size: 0.62rem;
+  }
+
   .hero-title {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
+    line-height: 1.22;
+  }
+
+  .hero-desc {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    padding: 0 2px;
   }
 
   .btn {
