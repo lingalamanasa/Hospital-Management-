@@ -144,11 +144,7 @@
     <main class="main">
       <div class="hero-row">
         <div>
-          <div class="welcome-back-msg" style="margin-bottom: 8px; font-size: 1.25rem; font-weight: 700; color: #1E3A5F; display: flex; align-items: center; gap: 8px;">
-            <span>Welcome back, <span class="welcome-user-name">Lingalamanasa123</span> 👋</span>
-          </div>
-          <span class="htag">01 · HOSPITAL OPERATIONS</span>
-          <h1 class="htitle">Hospital-wide Operations at a Glance</h1>
+          <h1 class="htitle">Welcome back, <span class="welcome-user-name">Lingalamanasa123</span> 👋</h1>
           <p class="hdesc">Live snapshot across all wards, OPD, lab, pharmacy, and billing modules.</p>
         </div>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
@@ -272,8 +268,8 @@
             wlc.textContent = name;
           }
           var htitle = document.querySelector('.htitle');
-          if (htitle && htitle.textContent.indexOf('Good Morning') !== -1) {
-            htitle.textContent = 'Good Morning, ' + name + ' 👋';
+          if (htitle && (htitle.textContent.indexOf('Good Morning') !== -1 || htitle.textContent.indexOf('Welcome back') !== -1)) {
+            htitle.innerHTML = 'Welcome back, <span class="welcome-user-name">' + name + '</span> 👋';
           }
         } catch(e) {}
       }
