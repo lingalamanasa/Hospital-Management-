@@ -278,60 +278,15 @@ ul {
   border-radius: var(--radius-md);
 }
 
-/* ================= TOPBAR & NAVBAR (FIXED AT TOP) ================= */
+/* ================= TOPBAR (REMOVED) & FIXED NAVBAR ================= */
 .topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 42px;
-  z-index: 1001;
-  background: var(--dark-900);
-  color: var(--gray-400);
-  font-size: 0.85rem;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-sizing: border-box;
+  display: none !important;
 }
 
-.topbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-}
-
-.topbar-left, .topbar-right {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.topbar-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.topbar-item a:hover {
-  color: var(--white);
-}
-
-.topbar-badge {
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--accent-teal);
-  padding: 2px 10px;
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: 600;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-/* Main Site Header (Permanently Fixed Below Topbar on Desktop, Fixed at Top on Mobile) */
+/* Main Site Header (Permanently Fixed at Top of Screen) */
 .site-header {
   position: fixed;
-  top: 42px;
+  top: 0;
   left: 0;
   right: 0;
   width: 100%;
@@ -351,7 +306,7 @@ ul {
 
 body.has-fixed-header,
 body:has(.site-header) {
-  padding-top: 122px;
+  padding-top: 80px;
 }
 
 .navbar {
