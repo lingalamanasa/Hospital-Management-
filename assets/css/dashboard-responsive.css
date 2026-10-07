@@ -197,6 +197,27 @@ img, svg {
   background: #64748B;
 }
 
+/* Desktop Sticky Fixed Sidebar (Do not scroll sidebar with page content) */
+@media (min-width: 1025px) {
+  .sidebar {
+    position: sticky !important;
+    top: 58px !important;
+    height: calc(100vh - 58px) !important;
+    max-height: calc(100vh - 58px) !important;
+    overflow-y: auto !important;
+    align-self: flex-start !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .sbot {
+    margin-top: 4px !important;
+    padding-top: 16px !important;
+  }
+}
+
 /* Breakpoint: Tablet & Below (max-width: 1024px) */
 @media (max-width: 1024px) {
   .dash-menu-toggle {

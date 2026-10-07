@@ -27,16 +27,16 @@
     .rtag{padding:2px 10px;border-radius:12px;background:rgba(255,255,255,.15);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;border:1px solid rgba(255,255,255,.25);}
     .crumb{color:rgba(255,255,255,.95);font-weight:600;}
     .dbody{display:flex;flex:1;}
-    .sidebar{width:250px;min-width:250px;background:#1a3a6b;color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:24px 16px 20px;}
+    .sidebar{width:250px;min-width:250px;background:#1a3a6b;color:#fff;display:flex;flex-direction:column;justify-content:flex-start;gap:16px;padding:24px 16px 20px;position:sticky;top:58px;height:calc(100vh - 58px);max-height:calc(100vh - 58px);overflow-y:auto;align-self:flex-start;}
     .slabel{font-size:.7rem;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.55);text-transform:uppercase;padding:0 12px;margin-bottom:14px;}
-    .smenu{list-style:none;display:flex;flex-direction:column;gap:5px;margin-bottom:20px;}
+    .smenu{list-style:none;display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
     .nbtn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:8px;background:transparent;border:none;color:rgba(255,255,255,.82);font-size:.86rem;font-weight:500;font-family:var(--font);cursor:pointer;text-decoration:none;transition:all .15s;text-align:left;}
     .nbtn .inn{display:flex;align-items:center;gap:12px;}
     .nbtn .inn i{font-size:.93rem;width:18px;text-align:center;}
     .nbtn:hover{background:rgba(255,255,255,.1);color:#fff;}
     .nbtn.active{background:#1558a0;color:#fff;font-weight:600;}
     .dind{width:6px;height:6px;background:#fff;border-radius:50%;}
-    .sbot{padding-top:20px;border-top:1px solid rgba(255,255,255,.1);}
+    .sbot{padding-top:14px;border-top:1px solid rgba(255,255,255,.12);margin-top:4px;}
     .ucard{background:rgba(0,0,0,.18);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:12px;border:1px solid rgba(255,255,255,.08);}
     .urow{display:flex;align-items:center;gap:10px;}
     .ucircle{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -101,12 +101,12 @@
           <li><a href="admin-billing.html" class="nbtn "><span class="inn"><i class="fa fa-chart-line"></i>Billing & Finance</span></a></li>
           <li><a href="admin-reports.html" class="nbtn "><span class="inn"><i class="fa fa-file-waveform"></i>Reports & Analytics</span></a></li>
         </ul>
-      </div>
-      <div class="sbot">
+        <div class="sbot">
         <div class="ucard">
           <div class="urow"><div class="ucircle"><i class="fa fa-user-shield"></i></div><div><div class="uname">Dr. Admin</div><div class="uem">admin@stacklyhealth.com</div></div></div>
           <button class="lbtn" onclick="if(confirm('Sign out?'))window.location.href='login.html'"><i class="fa fa-arrow-right-from-bracket"></i>LOGOUT</button>
         </div>
+      </div>
       </div>
     </aside>
         <main class="main">
